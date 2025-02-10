@@ -1,0 +1,261 @@
+[gd_scene load_steps=12 format=3 uid="uid://nggqqvqhay7f"]
+
+[ext_resource type="PackedScene" uid="uid://bi7l2ytinsd4d" path="res://full_gameready_city_buildings/scene.gltf" id="1_hc1i4"]
+[ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://player.tscn" id="2_4tux2"]
+[ext_resource type="Texture2D" uid="uid://fd0plvoln0qd" path="res://NightSkyHDRI003_4K-HDR.exr" id="3_f7o4c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w2cxm"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_oniju"]
+material = SubResource("StandardMaterial3D_w2cxm")
+size = Vector2(1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dbcv6"]
+size = Vector3(140.749, 1, 118.124)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1a3hx"]
+size = Vector3(0.001, 0.001, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d3icq"]
+size = Vector3(54.946, 10, 29.9576)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8mvrl"]
+panorama = ExtResource("3_f7o4c")
+
+[sub_resource type="Sky" id="Sky_r82o7"]
+sky_material = SubResource("PanoramaSkyMaterial_8mvrl")
+
+[sub_resource type="Environment" id="Environment_q3otm"]
+background_mode = 2
+sky = SubResource("Sky_r82o7")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="suelo" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_oniju")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="suelo"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="suelo/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9519, -0.499138, -0.625244)
+shape = SubResource("BoxShape3D_dbcv6")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_hc1i4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.062135, 0.0198378, 0.505868)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.78532, 0.536831, -8.21555)
+mesh = SubResource("BoxMesh_1a3hx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.973, 0, -14.8567)
+shape = SubResource("BoxShape3D_d3icq")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.78532, 0.536831, 38.6752)
+mesh = SubResource("BoxMesh_1a3hx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.973, 0, -14.8567)
+shape = SubResource("BoxShape3D_d3icq")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.9346, 0.536831, 38.6752)
+mesh = SubResource("BoxMesh_1a3hx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.973, 0, -14.6377)
+shape = SubResource("BoxShape3D_d3icq")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.9346, 0.536831, -7.09168)
+mesh = SubResource("BoxMesh_1a3hx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.973, 0, -15.0156)
+shape = SubResource("BoxShape3D_d3icq")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_q3otm")
+
+[node name="Luces" type="Node" parent="."]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.67396, 3.2296, 6.70705)
+light_color = Color(1, 1, 0.560784, 1)
+light_energy = 7.464
+light_size = 1.0
+spot_angle = 37.73
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Luces"]
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -5.67396, 3.07688, 6.70705)
+light_color = Color(1, 1, 0.560784, 1)
+light_energy = 7.464
+light_size = 1.0
+spot_angle = 37.73
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -17.0351, 3.2296, 6.70705)
+light_color = Color(1, 1, 0.560784, 1)
+light_energy = 7.464
+light_size = 1.0
+spot_angle = 37.73
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Luces"]
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -17.0351, 3.07688, 6.70705)
+light_color = Color(1, 1, 0.560784, 1)
+light_energy = 7.464
+light_size = 1.0
+spot_angle = 37.73
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -29.0501, 3.2296, 6.70705)
+light_color = Color(1, 1, 0.560784, 1)
+light_energy = 7.464
+light_size = 1.0
+spot_angle = 37.73
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="Luces"]
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -29.0501, 3.07688, 6.70705)
+light_color = Color(1, 1, 0.560784, 1)
+light_energy = 7.464
+light_size = 1.0
+spot_angle = 37.73
+
+[node name="SpotLight3D13" type="SpotLight3D" parent="Luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 31.5605, 3.2296, 6.5475)
+light_color = Color(1, 1, 0.560784, 1)
+light_energy = 7.464
+light_size = 1.0
+spot_angle = 37.73
+
+[node name="SpotLight3D14" type="SpotLight3D" parent="Luces"]
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 31.5586, 3.07688, 6.46245)
+light_color = Color(1, 1, 0.560784, 1)
+light_energy = 7.464
+light_size = 1.0
+spot_angle = 37.73
+
+[node name="SpotLight3D15" type="SpotLight3D" parent="Luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 17.9286, 3.2296, 6.42193)
+light_color = Color(1, 1, 0.560784, 1)
+light_energy = 7.464
+light_size = 1.0
+spot_angle = 37.73
+
+[node name="SpotLight3D16" type="SpotLight3D" parent="Luces"]
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 17.9587, 3.07688, 6.33426)
+light_color = Color(1, 1, 0.560784, 1)
+light_energy = 7.464
+light_size = 1.0
+spot_angle = 37.73
+
+[node name="SpotLight3D17" type="SpotLight3D" parent="Luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.02415, 3.2296, 6.44262)
+light_color = Color(1, 1, 0.560784, 1)
+light_energy = 7.464
+light_size = 1.0
+spot_angle = 37.73
+
+[node name="SpotLight3D18" type="SpotLight3D" parent="Luces"]
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 7.03577, 3.07688, 6.43443)
+light_color = Color(1, 1, 0.560784, 1)
+light_energy = 7.464
+light_size = 1.0
+spot_angle = 37.73
+
+[node name="SpotLight3D19" type="SpotLight3D" parent="Luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 30.6817, 3.2296, -5.62725)
+light_color = Color(1, 1, 0.560784, 1)
+light_energy = 7.464
+light_size = 1.0
+spot_angle = 37.73
+
+[node name="SpotLight3D20" type="SpotLight3D" parent="Luces"]
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 30.6707, 3.07688, -5.50225)
+light_color = Color(1, 1, 0.560784, 1)
+light_energy = 7.464
+light_size = 1.0
+spot_angle = 37.73
+
+[node name="SpotLight3D21" type="SpotLight3D" parent="Luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 19.1164, 3.2296, -5.75281)
+light_color = Color(1, 1, 0.560784, 1)
+light_energy = 7.464
+light_size = 1.0
+spot_angle = 37.73
+
+[node name="SpotLight3D22" type="SpotLight3D" parent="Luces"]
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 19.1361, 3.07688, -5.45425)
+light_color = Color(1, 1, 0.560784, 1)
+light_energy = 7.464
+light_size = 1.0
+spot_angle = 37.73
+
+[node name="SpotLight3D23" type="SpotLight3D" parent="Luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.02415, 3.2296, -5.62633)
+light_color = Color(1, 1, 0.560784, 1)
+light_energy = 7.464
+light_size = 1.0
+spot_angle = 37.73
+
+[node name="SpotLight3D24" type="SpotLight3D" parent="Luces"]
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 7.03577, 3.07688, -5.51473)
+light_color = Color(1, 1, 0.560784, 1)
+light_energy = 7.464
+light_size = 1.0
+spot_angle = 37.73
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.96368, 3.2296, -5.4156)
+light_color = Color(1, 1, 0.560784, 1)
+light_energy = 7.464
+light_size = 1.0
+spot_angle = 37.73
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="Luces"]
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -4.95768, 3.07688, -5.49556)
+light_color = Color(1, 1, 0.560784, 1)
+light_energy = 7.464
+light_size = 1.0
+spot_angle = 37.73
+
+[node name="SpotLight3D9" type="SpotLight3D" parent="Luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -17.0248, 3.2296, -5.4156)
+light_color = Color(1, 1, 0.560784, 1)
+light_energy = 7.464
+light_size = 1.0
+spot_angle = 37.73
+
+[node name="SpotLight3D10" type="SpotLight3D" parent="Luces"]
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -17.0341, 3.07688, -5.4156)
+light_color = Color(1, 1, 0.560784, 1)
+light_energy = 7.464
+light_size = 1.0
+spot_angle = 37.73
+
+[node name="SpotLight3D11" type="SpotLight3D" parent="Luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -28.8516, 3.2296, -5.4156)
+light_color = Color(1, 1, 0.560784, 1)
+light_energy = 7.464
+light_size = 1.0
+spot_angle = 37.73
+
+[node name="SpotLight3D12" type="SpotLight3D" parent="Luces"]
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -28.8516, 3.07688, -5.4156)
+light_color = Color(1, 1, 0.560784, 1)
+light_energy = 7.464
+light_size = 1.0
+spot_angle = 37.73
+
+[node name="Player" parent="." instance=ExtResource("2_4tux2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.268136, 1.45008, 0.321678)

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Korean Digital Kiosk
+* source:	https://sketchfab.com/3d-models/korean-digital-kiosk-24484604208a4df7ac335fd056ca7365
+* author:	bolinas (https://sketchfab.com/bolinas)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Korean Digital Kiosk" (https://sketchfab.com/3d-models/korean-digital-kiosk-24484604208a4df7ac335fd056ca7365) by bolinas (https://sketchfab.com/bolinas) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
