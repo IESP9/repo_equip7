@@ -1,0 +1,11 @@
+Model Information:
+* title:	moscow bus station
+* source:	https://sketchfab.com/3d-models/moscow-bus-station-b663562188404aa5a430ea16ebe6cd14
+* author:	bez_glaza (https://sketchfab.com/bez_glaza)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "moscow bus station" (https://sketchfab.com/3d-models/moscow-bus-station-b663562188404aa5a430ea16ebe6cd14) by bez_glaza (https://sketchfab.com/bez_glaza) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
