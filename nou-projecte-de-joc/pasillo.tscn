@@ -1,0 +1,740 @@
+[gd_scene load_steps=27 format=3 uid="uid://db1gofbyqxvyv"]
+
+[ext_resource type="PackedScene" uid="uid://4ljke0j41ydq" path="res://caffe/window/scene.gltf" id="1_3cgys"]
+[ext_resource type="PackedScene" uid="uid://bjipmb2jmalft" path="res://elevator-door/scene.gltf" id="2_07hir"]
+[ext_resource type="PackedScene" uid="uid://dnaturvg5ja88" path="res://caffe/long_office_ceiling_light/scene.gltf" id="2_k6ig1"]
+[ext_resource type="PackedScene" uid="uid://cq3fx3pfxakkw" path="res://caffe/wall_electrical_panel/scene.gltf" id="3_g5aqb"]
+[ext_resource type="PackedScene" uid="uid://c2ugxpppoqmje" path="res://ceiling_tiles_texture/scene.gltf" id="4_pf5uq"]
+[ext_resource type="Script" path="res://area_3de.gd" id="4_tdwsb"]
+[ext_resource type="PackedScene" uid="uid://d1fwonn02q864" path="res://door_with_frame/scene.gltf" id="5_a5p2m"]
+[ext_resource type="PackedScene" uid="uid://bpjpejojjveoo" path="res://fire_escape__exit_doors/scene.gltf" id="6_dikwe"]
+[ext_resource type="PackedScene" uid="uid://ccq4ux4nv6rkc" path="res://exit_sign/scene.gltf" id="6_tdx1n"]
+[ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://player.tscn" id="7_6ak2a"]
+[ext_resource type="PackedScene" uid="uid://c7iecbwp281fc" path="res://caffe/modern__sofa/scene.gltf" id="7_xjgbe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vske8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7765v"]
+material = SubResource("StandardMaterial3D_vske8")
+size = Vector3(1, 6, 15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xk5hd"]
+size = Vector3(1, 6, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k5lev"]
+size = Vector3(1, 6, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bmc2o"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pcpak"]
+material = SubResource("StandardMaterial3D_bmc2o")
+size = Vector3(50, 5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kpxdj"]
+size = Vector3(50, 6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_06ra5"]
+size = Vector3(96.1878, 232.742, 46.2196)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ep411"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fnh1t"]
+material = SubResource("StandardMaterial3D_ep411")
+size = Vector3(50, 0.5, 30)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sarg6"]
+size = Vector2(50, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k8nj1"]
+size = Vector3(50, 0, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_syrb8"]
+size = Vector3(1.98828, 1, 0.885864)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_na0c8"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hdpw7"]
+material = SubResource("StandardMaterial3D_na0c8")
+size = Vector3(50, 0.5, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Paredes" type="Node" parent="."]
+
+[node name="p30" type="MeshInstance3D" parent="Paredes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.3681, 2, -0.0325427)
+mesh = SubResource("BoxMesh_7765v")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Paredes/p30"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Paredes/p30/StaticBody3D"]
+shape = SubResource("BoxShape3D_xk5hd")
+
+[node name="p30_2" type="MeshInstance3D" parent="Paredes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5123, 2, -0.0325427)
+mesh = SubResource("BoxMesh_7765v")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Paredes/p30_2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Paredes/p30_2/StaticBody3D"]
+shape = SubResource("BoxShape3D_k5lev")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Paredes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.99606, 7.94792)
+mesh = SubResource("BoxMesh_pcpak")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Paredes/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Paredes/MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_kpxdj")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Paredes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.99606, -7.90411)
+mesh = SubResource("BoxMesh_pcpak")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Paredes/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Paredes/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_kpxdj")
+
+[node name="Sketchfab_Scene" parent="Paredes" instance=ExtResource("1_3cgys")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.297284, 1.95593, 7.38729)
+
+[node name="Sketchfab_Scene6" parent="Paredes" instance=ExtResource("1_3cgys")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -13.924, 1.95593, 7.38729)
+
+[node name="Sketchfab_Scene3" parent="Paredes" instance=ExtResource("1_3cgys")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 15.9413, 1.95593, 7.38729)
+
+[node name="Sketchfab_Scene7" parent="Paredes" instance=ExtResource("1_3cgys")]
+transform = Transform3D(-0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -0.33317, 1.95593, -7.34523)
+
+[node name="Sketchfab_Scene9" parent="Paredes" instance=ExtResource("1_3cgys")]
+transform = Transform3D(-0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 16.1425, 1.95593, -7.31493)
+
+[node name="Sketchfab_Scene11" parent="Paredes" instance=ExtResource("1_3cgys")]
+transform = Transform3D(-0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -14.0332, 1.95593, -7.26563)
+
+[node name="Sketchfab_Scene2" parent="Paredes" instance=ExtResource("2_07hir")]
+transform = Transform3D(-6.55671e-10, 0, 0.015, 0, 0.015, 0, -0.015, 0, -6.55671e-10, -23.856, 3.223, 0.00780725)
+
+[node name="Sketchfab_Scene" parent="Paredes/Sketchfab_Scene2" instance=ExtResource("6_tdx1n")]
+transform = Transform3D(0.02, 0, 3.88578e-16, 0, 0.02, 0, -3.88578e-16, 0, 0.02, 2.63435, 4.20935, -0.352417)
+
+[node name="Area3D" type="Area3D" parent="Paredes/Sketchfab_Scene2"]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 0, 80.5779, 215.225)
+script = ExtResource("4_tdwsb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Paredes/Sketchfab_Scene2/Area3D"]
+transform = Transform3D(1, 0, 9.30811e-13, 0, 1, 0, -9.30811e-13, 0, 1, 0.560181, -179.09, -195.412)
+shape = SubResource("BoxShape3D_06ra5")
+
+[node name="Techo" type="Node" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Techo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.78702, 0)
+mesh = SubResource("BoxMesh_fnh1t")
+
+[node name="lucesd" type="Node" parent="Techo"]
+
+[node name="Sketchfab_Scene" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -16.4863, 4.21049, -2.66888)
+
+[node name="Sketchfab_Scene2" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -12.1417, 4.21049, -2.66888)
+
+[node name="Sketchfab_Scene3" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -7.83534, 4.21049, -2.66888)
+
+[node name="Sketchfab_Scene4" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -3.49077, 4.21049, -2.66888)
+
+[node name="Sketchfab_Scene5" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.818033, 4.21049, -2.66888)
+
+[node name="Sketchfab_Scene6" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 5.1626, 4.21049, -2.66888)
+
+[node name="Sketchfab_Scene7" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 9.46899, 4.21049, -2.66888)
+
+[node name="Sketchfab_Scene8" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 13.8136, 4.21049, -2.66888)
+
+[node name="Sketchfab_Scene9" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 18.1568, 4.21049, -2.66888)
+
+[node name="Sketchfab_Scene10" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -16.4863, 4.21049, -8.90282)
+
+[node name="Sketchfab_Scene37" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -23.9461, 4.21049, -8.90282)
+
+[node name="Sketchfab_Scene11" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -12.1417, 4.21049, -8.90282)
+
+[node name="Sketchfab_Scene12" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -7.83534, 4.21049, -8.90282)
+
+[node name="Sketchfab_Scene13" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -3.49077, 4.21049, -8.90282)
+
+[node name="Sketchfab_Scene14" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.818033, 4.21049, -8.90282)
+
+[node name="Sketchfab_Scene15" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 5.1626, 4.21049, -8.90282)
+
+[node name="Sketchfab_Scene16" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 9.46899, 4.21049, -8.90282)
+
+[node name="Sketchfab_Scene17" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 13.8136, 4.21049, -8.90282)
+
+[node name="Sketchfab_Scene18" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 18.1568, 4.21049, -8.90282)
+
+[node name="Sketchfab_Scene19" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -16.4863, 4.21049, 10.287)
+
+[node name="Sketchfab_Scene20" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -12.1417, 4.21049, 10.287)
+
+[node name="Sketchfab_Scene21" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -7.83534, 4.21049, 10.287)
+
+[node name="Sketchfab_Scene22" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -3.49077, 4.21049, 10.287)
+
+[node name="Sketchfab_Scene23" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.818033, 4.21049, 10.287)
+
+[node name="Sketchfab_Scene24" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 5.1626, 4.21049, 10.287)
+
+[node name="Sketchfab_Scene25" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 9.46899, 4.21049, 10.287)
+
+[node name="Sketchfab_Scene26" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 13.8136, 4.21049, 10.287)
+
+[node name="Sketchfab_Scene27" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 18.1568, 4.21049, 10.287)
+
+[node name="Sketchfab_Scene28" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -16.4863, 4.21049, 4.05307)
+
+[node name="Sketchfab_Scene29" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -12.1417, 4.21049, 4.05307)
+
+[node name="Sketchfab_Scene30" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -7.83534, 4.21049, 4.05307)
+
+[node name="Sketchfab_Scene31" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -3.49077, 4.21049, 4.05307)
+
+[node name="Sketchfab_Scene32" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.818033, 4.21049, 4.05307)
+
+[node name="Sketchfab_Scene33" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 5.1626, 4.21049, 4.05307)
+
+[node name="Sketchfab_Scene34" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 9.46899, 4.21049, 4.05307)
+
+[node name="Sketchfab_Scene35" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 13.8136, 4.21049, 4.05307)
+
+[node name="Sketchfab_Scene36" parent="Techo/lucesd" instance=ExtResource("2_k6ig1")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 18.1568, 4.21049, 4.05307)
+
+[node name="Sketchfab_Scene38" parent="Techo/lucesd" instance=ExtResource("3_g5aqb")]
+transform = Transform3D(0.000706853, 0, 0.0999975, 0, 0.1, 0, -0.0999975, 0, 0.000706853, 24.806, 2.98248, 13.0804)
+
+[node name="luces" type="Node" parent="Techo"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -16.3942, 7.54335, -2.61525)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -11.9705, 7.54335, -2.61525)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.89636, 7.54335, -2.61525)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.3528, 7.54335, -2.61525)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.07093, 7.54335, -2.61525)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.14507, 7.54335, -2.61525)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 9.51135, 7.54335, -2.61525)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 13.9351, 7.54335, -2.61525)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D9" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 18.0092, 7.54335, -2.61525)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D10" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -16.3942, 7.54335, -8.91476)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D11" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -11.9705, 7.54335, -8.91476)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D12" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.89636, 7.54335, -8.91476)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D13" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.3528, 7.54335, -8.91476)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D14" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.07093, 7.54335, -8.91476)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D15" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.14507, 7.54335, -8.91476)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D16" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 9.51135, 7.54335, -8.91476)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D17" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 13.9351, 7.54335, -8.91476)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D18" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 18.0092, 7.54335, -8.91476)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D19" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -16.3942, 7.54335, 10.2735)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D20" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -11.9705, 7.54335, 10.2735)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D21" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.89636, 7.54335, 10.2735)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D22" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.3528, 7.54335, 10.2735)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D23" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.07093, 7.54335, 10.2735)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D24" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.14507, 7.54335, 10.2735)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D25" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 9.51135, 7.54335, 10.2735)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D26" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 13.9351, 7.54335, 10.2735)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D27" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 18.0092, 7.54335, 10.2735)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D28" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -16.3942, 7.54335, 3.97394)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D37" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -23.854, 7.54335, -2.61525)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D38" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -23.854, 7.54335, -8.91476)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D39" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -23.854, 7.54335, 10.2735)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D44" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -23.854, 7.54335, 3.97394)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D29" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -11.9705, 7.54335, 3.97394)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D30" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.89636, 7.54335, 3.97394)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D31" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.3528, 7.54335, 3.97394)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D32" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.07093, 7.54335, 3.97394)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D33" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.14507, 7.54335, 3.97394)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D34" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 9.51135, 7.54335, 3.97394)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D35" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 13.9351, 7.54335, 3.97394)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D36" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 18.0092, 7.54335, 3.97394)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D40" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 24.1565, 7.54335, -2.61525)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D41" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 24.1565, 7.54335, -2.28869)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D42" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 24.1565, 7.54335, 10.2735)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="SpotLight3D43" type="SpotLight3D" parent="Techo/luces"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 24.1565, 7.54335, 3.97394)
+light_energy = 4.374
+light_indirect_energy = 2.625
+light_volumetric_fog_energy = 16.0
+spot_range = 14.575
+spot_angle = 70.68
+
+[node name="Suelo2" type="Node" parent="."]
+
+[node name="Suelo" type="MeshInstance3D" parent="Suelo2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0276618, 0)
+mesh = SubResource("PlaneMesh_sarg6")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Suelo2/Suelo"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Suelo2/Suelo/StaticBody3D"]
+shape = SubResource("BoxShape3D_k8nj1")
+
+[node name="Sketchfab_Scene" parent="Suelo2" instance=ExtResource("4_pf5uq")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.65, -6.5, 130.499)
+
+[node name="Sketchfab_Scene2" parent="Suelo2" instance=ExtResource("4_pf5uq")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.65, -6.5, 120.399)
+
+[node name="Sketchfab_Scene3" parent="Suelo2" instance=ExtResource("4_pf5uq")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17.5147, -6.5, 130.499)
+
+[node name="Sketchfab_Scene4" parent="Suelo2" instance=ExtResource("4_pf5uq")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17.5147, -6.5, 120.399)
+
+[node name="Sketchfab_Scene5" parent="Suelo2" instance=ExtResource("4_pf5uq")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.65, -6.5, 110.28)
+
+[node name="Sketchfab_Scene6" parent="Suelo2" instance=ExtResource("4_pf5uq")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.65, -6.5, 100.18)
+
+[node name="Sketchfab_Scene7" parent="Suelo2" instance=ExtResource("4_pf5uq")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17.5147, -6.5, 110.28)
+
+[node name="Sketchfab_Scene8" parent="Suelo2" instance=ExtResource("4_pf5uq")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17.5147, -6.5, 100.18)
+
+[node name="Sketchfab_Scene9" parent="Suelo2" instance=ExtResource("4_pf5uq")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37.5825, -6.5, 130.499)
+
+[node name="Sketchfab_Scene10" parent="Suelo2" instance=ExtResource("4_pf5uq")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37.5825, -6.5, 120.399)
+
+[node name="Sketchfab_Scene11" parent="Suelo2" instance=ExtResource("4_pf5uq")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37.5825, -6.5, 130.499)
+
+[node name="Sketchfab_Scene12" parent="Suelo2" instance=ExtResource("4_pf5uq")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37.5825, -6.5, 120.399)
+
+[node name="Sketchfab_Scene13" parent="Suelo2" instance=ExtResource("4_pf5uq")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37.5825, -6.5, 110.28)
+
+[node name="Sketchfab_Scene14" parent="Suelo2" instance=ExtResource("4_pf5uq")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37.5825, -6.5, 100.18)
+
+[node name="Sketchfab_Scene15" parent="Suelo2" instance=ExtResource("4_pf5uq")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37.5825, -6.5, 110.28)
+
+[node name="Sketchfab_Scene16" parent="Suelo2" instance=ExtResource("4_pf5uq")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37.5825, -6.5, 100.18)
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("5_a5p2m")]
+transform = Transform3D(-0.017, 0, 1.48619e-09, 0, 0.017, 0, -1.48619e-09, 0, -0.017, 23.2022, 0.028, 7.57927)
+
+[node name="Sketchfab_Scene17" parent="." instance=ExtResource("6_dikwe")]
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 25.1521, -0.503083, 0.570756)
+
+[node name="Sketchfab_Scene15" parent="." instance=ExtResource("7_xjgbe")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -14.1011, 0.949379, -6.3583)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene15"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene15/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00170898, 0, -0.0570679)
+shape = SubResource("BoxShape3D_syrb8")
+
+[node name="Sketchfab_Scene16" parent="." instance=ExtResource("7_xjgbe")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.330636, 0.949379, -6.3583)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene16"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene16/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00170898, 0, -0.0570679)
+shape = SubResource("BoxShape3D_syrb8")
+
+[node name="Sketchfab_Scene18" parent="." instance=ExtResource("7_xjgbe")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 15.9662, 0.949379, -6.75858)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene18"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene18/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00170898, 0, -0.0570679)
+shape = SubResource("BoxShape3D_syrb8")
+
+[node name="Sketchfab_Scene19" parent="." instance=ExtResource("7_xjgbe")]
+transform = Transform3D(-3, 0, 2.62268e-07, 0, 3, 0, -2.62268e-07, 0, -3, 15.9703, 0.949379, 6.30899)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene19"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene19/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00170898, 0, -0.0570679)
+shape = SubResource("BoxShape3D_syrb8")
+
+[node name="Sketchfab_Scene20" parent="." instance=ExtResource("7_xjgbe")]
+transform = Transform3D(-3, 0, 2.62268e-07, 0, 3, 0, -2.62268e-07, 0, -3, -0.320942, 0.949379, 6.29625)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene20"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene20/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00170898, 0, -0.0570679)
+shape = SubResource("BoxShape3D_syrb8")
+
+[node name="Sketchfab_Scene21" parent="." instance=ExtResource("7_xjgbe")]
+transform = Transform3D(-3, 0, 2.62268e-07, 0, 3, 0, -2.62268e-07, 0, -3, -14.1002, 0.949379, 6.30423)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene21"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene21/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00170898, 0, -0.0570679)
+shape = SubResource("BoxShape3D_syrb8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30096, 7.9413)
+mesh = SubResource("BoxMesh_hdpw7")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30096, -7.89954)
+mesh = SubResource("BoxMesh_hdpw7")
+
+[node name="Player" parent="." instance=ExtResource("7_6ak2a")]
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 23.1209, 1.39353, 6.43911)
+
+[connection signal="body_entered" from="Paredes/Sketchfab_Scene2/Area3D" to="Paredes/Sketchfab_Scene2/Area3D" method="_on_body_entered"]

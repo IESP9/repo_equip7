@@ -1,0 +1,11 @@
+Model Information:
+* title:	Wall electrical panel
+* source:	https://sketchfab.com/3d-models/wall-electrical-panel-28b2381209ed4a87be866b759621d3e0
+* author:	okulusvirt (https://sketchfab.com/okulusvirt)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Wall electrical panel" (https://sketchfab.com/3d-models/wall-electrical-panel-28b2381209ed4a87be866b759621d3e0) by okulusvirt (https://sketchfab.com/okulusvirt) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
