@@ -51,7 +51,7 @@ size = Vector3(2.771, 4.07416, 11.8602)
 size = Vector3(0.94532, 6.13074, 57.0609)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7toln"]
-size = Vector3(1.6442, 117.292, 8.59989)
+size = Vector3(1.6442, 117.596, 8.59989)
 
 [node name="Node3D" type="Node3D"]
 
@@ -144,18 +144,15 @@ transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 0, -36.8
 script = ExtResource("8_gqj5w")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 9.23706e-13, 0, 1, 0, -9.23706e-13, 0, 1, 15.9008, -19.1724, -0.570671)
+transform = Transform3D(1, 0, 9.23706e-13, 0, 1, 0, -9.23706e-13, 0, 1, 15.9008, 37.438, -0.570671)
 shape = SubResource("BoxShape3D_7toln")
-
-[node name="Sketchfab_Scene" parent="Area3D" instance=ExtResource("5_awdnd")]
-transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -1.25482, 135.79, -207.76)
 
 [node name="Sketchfab_Scene2" parent="Area3D" instance=ExtResource("9_7h4sd")]
 transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 18.4122, 38.3499, -4.02949)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(0.0840083, 0, -0.996465, 0, 1, 0, 0.996465, 0, 0.0840083, 11.5967, 1.29716, -8.92347)
-light_energy = 5.556
-spot_range = 7.43
+transform = Transform3D(0.0840083, 0, -0.996465, 0, 1, 0, 0.996465, 0, 0.0840083, 9.97134, 1.29716, -8.92347)
+light_energy = 11.536
+spot_range = 43.376
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

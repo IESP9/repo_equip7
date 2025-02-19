@@ -45,10 +45,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9519, -0.499138, -0.625244
 shape = SubResource("BoxShape3D_dbcv6")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("1_hc1i4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.062135, 0.0198378, 0.505868)
-
-[node name="Sketchfab_Scene2" parent="." instance=ExtResource("1_hc1i4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.062135, 0.0198378, 0.505868)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.062135, 0.0198378, 0.505868)
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.9346, 0.536831, 38.6752)
@@ -89,406 +86,406 @@ environment = SubResource("Environment_q3otm")
 [node name="Luces" type="Node" parent="."]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.67396, 3.2296, 6.70705)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.93256, 3.71204, 6.56225)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -5.67396, 3.07688, 6.70705)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -4.93256, 3.55932, 6.56225)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D49" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.67396, 3.2296, 6.70705)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.93256, 3.71204, 6.56225)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D50" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -5.67396, 3.07688, 6.70705)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -4.93256, 3.55932, 6.56225)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D51" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.74449, 3.11123, 10.7022)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.00309, 3.59367, 10.5574)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D52" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -1.70371, 2.98219, 10.7022)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -0.962311, 3.46463, 10.5574)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D53" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.40713, 3.25784, 6.4873)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.14853, 3.74028, 6.3425)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D54" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 3.40713, 3.10512, 6.4873)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 4.14853, 3.58756, 6.3425)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D55" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.86031, 3.36889, -6.98847)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.60171, 3.85133, -7.13327)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D56" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 1.86031, 3.21617, -6.98847)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 2.60171, 3.69861, -7.13327)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D57" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.68318, 3.24672, -9.21457)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.941781, 3.72916, -9.35937)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D58" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -1.68318, 3.094, -9.21457)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -0.941781, 3.57644, -9.35937)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -17.0351, 3.2296, 6.70705)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -16.2937, 3.71204, 6.56225)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -17.0351, 3.07688, 6.70705)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -16.2937, 3.55932, 6.56225)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -29.0501, 3.2296, 6.70705)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -28.3087, 3.71204, 6.56225)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D6" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -29.0501, 3.07688, 6.70705)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -28.3087, 3.55932, 6.56225)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D13" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 31.5605, 3.2296, 6.5475)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 32.3019, 3.71204, 6.4027)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D14" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 31.5586, 3.07688, 6.46245)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 32.3, 3.55932, 6.31765)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D15" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 17.9286, 3.2296, 6.42193)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 18.67, 3.71204, 6.27713)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D16" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 17.9587, 3.07688, 6.33426)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 18.7001, 3.55932, 6.18946)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D17" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.02415, 3.2296, 6.44262)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.76555, 3.71204, 6.29782)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D18" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 7.03577, 3.07688, 6.43443)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 7.77717, 3.55932, 6.28963)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D19" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 30.6817, 3.2296, -5.62725)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 31.4231, 3.71204, -5.77205)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D20" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 30.6707, 3.07688, -5.50225)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 31.4121, 3.55932, -5.64705)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D21" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 19.1164, 3.2296, -5.75281)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 19.8578, 3.71204, -5.89761)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D22" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 19.1361, 3.07688, -5.45425)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 19.8775, 3.55932, -5.59905)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D23" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.02415, 3.2296, -5.62633)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.76555, 3.71204, -5.77113)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D24" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 7.03577, 3.07688, -5.51473)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 7.77717, 3.55932, -5.65953)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D7" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.96368, 3.2296, -5.4156)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.22228, 3.71204, -5.5604)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D8" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -4.95768, 3.07688, -5.49556)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -4.21628, 3.55932, -5.64036)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D9" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -17.0248, 3.2296, -5.4156)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -16.2834, 3.71204, -5.5604)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D10" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -17.0341, 3.07688, -5.4156)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -16.2927, 3.55932, -5.5604)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D25" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -15.6952, 3.2296, -0.445999)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -14.9538, 3.71204, -0.590801)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D26" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -15.7045, 3.35353, -0.487663)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -14.9631, 3.83597, -0.632465)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D27" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -15.6952, 3.2296, 1.24128)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -14.9538, 3.71204, 1.09648)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D28" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -15.7045, 3.35353, 1.27618)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -14.9631, 3.83597, 1.13138)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D33" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.66746, 2.91203, -0.445999)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.92606, 3.39447, -0.590801)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D34" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -3.67676, 3.03596, -0.487663)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -2.93536, 3.5184, -0.632465)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D35" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.66746, 2.91203, 1.24128)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.92606, 3.39447, 1.09648)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D36" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -3.67676, 3.03596, 1.27618)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -2.93536, 3.5184, 1.13138)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D37" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.61995, 2.91203, -0.445999)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.36135, 3.39447, -0.590801)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D38" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 3.61065, 3.03596, -0.487663)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 4.35205, 3.5184, -0.632465)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D39" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.61995, 2.91203, 1.24128)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.36135, 3.39447, 1.09648)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D40" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 3.61065, 3.03596, 1.27618)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 4.35205, 3.5184, 1.13138)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D41" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 15.6494, 2.9879, -0.445999)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 16.3908, 3.47034, -0.590801)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D42" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 15.6401, 3.11183, -0.487663)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 16.3815, 3.59427, -0.632465)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D43" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 15.6494, 2.9879, 1.24128)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 16.3908, 3.47034, 1.09648)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D44" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 15.6401, 3.11183, 1.27618)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 16.3815, 3.59427, 1.13138)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D45" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 27.6828, 2.9879, -0.445999)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 28.4242, 3.47034, -0.590801)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D46" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 27.6735, 3.11183, -0.487663)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 28.4149, 3.59427, -0.632465)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D47" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 27.6828, 2.9879, 1.24128)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 28.4242, 3.47034, 1.09648)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D48" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 27.6735, 3.11183, 1.27618)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 28.4149, 3.59427, 1.13138)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D29" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -27.7036, 3.2296, -0.445999)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -26.9622, 3.71204, -0.590801)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D30" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -27.7129, 3.35353, -0.487663)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -26.9715, 3.83597, -0.632465)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D31" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -27.7036, 3.2296, 1.24128)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -26.9622, 3.71204, 1.09648)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D32" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -27.7129, 3.35353, 1.27618)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -26.9715, 3.83597, 1.13138)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D11" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -28.8516, 3.2296, -5.4156)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -28.1102, 3.71204, -5.5604)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D12" type="SpotLight3D" parent="Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -28.8516, 3.07688, -5.4156)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -28.1102, 3.55932, -5.5604)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0

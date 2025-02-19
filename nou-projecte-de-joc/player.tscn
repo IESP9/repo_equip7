@@ -23,7 +23,7 @@ mesh = SubResource("CapsuleMesh_vukmd")
 [node name="Head" type="Node3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.20262, 0)
 
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head"]
+[node name="player_Camera" type="Camera3D" parent="CharacterBody3D/Head"]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

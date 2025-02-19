@@ -1,9 +1,9 @@
 [gd_scene load_steps=27 format=3 uid="uid://db1gofbyqxvyv"]
 
-[ext_resource type="PackedScene" uid="uid://4ljke0j41ydq" path="res://caffe/window/scene.gltf" id="1_3cgys"]
+[ext_resource type="PackedScene" uid="uid://4ljke0j41ydq" path="res://window/scene.gltf" id="1_3cgys"]
 [ext_resource type="PackedScene" uid="uid://bjipmb2jmalft" path="res://elevator-door/scene.gltf" id="2_07hir"]
-[ext_resource type="PackedScene" uid="uid://dnaturvg5ja88" path="res://caffe/long_office_ceiling_light/scene.gltf" id="2_k6ig1"]
-[ext_resource type="PackedScene" uid="uid://cq3fx3pfxakkw" path="res://caffe/wall_electrical_panel/scene.gltf" id="3_g5aqb"]
+[ext_resource type="PackedScene" uid="uid://dnaturvg5ja88" path="res://long_office_ceiling_light/scene.gltf" id="2_k6ig1"]
+[ext_resource type="PackedScene" uid="uid://cq3fx3pfxakkw" path="res://wall_electrical_panel/scene.gltf" id="3_g5aqb"]
 [ext_resource type="PackedScene" uid="uid://c2ugxpppoqmje" path="res://ceiling_tiles_texture/scene.gltf" id="4_pf5uq"]
 [ext_resource type="Script" path="res://area_3de.gd" id="4_tdwsb"]
 [ext_resource type="PackedScene" uid="uid://d1fwonn02q864" path="res://door_with_frame/scene.gltf" id="5_a5p2m"]
@@ -51,11 +51,11 @@ size = Vector3(50, 0, 30)
 [sub_resource type="BoxShape3D" id="BoxShape3D_syrb8"]
 size = Vector3(1.98828, 1, 0.885864)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_na0c8"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v63wi"]
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_hdpw7"]
-material = SubResource("StandardMaterial3D_na0c8")
+material = SubResource("StandardMaterial3D_v63wi")
 size = Vector3(50, 0.5, 1)
 
 [node name="Node3D" type="Node3D"]

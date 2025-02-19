@@ -1,17 +1,43 @@
-[gd_scene load_steps=35 format=3 uid="uid://cs1nyo7owx2i4"]
+[gd_scene load_steps=41 format=3 uid="uid://cs1nyo7owx2i4"]
 
 [ext_resource type="PackedScene" uid="uid://c2ugxpppoqmje" path="res://ceiling_tiles_texture/scene.gltf" id="1_bvhg0"]
-[ext_resource type="PackedScene" uid="uid://4ljke0j41ydq" path="res://caffe/window/scene.gltf" id="2_lt2fv"]
+[ext_resource type="PackedScene" uid="uid://4ljke0j41ydq" path="res://window/scene.gltf" id="2_lt2fv"]
 [ext_resource type="PackedScene" uid="uid://bq2nyr8u0meji" path="res://office_computer/scene.gltf" id="2_xn1c8"]
 [ext_resource type="PackedScene" uid="uid://b8cb1m2w8wxim" path="res://office_table/scene.gltf" id="3_0vnct"]
 [ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://player.tscn" id="3_feymb"]
 [ext_resource type="Texture2D" uid="uid://cchbr0eogqvey" path="res://DALL_E-2025-02-12-17.55.11-A-minimalist-logo-for-an-insurance-company-removebg-preview.png" id="3_u4kh6"]
-[ext_resource type="PackedScene" uid="uid://dnaturvg5ja88" path="res://caffe/long_office_ceiling_light/scene.gltf" id="4_n2d2m"]
+[ext_resource type="PackedScene" uid="uid://dnaturvg5ja88" path="res://long_office_ceiling_light/scene.gltf" id="4_n2d2m"]
 [ext_resource type="PackedScene" uid="uid://pawfed7jvo6x" path="res://papers__envelopes/scene.gltf" id="4_vj5ob"]
 [ext_resource type="PackedScene" uid="uid://d1fwonn02q864" path="res://door_with_frame/scene.gltf" id="7_0nqv6"]
-[ext_resource type="PackedScene" uid="uid://cq3fx3pfxakkw" path="res://caffe/wall_electrical_panel/scene.gltf" id="7_aufsu"]
+[ext_resource type="PackedScene" uid="uid://cq3fx3pfxakkw" path="res://wall_electrical_panel/scene.gltf" id="7_aufsu"]
 [ext_resource type="Script" path="res://area_3do.gd" id="8_ei07v"]
 [ext_resource type="PackedScene" uid="uid://ccq4ux4nv6rkc" path="res://exit_sign/scene.gltf" id="11_j4flg"]
+
+[sub_resource type="GDScript" id="GDScript_lqr8o"]
+script/source = "extends Node3D
+
+@onready var animation_player = $Camera3D/AnimationPlayer  # Asegúrate de que el nodo AnimationPlayer esté correctamente referenciado
+@onready var main_camera = $Camera3D  # Cámara de zoom
+@onready var player_camera = $Player/CharacterBody3D/Head/player_Camera  # Cámara del jugador
+
+func _ready():
+	# Al iniciar, asegúrate de que la cámara principal (de zoom) está activa
+	main_camera.current = true
+	player_camera.current = false  # Asegúrate de que la cámara del jugador no esté activa al inicio
+
+	# Reproduce la animación
+	animation_player.play(\"ZoomInAndOut\")
+
+	# Conectar la señal de finalización de la animación a la función que cambia la cámara
+	animation_player.connect(\"animation_finished\", Callable(self, \"_on_animation_finished\"))
+
+# Función que se llama cuando la animación termina
+func _on_animation_finished(anim_name: String) -> void:
+	if anim_name == \"ZoomInAndOut\":
+		# Cambia a la cámara del jugador después de la animación
+		main_camera.current = false  # Desactiva la cámara de zoom
+		player_camera.current = true  # Activa la cámara del jugador
+"
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1fm6m"]
 size = Vector2(50, 30)
@@ -81,7 +107,100 @@ size = Vector3(50, 1, 30)
 [sub_resource type="BoxShape3D" id="BoxShape3D_egxkx"]
 size = Vector3(96.1878, 232.742, 46.2196)
 
+[sub_resource type="Animation" id="Animation_6v5vp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:fov")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [78.1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-22.416, 2.624, -11.912)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nfrik"]
+resource_name = "ZoomInAndOut"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:fov")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.366667, 1.06667, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [33.9, 64.2, 75.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.06667, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-22.275, 1.97197, -13.0101), Vector3(-22.392, 2.235, -11.889)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.06667, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.239512, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r5mew"]
+_data = {
+"RESET": SubResource("Animation_6v5vp"),
+"ZoomInAndOut": SubResource("Animation_nfrik")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dxqsb"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_l3wms"]
+material = SubResource("StandardMaterial3D_dxqsb")
+size = Vector3(50, 0.5, 1)
+
 [node name="Office" type="Node3D"]
+script = SubResource("GDScript_lqr8o")
 
 [node name="Suelo2" type="Node" parent="."]
 
@@ -1113,5 +1232,22 @@ shape = SubResource("BoxShape3D_egxkx")
 
 [node name="Sketchfab_Scene" parent="Puerta/Sketchfab_Scene41/Area3D" instance=ExtResource("11_j4flg")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -1.25482, 135.79, -207.76)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.416, 2.624, -11.912)
+fov = 78.1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D"]
+libraries = {
+"": SubResource("AnimationLibrary_r5mew")
+}
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30096, 14.5111)
+mesh = SubResource("BoxMesh_l3wms")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30096, -14.525)
+mesh = SubResource("BoxMesh_l3wms")
 
 [connection signal="body_entered" from="Puerta/Sketchfab_Scene41/Area3D" to="Puerta/Sketchfab_Scene41/Area3D" method="_on_body_entered"]

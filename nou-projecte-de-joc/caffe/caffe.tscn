@@ -1,10 +1,11 @@
-[gd_scene load_steps=30 format=3 uid="uid://biepf2k2b0q5r"]
+[gd_scene load_steps=34 format=3 uid="uid://biepf2k2b0q5r"]
 
 [ext_resource type="PackedScene" uid="uid://c2ugxpppoqmje" path="res://ceiling_tiles_texture/scene.gltf" id="1_i688u"]
 [ext_resource type="PackedScene" uid="uid://bpjpejojjveoo" path="res://fire_escape__exit_doors/scene.gltf" id="2_012s0"]
-[ext_resource type="PackedScene" uid="uid://dnaturvg5ja88" path="res://caffe/long_office_ceiling_light/scene.gltf" id="2_saxl5"]
-[ext_resource type="PackedScene" uid="uid://cq3fx3pfxakkw" path="res://caffe/wall_electrical_panel/scene.gltf" id="3_0m3s5"]
-[ext_resource type="PackedScene" uid="uid://4ljke0j41ydq" path="res://caffe/window/scene.gltf" id="4_8k8p7"]
+[ext_resource type="PackedScene" uid="uid://dnaturvg5ja88" path="res://long_office_ceiling_light/scene.gltf" id="2_saxl5"]
+[ext_resource type="PackedScene" uid="uid://cq3fx3pfxakkw" path="res://wall_electrical_panel/scene.gltf" id="3_0m3s5"]
+[ext_resource type="Script" path="res://caffe/area_3degg.gd" id="3_05i8e"]
+[ext_resource type="PackedScene" uid="uid://4ljke0j41ydq" path="res://window/scene.gltf" id="4_8k8p7"]
 [ext_resource type="PackedScene" uid="uid://d1fwonn02q864" path="res://door_with_frame/scene.gltf" id="5_gtf0f"]
 [ext_resource type="Script" path="res://area_3dc.gd" id="6_sqbwx"]
 [ext_resource type="PackedScene" uid="uid://ccq4ux4nv6rkc" path="res://exit_sign/scene.gltf" id="7_0cg8l"]
@@ -18,6 +19,9 @@ size = Vector2(50, 30)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kckct"]
 size = Vector3(50, 0, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n4425"]
+size = Vector3(0.910156, 2.32019, 1.39642)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbdnw"]
 
@@ -63,6 +67,13 @@ size = Vector3(3.12262, 0.576172, 1.17789)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ssbtu"]
 size = Vector3(1.98828, 1, 0.885864)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_na0c8"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qcy0q"]
+material = SubResource("StandardMaterial3D_na0c8")
+size = Vector3(50, 0.5, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -128,6 +139,13 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37.5825, -6.5, 100.18)
 
 [node name="Sketchfab_Scene17" parent="Suelo2" instance=ExtResource("2_012s0")]
 transform = Transform3D(-2.2, 0, 3.32191e-07, 0, 2.2, 0, -3.32191e-07, 0, -2.2, -24.3141, -0.503083, 5.47624)
+
+[node name="Area3D" type="Area3D" parent="Suelo2/Sketchfab_Scene17"]
+script = ExtResource("3_05i8e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Suelo2/Sketchfab_Scene17/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04492, 0.660095, 0.0301814)
+shape = SubResource("BoxShape3D_n4425")
 
 [node name="Techo" type="Node" parent="."]
 
@@ -708,5 +726,13 @@ transform = Transform3D(2.64854e-05, 0.000136175, -0.000166629, -0.000220808, 3.
 
 [node name="Sketchfab_Scene20" parent="cafes" instance=ExtResource("12_353od")]
 transform = Transform3D(-3.49057e-05, -0.000179469, 8.05797e-05, -0.000220808, 3.20448e-05, -1.24149e-12, -1.25613e-05, -6.45844e-05, -0.000223917, -5.47072, 1.28759, 4.61964)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30096, 14.5126)
+mesh = SubResource("BoxMesh_qcy0q")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30096, 0.0667211)
+mesh = SubResource("BoxMesh_qcy0q")
 
 [connection signal="body_entered" from="Puerta/Sketchfab_Scene41/Area3D" to="Puerta/Sketchfab_Scene41/Area3D" method="_on_body_entered"]

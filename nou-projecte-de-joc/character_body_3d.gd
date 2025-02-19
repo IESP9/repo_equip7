@@ -10,7 +10,7 @@ var yaw := 0.0
 var pitch := 0.0
 var head_bob_timer := 0.0  # Controla el tiempo para la animación
 
-@onready var camera = $Head/Camera3D
+@onready var camera = $Head/player_Camera
 @onready var head = $Head  # Nodo de la cabeza (NO modificar su posición global)
 
 func _ready() -> void:

@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwti8n5fmcsks"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ut8gg"]
+size = Vector2(50, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8u1ml"]
+size = Vector3(50, 0, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3060j"]
+size = Vector3(50, 20, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_56ko0"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Suelo" type="Node" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Suelo"]
+mesh = SubResource("PlaneMesh_ut8gg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Suelo/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Suelo/MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_8u1ml")
+
+[node name="Paredes" type="Node" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Paredes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.0329, -14.5008)
+mesh = SubResource("BoxMesh_3060j")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Paredes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.86127, 14.5019)
+mesh = SubResource("BoxMesh_3060j")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Paredes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 0)
+mesh = SubResource("BoxMesh_56ko0")
