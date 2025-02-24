@@ -13,7 +13,9 @@ config_version=5
 config/name="mapas"
 run/main_scene="res://office.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="res://TPMOB.png"
+config/icon="res://TPMOB.png"
 
 [display]
 

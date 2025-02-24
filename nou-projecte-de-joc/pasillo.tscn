@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://db1gofbyqxvyv"]
+[gd_scene load_steps=28 format=3 uid="uid://db1gofbyqxvyv"]
 
 [ext_resource type="PackedScene" uid="uid://4ljke0j41ydq" path="res://window/scene.gltf" id="1_3cgys"]
 [ext_resource type="PackedScene" uid="uid://bjipmb2jmalft" path="res://elevator-door/scene.gltf" id="2_07hir"]
@@ -42,6 +42,9 @@ size = Vector3(96.1878, 232.742, 46.2196)
 material = SubResource("StandardMaterial3D_ep411")
 size = Vector3(50, 0.5, 30)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_5l6py"]
+size = Vector3(50, 1, 15)
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_sarg6"]
 size = Vector2(50, 30)
 
@@ -49,7 +52,7 @@ size = Vector2(50, 30)
 size = Vector3(50, 0, 30)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_syrb8"]
-size = Vector3(1.98828, 1, 0.885864)
+size = Vector3(1.98828, 0.748901, 0.885864)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v63wi"]
 albedo_color = Color(0, 0, 0, 1)
@@ -135,6 +138,11 @@ shape = SubResource("BoxShape3D_06ra5")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Techo"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.78702, 0)
 mesh = SubResource("BoxMesh_fnh1t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Techo/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Techo/MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_5l6py")
 
 [node name="lucesd" type="Node" parent="Techo"]
 
@@ -678,7 +686,7 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -14.1011, 0.949379, -6.3583)
 [node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene15"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene15/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00170898, 0, -0.0570679)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00170898, -0.125549, -0.0570679)
 shape = SubResource("BoxShape3D_syrb8")
 
 [node name="Sketchfab_Scene16" parent="." instance=ExtResource("7_xjgbe")]
@@ -687,7 +695,7 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.330636, 0.949379, -6.3583)
 [node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene16"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene16/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00170898, 0, -0.0570679)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00170898, -0.125549, -0.0570679)
 shape = SubResource("BoxShape3D_syrb8")
 
 [node name="Sketchfab_Scene18" parent="." instance=ExtResource("7_xjgbe")]
@@ -696,7 +704,7 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 15.9662, 0.949379, -6.75858)
 [node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene18"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene18/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00170898, 0, -0.0570679)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00170898, -0.125549, -0.0570679)
 shape = SubResource("BoxShape3D_syrb8")
 
 [node name="Sketchfab_Scene19" parent="." instance=ExtResource("7_xjgbe")]
@@ -705,7 +713,7 @@ transform = Transform3D(-3, 0, 2.62268e-07, 0, 3, 0, -2.62268e-07, 0, -3, 15.970
 [node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene19"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene19/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00170898, 0, -0.0570679)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00170898, -0.125549, -0.0570679)
 shape = SubResource("BoxShape3D_syrb8")
 
 [node name="Sketchfab_Scene20" parent="." instance=ExtResource("7_xjgbe")]
@@ -714,7 +722,7 @@ transform = Transform3D(-3, 0, 2.62268e-07, 0, 3, 0, -2.62268e-07, 0, -3, -0.320
 [node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene20"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene20/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00170898, 0, -0.0570679)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00170898, -0.125549, -0.0570679)
 shape = SubResource("BoxShape3D_syrb8")
 
 [node name="Sketchfab_Scene21" parent="." instance=ExtResource("7_xjgbe")]
@@ -723,7 +731,7 @@ transform = Transform3D(-3, 0, 2.62268e-07, 0, 3, 0, -2.62268e-07, 0, -3, -14.10
 [node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene21"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene21/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00170898, 0, -0.0570679)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00170898, -0.125549, -0.0570679)
 shape = SubResource("BoxShape3D_syrb8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c4e8acq42oisw"]
+[gd_scene load_steps=24 format=3 uid="uid://c4e8acq42oisw"]
 
 [ext_resource type="Texture2D" uid="uid://fd0plvoln0qd" path="res://NightSkyHDRI003_4K-HDR.exr" id="1_jy8cx"]
 [ext_resource type="PackedScene" uid="uid://bjipmb2jmalft" path="res://elevator-door/scene.gltf" id="4_pxefl"]
@@ -50,6 +50,9 @@ size = Vector3(2.771, 4.07416, 11.8602)
 [sub_resource type="BoxShape3D" id="BoxShape3D_2bkoj"]
 size = Vector3(0.94532, 6.13074, 57.0609)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_mxlfm"]
+size = Vector3(1, 5.4389, 72.8016)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_7toln"]
 size = Vector3(1.6442, 117.596, 8.59989)
 
@@ -61,7 +64,7 @@ environment = SubResource("Environment_na6nq")
 [node name="Suelo2" type="Node" parent="."]
 
 [node name="Suelo" type="MeshInstance3D" parent="Suelo2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.50227, 0.0276618, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.502, -0.08, 0)
 mesh = SubResource("PlaneMesh_y6rjh")
 skeleton = NodePath("../..")
 
@@ -119,6 +122,10 @@ shape = SubResource("BoxShape3D_2bkoj")
 [node name="CollisionShape3D9" type="CollisionShape3D" parent="Paredes/StaticBody3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.41758, 2.56537, -26.5499)
 shape = SubResource("BoxShape3D_2bkoj")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="Paredes/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.6599, 2.21945, -9.7536)
+shape = SubResource("BoxShape3D_mxlfm")
 
 [node name="Techo" type="Node" parent="."]
 
