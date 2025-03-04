@@ -1,6 +1,6 @@
 extends Area3D
 
-@export var target_scene: String = "res://pasillo2.tscn"
+@export var target_scene: String = "res://caffe.tscn"
 
 
 func _on_body_entered(body):

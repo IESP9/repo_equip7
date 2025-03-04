@@ -1,8 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://nggqqvqhay7f"]
+[gd_scene load_steps=18 format=3 uid="uid://nggqqvqhay7f"]
 
 [ext_resource type="PackedScene" uid="uid://bi7l2ytinsd4d" path="res://full_gameready_city_buildings/scene.gltf" id="1_hc1i4"]
+[ext_resource type="Script" path="res://mapa1.gd" id="1_wmdf0"]
 [ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://player.tscn" id="2_4tux2"]
 [ext_resource type="Texture2D" uid="uid://fd0plvoln0qd" path="res://NightSkyHDRI003_4K-HDR.exr" id="3_f7o4c"]
+[ext_resource type="Script" path="res://prueba.gd" id="5_3ecem"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vidd0"]
+size = Vector3(18.3643, 4.83047, 16.2267)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w2cxm"]
 albedo_color = Color(0, 0, 0, 1)
@@ -39,333 +44,369 @@ sky_material = SubResource("PanoramaSkyMaterial_8mvrl")
 background_mode = 2
 sky = SubResource("Sky_r82o7")
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D" type="Node3D" node_paths=PackedStringArray("spawn_controller")]
+script = ExtResource("1_wmdf0")
+spawn_controller = NodePath("pruebazombie/SpawnController")
 
-[node name="suelo" type="MeshInstance3D" parent="."]
+[node name="Player" parent="." instance=ExtResource("2_4tux2")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.268136, 0.626421, 0.321678)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 750.0
+offset_top = 425.0
+offset_right = 1161.0
+offset_bottom = 581.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pruebazombie" type="Node3D" parent="."]
+
+[node name="SpawnController" type="Node3D" parent="pruebazombie"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8496, 0, 0)
+script = ExtResource("5_3ecem")
+
+[node name="SpawnArea" type="Area3D" parent="pruebazombie/SpawnController"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00217056, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pruebazombie/SpawnController/SpawnArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0244639, 2.43199, 0.23928)
+shape = SubResource("BoxShape3D_vidd0")
+
+[node name="sulos paredes luces mapa" type="Node" parent="."]
+
+[node name="suelo" type="MeshInstance3D" parent="sulos paredes luces mapa"]
 mesh = SubResource("PlaneMesh_oniju")
+skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="suelo"]
+[node name="StaticBody3D" type="StaticBody3D" parent="sulos paredes luces mapa/suelo"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="suelo/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sulos paredes luces mapa/suelo/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9519, -0.499138, -0.625244)
 shape = SubResource("BoxShape3D_dbcv6")
 
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_hc1i4")]
+[node name="Sketchfab_Scene" parent="sulos paredes luces mapa" instance=ExtResource("1_hc1i4")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.062135, 0.0198378, 0.505868)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene"]
+[node name="StaticBody3D" type="StaticBody3D" parent="sulos paredes luces mapa/Sketchfab_Scene"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sulos paredes luces mapa/Sketchfab_Scene/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5633, 0.798225, -2.97219)
 shape = SubResource("BoxShape3D_ek1eh")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Sketchfab_Scene/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="sulos paredes luces mapa/Sketchfab_Scene/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2586, 0.0979004, -4.6222)
 shape = SubResource("BoxShape3D_pn16c")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="sulos paredes luces mapa"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.9346, 0.536831, 38.6752)
 mesh = SubResource("BoxMesh_1a3hx")
+skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="sulos paredes luces mapa/MeshInstance3D3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sulos paredes luces mapa/MeshInstance3D3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.4217, 0, -14.6195)
 shape = SubResource("BoxShape3D_d3icq")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="sulos paredes luces mapa"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.9346, 0.536831, -7.09168)
 mesh = SubResource("BoxMesh_1a3hx")
+skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="sulos paredes luces mapa/MeshInstance3D4"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sulos paredes luces mapa/MeshInstance3D4/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.673, 0, -14.0709)
 shape = SubResource("BoxShape3D_d3icq")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="sulos paredes luces mapa"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.715, 0, 0)
+skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="sulos paredes luces mapa/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sulos paredes luces mapa/MeshInstance3D/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04883, 1.52231)
 shape = SubResource("BoxShape3D_icwo8")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="sulos paredes luces mapa/MeshInstance3D/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.709, 1.04883, 0.988464)
 shape = SubResource("BoxShape3D_icwo8")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="sulos paredes luces mapa"]
 environment = SubResource("Environment_q3otm")
 
-[node name="Luces" type="Node" parent="."]
+[node name="Luces" type="Node" parent="sulos paredes luces mapa"]
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6.77773, 3.71204, 7.86665)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D2" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -6.77773, 3.55932, 7.86665)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D49" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D49" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6.77773, 3.71204, 7.86665)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D50" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D50" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -6.77773, 3.55932, 7.86665)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D3" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -20.5078, 3.72362, 8.14177)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D4" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D4" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -20.5078, 3.79568, 8.14177)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D5" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D5" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -28.3087, 3.71204, 6.56225)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D6" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D6" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -28.3087, 3.55932, 6.56225)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D17" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D17" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 8.40829, 3.71204, 7.60596)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D18" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D18" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 8.41991, 3.55932, 7.59777)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D21" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D21" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 23.0295, 3.87446, -6.99511)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D22" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D22" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 23.0492, 3.72174, -6.69655)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D23" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D23" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 8.42628, 3.85296, -6.81111)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D24" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D24" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 8.42609, 3.83621, -6.80982)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D7" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D7" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.95304, 3.71204, -6.64131)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D8" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D8" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -5.94704, 3.55932, -6.72127)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D9" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D9" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -20.4642, 3.8059, -6.64595)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D10" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D10" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -20.4735, 3.65318, -6.64595)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D25" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D25" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -18.8537, 3.87457, -0.661767)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D26" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D26" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -18.863, 3.9985, -0.703431)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D27" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D27" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -18.7435, 3.89043, 1.39325)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D28" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D28" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -18.7528, 4.01436, 1.42815)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D33" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D33" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.43511, 3.55429, -0.603909)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D34" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D34" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -4.44441, 3.67822, -0.645573)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D35" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D35" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.43271, 3.58559, 1.38414)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D36" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D36" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -4.44201, 3.70952, 1.41904)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D37" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D37" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.36135, 3.39447, -0.590801)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D38" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D38" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 4.35205, 3.5184, -0.632465)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D39" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D39" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.36135, 3.39447, 1.09648)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D40" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D40" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 4.35205, 3.5184, 1.13138)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D41" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D41" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 18.8229, 3.62312, -0.660699)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D42" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D42" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 18.8136, 3.74705, -0.702363)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D43" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D43" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 18.7714, 3.57431, 1.39856)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D44" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D44" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 18.7621, 3.69824, 1.43346)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D29" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D29" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -26.9622, 3.71204, -0.590801)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D30" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D30" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -26.9715, 3.83597, -0.632465)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D31" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D31" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -26.9622, 3.71204, 1.09648)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
-[node name="SpotLight3D32" type="SpotLight3D" parent="Luces"]
+[node name="SpotLight3D32" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
 transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, -26.9715, 3.83597, 1.13138)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
-
-[node name="Player" parent="." instance=ExtResource("2_4tux2")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.268136, 0.626421, 0.321678)
