@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://btwhd6ocrq2l2"]
 
 [ext_resource type="PackedScene" uid="uid://cqptbh8w87ttp" path="res://Zombie Scream.fbx" id="1_hvftn"]
-[ext_resource type="Script" path="res://zombie_scream.gd" id="2_dr7a0"]
+[ext_resource type="Script" path="res://Scripts/zombie_scream.gd" id="2_dr7a0"]
 
 [sub_resource type="Animation" id="Animation_xp7un"]
 resource_name = "mixamo_com"

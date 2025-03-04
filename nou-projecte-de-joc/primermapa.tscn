@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://ckr6msttba765" path="res://textures/main_mat_albedo000.png" id="28_xsgnj"]
 [ext_resource type="Texture2D" uid="uid://f6c5hixh1occ" path="res://textures/main_mat_orm000.png" id="29_k2pti"]
 [ext_resource type="Texture2D" uid="uid://cyd4dy7r7rnp5" path="res://textures/main_mat_normal000.png" id="30_e36a5"]
-[ext_resource type="Script" path="res://area_3d.gd" id="31_8jo4d"]
+[ext_resource type="Script" path="res://Scripts/area_3d.gd" id="31_8jo4d"]
 [ext_resource type="Texture2D" uid="uid://jsl6ah67bb38" path="res://textures/material_albedo000.png" id="33_6cl6f"]
 [ext_resource type="Texture2D" uid="uid://btf811gg7dj01" path="res://textures/material_orm000.png" id="34_vbx2n"]
 [ext_resource type="Texture2D" uid="uid://dkhg1lu0f8o1b" path="res://textures/material_normal000.png" id="35_34sgx"]

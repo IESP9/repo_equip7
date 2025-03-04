@@ -1,9 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://biepf2k2b0q5r"]
+[gd_scene load_steps=34 format=3 uid="uid://biepf2k2b0q5r"]
 
 [ext_resource type="PackedScene" uid="uid://c2ugxpppoqmje" path="res://ceiling_tiles_texture/scene.gltf" id="1_foupd"]
+[ext_resource type="Script" path="res://caffe.gd" id="1_o38wl"]
 [ext_resource type="PackedScene" uid="uid://bpjpejojjveoo" path="res://fire_escape__exit_doors/scene.gltf" id="2_i48bw"]
-[ext_resource type="Script" path="res://caffe/area_3degg.gd" id="3_5gthw"]
-[ext_resource type="Script" path="res://area_3dc.gd" id="3_g0gec"]
+[ext_resource type="Script" path="res://Scripts/area_3degg.gd" id="3_5gthw"]
+[ext_resource type="Script" path="res://Scripts/area_3dc.gd" id="3_g0gec"]
 [ext_resource type="PackedScene" uid="uid://dnaturvg5ja88" path="res://long_office_ceiling_light/scene.gltf" id="4_ewulo"]
 [ext_resource type="PackedScene" uid="uid://cq3fx3pfxakkw" path="res://wall_electrical_panel/scene.gltf" id="5_87i8d"]
 [ext_resource type="PackedScene" uid="uid://4ljke0j41ydq" path="res://window/scene.gltf" id="6_amsyc"]
@@ -73,6 +74,7 @@ material = SubResource("StandardMaterial3D_na0c8")
 size = Vector3(50, 0.5, 1)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_o38wl")
 
 [node name="Suelo2" type="Node" parent="."]
 
@@ -732,6 +734,22 @@ mesh = SubResource("BoxMesh_qcy0q")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30096, 0.0667211)
 mesh = SubResource("BoxMesh_qcy0q")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TransitionLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 1918.0
+offset_bottom = 815.0
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="Suelo2/Sketchfab_Scene17/Area3D" to="Suelo2/Sketchfab_Scene17/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Puerta/Sketchfab_Scene41/Area3D" to="Puerta/Sketchfab_Scene41/Area3D" method="_on_body_entered"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bdx32kiogeyp"]
 
-[ext_resource type="Script" path="res://character_body_3drain.gd" id="1_lmx6y"]
-[ext_resource type="Script" path="res://label.gd" id="2_jp5hk"]
+[ext_resource type="Script" path="res://Scripts/character_body_3drain.gd" id="1_lmx6y"]
+[ext_resource type="Script" path="res://Scripts/label.gd" id="2_jp5hk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kd8f1"]
 

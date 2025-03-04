@@ -1,12 +1,13 @@
-[gd_scene load_steps=24 format=3 uid="uid://c4e8acq42oisw"]
+[gd_scene load_steps=25 format=3 uid="uid://c4e8acq42oisw"]
 
 [ext_resource type="Texture2D" uid="uid://fd0plvoln0qd" path="res://NightSkyHDRI003_4K-HDR.exr" id="1_jy8cx"]
+[ext_resource type="Script" path="res://lobby.gd" id="1_y44rw"]
 [ext_resource type="PackedScene" uid="uid://bjipmb2jmalft" path="res://elevator-door/scene.gltf" id="4_pxefl"]
 [ext_resource type="PackedScene" uid="uid://ccq4ux4nv6rkc" path="res://exit_sign/scene.gltf" id="5_awdnd"]
 [ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://player.tscn" id="7_cy8s7"]
 [ext_resource type="PackedScene" uid="uid://ddm5y7ylip1rp" path="res://modern_city_block/scene.gltf" id="7_mg1nk"]
 [ext_resource type="PackedScene" uid="uid://cmv5mwqf0iipg" path="res://free__atlanta_corperate_office_building/scene.gltf" id="7_uwr0s"]
-[ext_resource type="Script" path="res://area_3dl.gd" id="8_gqj5w"]
+[ext_resource type="Script" path="res://Scripts/area_3dl.gd" id="8_gqj5w"]
 [ext_resource type="PackedScene" uid="uid://c5xwsfnjltjjf" path="res://korean_digital_kiosk/scene.gltf" id="9_7h4sd"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8phk5"]
@@ -57,6 +58,7 @@ size = Vector3(1, 5.4389, 72.8016)
 size = Vector3(1.6442, 117.596, 8.59989)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_y44rw")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_na6nq")
@@ -161,5 +163,21 @@ transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 18.4122,
 transform = Transform3D(0.0840083, 0, -0.996465, 0, 1, 0, 0.996465, 0, 0.0840083, 9.97134, 1.29716, -8.92347)
 light_energy = 11.536
 spot_range = 43.376
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TransitionLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 1918.0
+offset_bottom = 815.0
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
