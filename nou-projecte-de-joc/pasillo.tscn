@@ -1,9 +1,9 @@
-[gd_scene load_steps=33 format=3 uid="uid://db1gofbyqxvyv"]
+[gd_scene load_steps=35 format=3 uid="uid://db1gofbyqxvyv"]
 
-[ext_resource type="PackedScene" uid="uid://4ljke0j41ydq" path="res://window/scene.gltf" id="1_3cgys"]
+[ext_resource type="PackedScene" uid="uid://4ljke0j41ydq" path="res://caffe/window/scene.gltf" id="1_3cgys"]
 [ext_resource type="Script" path="res://pasillo.gd" id="1_ahkxx"]
 [ext_resource type="PackedScene" uid="uid://bjipmb2jmalft" path="res://elevator-door/scene.gltf" id="2_07hir"]
-[ext_resource type="PackedScene" uid="uid://dnaturvg5ja88" path="res://long_office_ceiling_light/scene.gltf" id="2_k6ig1"]
+[ext_resource type="PackedScene" uid="uid://dnaturvg5ja88" path="res://caffe/long_office_ceiling_light/scene.gltf" id="2_k6ig1"]
 [ext_resource type="PackedScene" uid="uid://c2ugxpppoqmje" path="res://ceiling_tiles_texture/scene.gltf" id="4_pf5uq"]
 [ext_resource type="Script" path="res://Scripts/area_3de.gd" id="4_tdwsb"]
 [ext_resource type="PackedScene" uid="uid://d1fwonn02q864" path="res://door_with_frame/scene.gltf" id="5_a5p2m"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://player.tscn" id="7_6ak2a"]
 [ext_resource type="PackedScene" uid="uid://c7iecbwp281fc" path="res://caffe/modern__sofa/scene.gltf" id="7_xjgbe"]
 [ext_resource type="Texture2D" uid="uid://c5nbr05ybey1q" path="res://28211d0561b8d4d6ceabf2bcf0b6ac8a.jpg" id="8_imyxu"]
+[ext_resource type="Script" path="res://pasillo2.gd" id="10_nsbaj"]
 [ext_resource type="Texture2D" uid="uid://bejqxd5bda8wk" path="res://19434421701595501121-128.png" id="13_xr4gj"]
 [ext_resource type="Texture2D" uid="uid://ce0ysuvfdqvys" path="res://aldama-y-sanchez-psoe_1200_1600.webp" id="14_j5327"]
 
@@ -61,6 +62,9 @@ albedo_texture = ExtResource("8_imyxu")
 [sub_resource type="BoxMesh" id="BoxMesh_4xem8"]
 material = SubResource("StandardMaterial3D_67yjg")
 size = Vector3(50, 0, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1wpat"]
+size = Vector3(96.1878, 232.742, 46.2196)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_syrb8"]
 size = Vector3(1.98828, 0.748901, 0.885864)
@@ -612,6 +616,14 @@ transform = Transform3D(-0.017, 0, 1.48619e-09, 0, 0.017, 0, -1.48619e-09, 0, -0
 [node name="Sketchfab_Scene3" parent="." instance=ExtResource("5_a5p2m")]
 transform = Transform3D(-0.017, 0, 1.48619e-09, 0, 0.017, 0, -1.48619e-09, 0, -0.017, -7.43804, 0.028, 7.57927)
 
+[node name="Area3D" type="Area3D" parent="Sketchfab_Scene3"]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 0, 80.5779, 215.225)
+script = ExtResource("10_nsbaj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene3/Area3D"]
+transform = Transform3D(1, 0, 9.37916e-13, 0, 1, 0, -9.37916e-13, 0, 1, 0.560211, 8.66636, -195.412)
+shape = SubResource("BoxShape3D_1wpat")
+
 [node name="Sketchfab_Scene2" parent="." instance=ExtResource("5_a5p2m")]
 transform = Transform3D(0.017, 0, 0, 0, 0.017, 0, 0, 0, 0.017, 6.85925, 0.028, -7.51806)
 
@@ -684,7 +696,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30096, -7.89954)
 mesh = SubResource("BoxMesh_hdpw7")
 
 [node name="Player" parent="." instance=ExtResource("7_6ak2a")]
-transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, -7.48527, 1.39353, 6.43911)
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, -7.48527, 1.39353, 5.84791)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -711,3 +723,4 @@ transform = Transform3D(-0.05, 0, -4.37114e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.0
 texture = ExtResource("14_j5327")
 
 [connection signal="body_entered" from="Paredes/Sketchfab_Scene2/Area3D" to="Paredes/Sketchfab_Scene2/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="Sketchfab_Scene3/Area3D" to="Sketchfab_Scene3/Area3D" method="_on_body_entered"]

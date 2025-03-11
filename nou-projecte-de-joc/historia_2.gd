@@ -1,7 +1,7 @@
 extends Control
 
 @onready var label = $Label  # Asegúrate de que el Label esté en un CanvasLayer
-@export var target_scene: String = "res://historia2.tscn"
+@export var target_scene: String = "res://office.tscn"
 
 func _ready():
 	label.visible = false  # Ocultamos el texto al inicio

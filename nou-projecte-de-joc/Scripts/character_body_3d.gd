@@ -10,6 +10,8 @@ var yaw := 0.0
 var pitch := 0.0
 var head_bob_timer := 0.0  # Controla el tiempo para la animación
 
+signal jumped  # Señal de que el jugador ha saltado
+
 @onready var camera = $Head/player_Camera
 @onready var head = $Head  # Nodo de la cabeza (NO modificar su posición global)
 
@@ -33,6 +35,7 @@ func _physics_process(delta: float) -> void:
 	# Manejar el salto
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		emit_signal("jumped")  # Emitir la señal de salto
 
 	# Movimiento con WASD
 	var input_dir := Vector3()
