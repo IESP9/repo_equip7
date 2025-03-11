@@ -1,4 +1,4 @@
-[gd_scene load_steps=214 format=4 uid="uid://cv5bccwdyk5k3"]
+[gd_scene load_steps=220 format=4 uid="uid://cv5bccwdyk5k3"]
 
 [ext_resource type="Texture2D" uid="uid://fd0plvoln0qd" path="res://NightSkyHDRI003_4K-HDR.exr" id="1_uj3ra"]
 [ext_resource type="Texture2D" uid="uid://d2xblh7qs1lrw" path="res://textures/Lobby_Interior_Baked_albedo000.png" id="2_7yqww"]
@@ -55,6 +55,10 @@
 [ext_resource type="PackedScene" uid="uid://c5xwsfnjltjjf" path="res://korean_digital_kiosk/scene.gltf" id="54_015d8"]
 [ext_resource type="PackedScene" uid="uid://bdx32kiogeyp" path="res://playerwithrain.tscn" id="55_mjxms"]
 [ext_resource type="Texture2D" uid="uid://ccgmx23od02st" path="res://d4vhyzb-87e74112-9538-40ad-a4f7-b81a615c6b86.png" id="56_82g5m"]
+[ext_resource type="PackedScene" uid="uid://dna0g3x8u0o5y" path="res://skyscraper/scene.gltf" id="56_m3nk6"]
+[ext_resource type="PackedScene" uid="uid://cxerupa16henk" path="res://barcelonas_metal_bin_prop/scene.gltf" id="57_6naj4"]
+[ext_resource type="FontFile" uid="uid://jmfhcuwr7vlc" path="res://kalayo/Kalayo.ttf" id="58_k5ucv"]
+[ext_resource type="FontFile" uid="uid://dxmxsgkmnb2ye" path="res://super_magical/Super Magical.ttf" id="59_en3mv"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2fbui"]
 panorama = ExtResource("1_uj3ra")
@@ -710,7 +714,7 @@ albedo_color = Color(0.0117647, 1, 0.541176, 1)
 material = SubResource("StandardMaterial3D_yywuc")
 top_radius = 21.782
 bottom_radius = 125.0
-height = 349.923
+height = 347.0
 cap_bottom = false
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2i52b"]
@@ -2301,10 +2305,19 @@ size = Vector3(59.2542, 5.90234, 101.107)
 [sub_resource type="BoxShape3D" id="BoxShape3D_7itma"]
 size = Vector3(156.136, 14.1993, 2.74554)
 
-[sub_resource type="GDScript" id="GDScript_msow1"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_67epx"]
+size = Vector3(38.5126, 10.7163, 2.70557)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_57mxe"]
-size = Vector3(2.58838, 0.279419, 2.46021)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7lv5x"]
+height = 1.82135
+radius = 0.253044
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_crnsk"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fx47o"]
+material = SubResource("StandardMaterial3D_crnsk")
+size = Vector3(55, 1, 1)
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6439, -2.58651, 0.841293)
@@ -2562,7 +2575,7 @@ transparency = 0.75
 mesh = SubResource("CylinderMesh_7aroy")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Cosas/Sketchfab_Scene4/Area3D/MeshInstance3D"]
-transform = Transform3D(66.6667, 0, 0, 0, -2.91409e-06, 66.6667, 0, -66.6667, -2.91409e-06, -0.755531, 138.348, 3.93384)
+transform = Transform3D(66.6667, 0, 0, 0, -2.91409e-06, 66.6667, 0, -66.6667, -2.91409e-06, -0.755539, 153.868, 3.93359)
 light_color = Color(0.0117647, 1, 0.541176, 1)
 light_energy = 16.0
 light_indirect_energy = 1.646
@@ -2863,6 +2876,10 @@ shape = SubResource("BoxShape3D_7itma")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35.8832, 7.85527, 59.6496)
 shape = SubResource("BoxShape3D_7itma")
 
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Suelos y paredes/MeshInstance3D2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.3769, 5.35184, 112.062)
+shape = SubResource("BoxShape3D_67epx")
+
 [node name="Node3D" parent="." instance=ExtResource("55_mjxms")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5592, 1.78593, -19.7284)
 
@@ -2908,11 +2925,39 @@ alpha_scissor_threshold = 1.0
 alpha_antialiasing_mode = 2
 texture = ExtResource("56_82g5m")
 
-[node name="Area3D" type="Area3D" parent="."]
-script = SubResource("GDScript_msow1")
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("56_m3nk6")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 130.294, 31.9793, 238.666)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3538, 4.78523, -19.9151)
-shape = SubResource("BoxShape3D_57mxe")
+[node name="Sketchfab_Scene2" parent="." instance=ExtResource("57_6naj4")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -14.166, 0.0971675, -50.5495)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene2/StaticBody3D"]
+shape = SubResource("CylinderShape3D_7lv5x")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(0.941776, -0.336241, 0, 0.336241, 0.941776, 0, 0, 0, 1, 10.8153, 64.8111, -161.299)
+text = "PEDRO SANCHEZ DIMISION"
+font = ExtResource("58_k5ucv")
+font_size = 1000
+
+[node name="Label3D2" type="Label3D" parent="."]
+transform = Transform3D(1.31134e-07, -1, -4.37114e-08, -3.82137e-15, 4.37114e-08, -1, 1, 1.31134e-07, 1.91069e-15, 36.2825, 447.606, -32.6213)
+text = "PEDRO SANCHEZ DIMISION"
+font = ExtResource("59_en3mv")
+font_size = 5800
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.5294, -0.418089, -63.4382)
+mesh = SubResource("BoxMesh_fx47o")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -72.582, -0.418, -36.4)
+mesh = SubResource("BoxMesh_fx47o")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -72.582, -0.418, -9.41913)
+mesh = SubResource("BoxMesh_fx47o")
 
 [connection signal="body_entered" from="Cosas/Sketchfab_Scene4/Area3D" to="Cosas/Sketchfab_Scene4/Area3D" method="_on_body_entered"]

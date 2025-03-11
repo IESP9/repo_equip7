@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://nggqqvqhay7f"]
+[gd_scene load_steps=19 format=3 uid="uid://nggqqvqhay7f"]
 
 [ext_resource type="PackedScene" uid="uid://bi7l2ytinsd4d" path="res://full_gameready_city_buildings/scene.gltf" id="1_hc1i4"]
 [ext_resource type="Script" path="res://mapa1.gd" id="1_wmdf0"]
 [ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://player.tscn" id="2_4tux2"]
 [ext_resource type="Texture2D" uid="uid://fd0plvoln0qd" path="res://NightSkyHDRI003_4K-HDR.exr" id="3_f7o4c"]
 [ext_resource type="Script" path="res://prueba.gd" id="5_3ecem"]
+[ext_resource type="PackedScene" uid="uid://bdi7kjm6mylsr" path="res://lowpoly-apocalyptic-buildings-by-majadroid/LowPoly-Apocalyptic-Buildings-By-Majadroid/fbx files/building-01.fbx" id="6_ooy83"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vidd0"]
 size = Vector3(18.3643, 4.83047, 16.2267)
@@ -342,14 +343,14 @@ light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D39" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.36135, 3.39447, 1.09648)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.36135, 3.59025, 1.37182)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
 
 [node name="SpotLight3D40" type="SpotLight3D" parent="sulos paredes luces mapa/Luces"]
-transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 4.35205, 3.5184, 1.13138)
+transform = Transform3D(-0.999986, 2.34971e-10, -0.00537551, 0.00537551, 4.37108e-08, -0.999986, 0, -1, -4.37114e-08, 4.35205, 3.5184, 1.47239)
 light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
@@ -410,3 +411,6 @@ light_color = Color(1, 1, 0.560784, 1)
 light_energy = 7.464
 light_size = 1.0
 spot_angle = 37.73
+
+[node name="building-01" parent="sulos paredes luces mapa" instance=ExtResource("6_ooy83")]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 84.8066, 0, -11.9807)

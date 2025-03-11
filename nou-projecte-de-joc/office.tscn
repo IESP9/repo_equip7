@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cs1nyo7owx2i4"]
+[gd_scene load_steps=48 format=3 uid="uid://cs1nyo7owx2i4"]
 
 [ext_resource type="PackedScene" uid="uid://c2ugxpppoqmje" path="res://ceiling_tiles_texture/scene.gltf" id="1_bvhg0"]
 [ext_resource type="PackedScene" uid="uid://4ljke0j41ydq" path="res://window/scene.gltf" id="2_lt2fv"]
@@ -14,6 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://ccq4ux4nv6rkc" path="res://exit_sign/scene.gltf" id="11_j4flg"]
 [ext_resource type="PackedScene" uid="uid://bry5wtjc0yln3" path="res://coffe_cup/scene.gltf" id="13_1fb8j"]
 [ext_resource type="PackedScene" uid="uid://yem8qk6kxvt2" path="res://poster_-_calendar/scene.gltf" id="14_046dt"]
+[ext_resource type="Texture2D" uid="uid://cferjwjyub1pv" path="res://Flag_of_Spain.svg" id="15_k1tam"]
+[ext_resource type="Texture2D" uid="uid://dyj2w6yq74ccf" path="res://psoe-corrupcion.jpg" id="16_ybdcs"]
+[ext_resource type="Texture2D" uid="uid://bd21v5j708bja" path="res://Eg9vTC6XcAA9QT8-600x445.webp" id="17_t6yop"]
 
 [sub_resource type="GDScript" id="GDScript_lqr8o"]
 script/source = "extends Node3D
@@ -390,7 +393,7 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 25.242
 mesh = SubResource("BoxMesh_dcvee")
 
 [node name="Sprite3D" type="Sprite3D" parent="Paredes"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 24.7332, 1.82224, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 24.7332, 1.82224, -3.17361)
 texture = ExtResource("3_u4kh6")
 
 [node name="mesas" type="Node" parent="."]
@@ -917,9 +920,6 @@ transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 18.156
 [node name="Sketchfab_Scene10" parent="Techo/lucesd" instance=ExtResource("4_n2d2m")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -16.4863, 4.21049, -8.90282)
 
-[node name="Sketchfab_Scene37" parent="Techo/lucesd" instance=ExtResource("4_n2d2m")]
-transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -23.9461, 4.21049, -8.90282)
-
 [node name="Sketchfab_Scene11" parent="Techo/lucesd" instance=ExtResource("4_n2d2m")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -12.1417, 4.21049, -8.90282)
 
@@ -1391,7 +1391,7 @@ mesh = SubResource("BoxMesh_l3wms")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30096, -14.525)
 mesh = SubResource("BoxMesh_l3wms")
 
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("4_vj5ob")]
+[node name="Papeles" parent="." instance=ExtResource("4_vj5ob")]
 transform = Transform3D(0.852178, 0, 0.844862, 0, 1.2, 0, -0.844862, 0, 0.852178, -23.111, 1.3181, -13.2107)
 
 [node name="Sketchfab_Scene2" parent="." instance=ExtResource("13_1fb8j")]
@@ -1419,5 +1419,20 @@ vertical_alignment = 1
 
 [node name="Sketchfab_Scene3" parent="." instance=ExtResource("14_046dt")]
 transform = Transform3D(9.55343e-15, 2.18557e-07, 5, 5, -2.18557e-07, 0, 2.18557e-07, 5, -2.18557e-07, -23.9831, 2.48123, -0.515593)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, -24, 2.33132, -5.21005)
+modulate = Color(0.864675, 0.864675, 0.864675, 1)
+texture = ExtResource("15_k1tam")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(-0.15, 0, 2.26494e-08, 0, 0.15, 0, -2.26494e-08, 0, -0.15, -22.1722, 3.23359, 14.0076)
+modulate = Color(0.864675, 0.864675, 0.864675, 1)
+texture = ExtResource("16_ybdcs")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(-2.84124e-08, 0, -0.65, 0, 0.65, 0, 0.65, 0, -2.84124e-08, 24.7198, 2.21299, 1.75615)
+modulate = Color(0.864675, 0.864675, 0.864675, 1)
+texture = ExtResource("17_t6yop")
 
 [connection signal="body_entered" from="Puerta/Sketchfab_Scene41/Area3D" to="Puerta/Sketchfab_Scene41/Area3D" method="_on_body_entered"]

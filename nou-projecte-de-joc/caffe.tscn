@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://biepf2k2b0q5r"]
+[gd_scene load_steps=35 format=3 uid="uid://biepf2k2b0q5r"]
 
 [ext_resource type="PackedScene" uid="uid://c2ugxpppoqmje" path="res://ceiling_tiles_texture/scene.gltf" id="1_foupd"]
 [ext_resource type="Script" path="res://caffe.gd" id="1_o38wl"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bfk02cql3kl4d" path="res://caffe/kitchen_modern_set_3d_model/scene.gltf" id="10_q4o7h"]
 [ext_resource type="PackedScene" uid="uid://c7iecbwp281fc" path="res://caffe/modern__sofa/scene.gltf" id="11_ag5s7"]
 [ext_resource type="PackedScene" uid="uid://bry5wtjc0yln3" path="res://coffe_cup/scene.gltf" id="12_ehqt3"]
+[ext_resource type="Texture2D" uid="uid://d2wd2mfykplrr" path="res://images.jpeg" id="15_2aqce"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_dj847"]
 size = Vector2(50, 30)
@@ -750,6 +751,10 @@ offset_bottom = 815.0
 theme_override_font_sizes/font_size = 35
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.11864, 4.01797, 0.56217)
+texture = ExtResource("15_2aqce")
 
 [connection signal="body_entered" from="Suelo2/Sketchfab_Scene17/Area3D" to="Suelo2/Sketchfab_Scene17/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Puerta/Sketchfab_Scene41/Area3D" to="Puerta/Sketchfab_Scene41/Area3D" method="_on_body_entered"]
