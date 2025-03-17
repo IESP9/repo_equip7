@@ -4,8 +4,7 @@ extends Node3D  # O cualquier otro nodo adecuado
 @onready var player_camera = $Player/CharacterBody3D/Head/player_Camera  # Cámara del jugador
 @onready var anim_camera = $ZombieCamera/AnimationPlayer  # Animación de la cámara del zombie
 @export var target_scene: String = "res://caffe.tscn"
-@export var tiempo_espera = 0.1  # Tiempo de espera antes de cambiar la escena (en segundos)
-@onready var monster_roar = $MonsterRoar4  # AudioStreamPlayer3D del rugido del monstruo
+@export var tiempo_espera = 0.1  # Tiempo de espera antes de cambiar la escena (en segundos)# AudioStreamPlayer3D del rugido del monstruo
 @onready var transition_label = $Control/TransitionLabel  # Ruta al Label
 @export var mensaje_transicion = "Cagaste"  # Texto que aparecerá
 @export var tiempo_mensaje = 2.0  # Duración total del mensaje en pantalla
@@ -13,7 +12,6 @@ extends Node3D  # O cualquier otro nodo adecuado
 
 func _ready():
 	mostrar_mensaje(mensaje_transicion)  # Muestra el mensaje al iniciar
-	monster_roar.play()
 	iniciar_camara_zombie()  # Inicia con la cámara del zombie
 	anim_camera.play("seguir")  # Reproduce la animación de la cámara del zombie
 	# Espera a que la animación termine

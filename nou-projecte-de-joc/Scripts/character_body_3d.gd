@@ -14,10 +14,16 @@ signal jumped  # Señal de que el jugador ha saltado
 
 @onready var camera = $Head/player_Camera
 @onready var head = $Head  # Nodo de la cabeza (NO modificar su posición global)
+@onready var ui = load("res://ui.tscn").instantiate()  # Cargar la UI
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	add_to_group("Player")  
+	
+	# Añadir la UI como un hijo del jugador
+	add_child(ui)
+	ui.set_owner(self)
+	print("UI añadida al jugador.")
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:

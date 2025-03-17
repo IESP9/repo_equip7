@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dwti8n5fmcsks"]
+[gd_scene load_steps=12 format=3 uid="uid://dwti8n5fmcsks"]
 
 [ext_resource type="Script" path="res://Scripts/boss.gd" id="1_kg3y0"]
 [ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://player.tscn" id="1_vjr16"]
 [ext_resource type="Texture2D" uid="uid://b68a7tnm1xoa5" path="res://Prototype Textures/black.png" id="2_8x128"]
 [ext_resource type="PackedScene" uid="uid://btwhd6ocrq2l2" path="res://zombie_scream.tscn" id="3_j02al"]
-[ext_resource type="AudioStream" uid="uid://bj360730jd0my" path="res://Monster_Roar_4.wav" id="5_a2m6y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6u2km"]
 albedo_texture = ExtResource("2_8x128")
@@ -112,10 +111,6 @@ libraries = {
 "": SubResource("AnimationLibrary_5i04p")
 }
 autoplay = "seguir"
-
-[node name="MonsterRoar4" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.85384, 5.11707, 6.23258)
-stream = ExtResource("5_a2m6y")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

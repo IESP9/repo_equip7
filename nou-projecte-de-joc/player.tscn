@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkl38l61g6lu5"]
+[gd_scene load_steps=6 format=3 uid="uid://dkl38l61g6lu5"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_3d.gd" id="1_d3ix3"]
 [ext_resource type="Script" path="res://Scripts/label.gd" id="2_hpum8"]
+[ext_resource type="PackedScene" uid="uid://crbk635xm35uk" path="res://ui.tscn" id="3_safad"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bur01"]
 
@@ -27,6 +28,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.20262, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="CharacterBody3D/Head/player_Camera"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="UI" parent="CharacterBody3D" instance=ExtResource("3_safad")]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
