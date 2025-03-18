@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3h6eevimpte4"]
+
+[ext_resource type="Script" path="res://pcargap.gd" id="1_epxwr"]
+[ext_resource type="Texture2D" uid="uid://ciy2bcvbbstxt" path="res://TPMOB.png" id="2_x0h6d"]
+[ext_resource type="FontFile" uid="uid://diakic27yfkso" path="res://contra_muerta/CONTRA MUERTA.ttf" id="3_dyhqq"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_epxwr")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_x0h6d")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1009.0
+offset_right = 275.0
+offset_bottom = 1078.0
+theme_override_font_sizes/font_size = 50
+text = "Cargando..."
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 1168.0
+offset_top = 1025.0
+offset_right = 1918.0
+offset_bottom = 1069.0
+theme_override_font_sizes/font_size = 25
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.503
+anchor_top = 0.5
+anchor_right = 0.503
+anchor_bottom = 0.5
+offset_left = -765.76
+offset_top = -394.0
+offset_right = 766.24
+offset_bottom = -190.0
+theme_override_fonts/font = ExtResource("3_dyhqq")
+theme_override_font_sizes/font_size = 200
+text = "Spanish Security Simulator"
+horizontal_alignment = 1
+vertical_alignment = 1

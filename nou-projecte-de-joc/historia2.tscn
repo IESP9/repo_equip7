@@ -13,8 +13,8 @@ offset_bottom = 40.0
 script = ExtResource("1_v16b0")
 
 [node name="Sprite2D" type="Sprite2D" parent="Control"]
-position = Vector2(960.5, 495)
-scale = Vector2(1.06752, 0.96875)
+position = Vector2(960.5, 541.5)
+scale = Vector2(1.06752, 1.05957)
 texture = ExtResource("1_151sl")
 
 [node name="Label" type="Label" parent="Control"]

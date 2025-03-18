@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://biepf2k2b0q5r"]
+[gd_scene load_steps=36 format=3 uid="uid://biepf2k2b0q5r"]
 
 [ext_resource type="PackedScene" uid="uid://c2ugxpppoqmje" path="res://ceiling_tiles_texture/scene.gltf" id="1_foupd"]
 [ext_resource type="Script" path="res://caffe.gd" id="1_o38wl"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c7iecbwp281fc" path="res://caffe/modern__sofa/scene.gltf" id="11_ag5s7"]
 [ext_resource type="PackedScene" uid="uid://bry5wtjc0yln3" path="res://coffe_cup/scene.gltf" id="12_ehqt3"]
 [ext_resource type="Texture2D" uid="uid://d2wd2mfykplrr" path="res://images.jpeg" id="15_2aqce"]
+[ext_resource type="Texture2D" uid="uid://cgnc7t58oyk42" path="res://palma.png" id="16_dsu1x"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_dj847"]
 size = Vector2(50, 30)
@@ -755,6 +756,10 @@ vertical_alignment = 1
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.11864, 4.01797, 0.56217)
 texture = ExtResource("15_2aqce")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(-2.18557e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.18557e-09, -24.0044, 1.65601, 4.9166)
+texture = ExtResource("16_dsu1x")
 
 [connection signal="body_entered" from="Suelo2/Sketchfab_Scene17/Area3D" to="Suelo2/Sketchfab_Scene17/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Puerta/Sketchfab_Scene41/Area3D" to="Puerta/Sketchfab_Scene41/Area3D" method="_on_body_entered"]

@@ -15,8 +15,8 @@ script = ExtResource("1_mdlp5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.588235)
-position = Vector2(958.999, 540.501)
-scale = Vector2(1.39766, 1.41016)
+position = Vector2(959, 540.501)
+scale = Vector2(1.40205, 1.41016)
 texture = ExtResource("2_6t4kb")
 
 [node name="PlayButton" type="Button" parent="."]
@@ -27,7 +27,7 @@ offset_right = 1056.0
 offset_bottom = 675.0
 theme_override_fonts/font = ExtResource("3_xw0u3")
 theme_override_font_sizes/font_size = 50
-text = "Start Game"
+text = "Jugar"
 
 [node name="OptionsButton" type="Button" parent="."]
 layout_mode = 0
@@ -37,7 +37,7 @@ offset_right = 1056.0
 offset_bottom = 760.0
 theme_override_fonts/font = ExtResource("3_xw0u3")
 theme_override_font_sizes/font_size = 50
-text = "Options"
+text = "Opciones"
 
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 0

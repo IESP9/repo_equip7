@@ -13,7 +13,7 @@ func _on_play_pressed():
 	get_tree().change_scene_to_file("res://historia.tscn")  # Cambia a la escena del juego
 
 func _on_options_pressed():
-	print("Abrir menú de opciones")  # Aquí puedes abrir otra escena o un panel
+	get_tree().change_scene_to_file("res://ajustes.tscn")  # Cambia a la escena del ajustes
 
 func _on_quit_pressed():
 	get_tree().quit()  # Cierra el juego

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://iki64rv75og2"]
+[gd_scene load_steps=33 format=3 uid="uid://iki64rv75og2"]
 
 [ext_resource type="Script" path="res://pasillo.gd" id="1_oj43a"]
 [ext_resource type="PackedScene" uid="uid://4ljke0j41ydq" path="res://window/scene.gltf" id="2_f1oce"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c7iecbwp281fc" path="res://caffe/modern__sofa/scene.gltf" id="11_ja1gg"]
 [ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://player.tscn" id="12_wv4ru"]
 [ext_resource type="Texture2D" uid="uid://bejqxd5bda8wk" path="res://19434421701595501121-128.png" id="13_sknld"]
+[ext_resource type="Texture2D" uid="uid://cg4qrxlsplsw0" path="res://sangre.png" id="14_la3vk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vske8"]
 
@@ -704,5 +705,10 @@ vertical_alignment = 1
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -7.43199, 3.74004, 7.44649)
 texture = ExtResource("13_sknld")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(-0.225, -3.39741e-08, 1.48505e-15, 0, -9.83506e-09, -0.225, 3.39741e-08, -0.225, 9.83506e-09, -19.9221, 0.0514292, -7.02034)
+modulate = Color(0.674815, 0.674815, 0.674815, 1)
+texture = ExtResource("14_la3vk")
 
 [connection signal="body_entered" from="Sketchfab_Scene3/Area3D" to="Sketchfab_Scene3/Area3D" method="_on_body_entered"]

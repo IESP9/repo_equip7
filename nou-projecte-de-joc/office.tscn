@@ -1428,27 +1428,29 @@ vertical_alignment = 1
 [node name="Sketchfab_Scene3" parent="." instance=ExtResource("14_046dt")]
 transform = Transform3D(9.55343e-15, 2.18557e-07, 5, 5, -2.18557e-07, 0, 2.18557e-07, 5, -2.18557e-07, -23.9831, 2.48123, -0.515593)
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -24, 2.33132, -5.21005)
-modulate = Color(0.864675, 0.864675, 0.864675, 1)
-texture = ExtResource("15_k1tam")
+[node name="Detalles" type="Node" parent="."]
 
-[node name="Area3D" type="Area3D" parent="Sprite3D"]
-script = ExtResource("16_ge4f3")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0104976, 0.0577085, -0.374454)
-shape = SubResource("BoxShape3D_m62mh")
-
-[node name="Sprite3D2" type="Sprite3D" parent="."]
-transform = Transform3D(-0.15, 0, 2.26494e-08, 0, 0.15, 0, -2.26494e-08, 0, -0.15, -22.1722, 3.23359, 14.0076)
-modulate = Color(0.864675, 0.864675, 0.864675, 1)
-texture = ExtResource("16_ybdcs")
-
-[node name="Sprite3D3" type="Sprite3D" parent="."]
+[node name="Sprite3D3" type="Sprite3D" parent="Detalles"]
 transform = Transform3D(-2.84124e-08, 0, -0.65, 0, 0.65, 0, 0.65, 0, -2.84124e-08, 24.7198, 2.21299, 1.75615)
 modulate = Color(0.864675, 0.864675, 0.864675, 1)
 texture = ExtResource("17_t6yop")
 
+[node name="Sprite3D2" type="Sprite3D" parent="Detalles"]
+transform = Transform3D(-0.15, 0, 2.26494e-08, 0, 0.15, 0, -2.26494e-08, 0, -0.15, -22.1722, 3.23359, 14.0076)
+modulate = Color(0.864675, 0.864675, 0.864675, 1)
+texture = ExtResource("16_ybdcs")
+
+[node name="Sprite3D" type="Sprite3D" parent="Detalles"]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -24, 2.33132, -5.21005)
+modulate = Color(0.864675, 0.864675, 0.864675, 1)
+texture = ExtResource("15_k1tam")
+
+[node name="Area3D" type="Area3D" parent="Detalles/Sprite3D"]
+script = ExtResource("16_ge4f3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Detalles/Sprite3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0104976, 0.0577085, -0.374454)
+shape = SubResource("BoxShape3D_m62mh")
+
 [connection signal="body_entered" from="Puerta/Sketchfab_Scene41/Area3D" to="Puerta/Sketchfab_Scene41/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="Sprite3D/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Detalles/Sprite3D/Area3D" to="." method="_on_area_3d_body_entered"]

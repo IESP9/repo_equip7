@@ -1,0 +1,87 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhy8aaw4ljb2q"]
+
+[ext_resource type="Script" path="res://ajustes.gd" id="1_rgui1"]
+[ext_resource type="Texture2D" uid="uid://itcy2dla4xxi" path="res://Leonardo_Kino_XL_In_the_tattered_remains_of_a_postapocalyptic_2.jpg" id="2_nbx3l"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rgui1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_nbx3l")
+
+[node name="Titulo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 884.0
+offset_top = 191.0
+offset_right = 1060.0
+offset_bottom = 260.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Ajustes"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 853.0
+offset_top = 443.0
+offset_right = 1103.0
+offset_bottom = 508.0
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 853.0
+offset_top = 545.0
+offset_right = 1103.0
+offset_bottom = 585.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 853.0
+offset_top = 631.0
+offset_right = 1103.0
+offset_bottom = 671.0
+text = "Guardar y Salir"
+
+[node name="Volumen" type="Label" parent="."]
+layout_mode = 0
+offset_left = 938.0
+offset_top = 414.0
+offset_right = 1008.0
+offset_bottom = 437.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Volumen"
+
+[node name="Resolución" type="Label" parent="."]
+layout_mode = 0
+offset_left = 932.0
+offset_top = 508.0
+offset_right = 1037.0
+offset_bottom = 536.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Resolución"
+
+[node name="CheckButton" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 899.0
+offset_top = 697.0
+offset_right = 1058.0
+offset_bottom = 733.0
+theme_override_colors/font_hover_pressed_color = Color(0.847474, 0.847474, 0.847474, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Full Screen "

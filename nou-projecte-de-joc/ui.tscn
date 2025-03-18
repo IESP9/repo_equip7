@@ -53,9 +53,9 @@ autowrap_mode = 1
 [node name="MensajeInteraccion" type="Label" parent="."]
 layout_mode = 0
 offset_left = 700.0
-offset_top = 950.0
+offset_top = 900.0
 offset_right = 1300.0
-offset_bottom = 1030.0
+offset_bottom = 980.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1

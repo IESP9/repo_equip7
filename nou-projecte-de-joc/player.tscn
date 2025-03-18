@@ -42,3 +42,11 @@ layout_mode = 0
 offset_right = 320.0
 offset_bottom = 215.0
 script = ExtResource("2_hpum8")
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 540.0
+offset_right = 1000.0
+offset_bottom = 563.0
+text = "."
