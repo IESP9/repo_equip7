@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://menu.gd" id="1_mdlp5"]
 [ext_resource type="Texture2D" uid="uid://itcy2dla4xxi" path="res://Leonardo_Kino_XL_In_the_tattered_remains_of_a_postapocalyptic_2.jpg" id="2_6t4kb"]
-[ext_resource type="FontFile" uid="uid://diakic27yfkso" path="res://contra_muerta/CONTRA MUERTA.ttf" id="3_xw0u3"]
+[ext_resource type="FontFile" uid="uid://diakic27yfkso" path="res://Mapas/contra_muerta/CONTRA MUERTA.ttf" id="3_xw0u3"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

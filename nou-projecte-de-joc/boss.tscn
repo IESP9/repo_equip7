@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/boss.gd" id="1_kg3y0"]
 [ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://player.tscn" id="1_vjr16"]
-[ext_resource type="Texture2D" uid="uid://b68a7tnm1xoa5" path="res://Prototype Textures/black.png" id="2_8x128"]
+[ext_resource type="Texture2D" uid="uid://b68a7tnm1xoa5" path="res://Mapas/Prototype Textures/black.png" id="2_8x128"]
 [ext_resource type="PackedScene" uid="uid://btwhd6ocrq2l2" path="res://zombie_scream.tscn" id="3_j02al"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6u2km"]

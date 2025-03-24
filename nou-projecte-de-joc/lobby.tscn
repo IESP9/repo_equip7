@@ -2,13 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://fd0plvoln0qd" path="res://NightSkyHDRI003_4K-HDR.exr" id="1_jy8cx"]
 [ext_resource type="Script" path="res://lobby.gd" id="1_y44rw"]
-[ext_resource type="PackedScene" uid="uid://bjipmb2jmalft" path="res://elevator-door/scene.gltf" id="4_pxefl"]
-[ext_resource type="PackedScene" uid="uid://ccq4ux4nv6rkc" path="res://exit_sign/scene.gltf" id="5_awdnd"]
+[ext_resource type="PackedScene" uid="uid://bjipmb2jmalft" path="res://Mapas/elevator-door/scene.gltf" id="4_pxefl"]
+[ext_resource type="PackedScene" uid="uid://ccq4ux4nv6rkc" path="res://Mapas/exit_sign/scene.gltf" id="5_awdnd"]
 [ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://player.tscn" id="7_cy8s7"]
-[ext_resource type="PackedScene" uid="uid://ddm5y7ylip1rp" path="res://modern_city_block/scene.gltf" id="7_mg1nk"]
-[ext_resource type="PackedScene" uid="uid://cmv5mwqf0iipg" path="res://free__atlanta_corperate_office_building/scene.gltf" id="7_uwr0s"]
+[ext_resource type="PackedScene" uid="uid://ddm5y7ylip1rp" path="res://Mapas/modern_city_block/scene.gltf" id="7_mg1nk"]
+[ext_resource type="PackedScene" uid="uid://cmv5mwqf0iipg" path="res://Mapas/free__atlanta_corperate_office_building/scene.gltf" id="7_uwr0s"]
 [ext_resource type="Script" path="res://Scripts/area_3dl.gd" id="8_gqj5w"]
-[ext_resource type="PackedScene" uid="uid://c5xwsfnjltjjf" path="res://korean_digital_kiosk/scene.gltf" id="9_7h4sd"]
+[ext_resource type="PackedScene" uid="uid://c5xwsfnjltjjf" path="res://Mapas/korean_digital_kiosk/scene.gltf" id="9_7h4sd"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8phk5"]
 panorama = ExtResource("1_jy8cx")

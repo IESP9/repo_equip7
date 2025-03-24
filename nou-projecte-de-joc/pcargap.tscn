@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://pcargap.gd" id="1_epxwr"]
 [ext_resource type="Texture2D" uid="uid://ciy2bcvbbstxt" path="res://TPMOB.png" id="2_x0h6d"]
-[ext_resource type="FontFile" uid="uid://diakic27yfkso" path="res://contra_muerta/CONTRA MUERTA.ttf" id="3_dyhqq"]
+[ext_resource type="FontFile" uid="uid://diakic27yfkso" path="res://Mapas/contra_muerta/CONTRA MUERTA.ttf" id="3_dyhqq"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

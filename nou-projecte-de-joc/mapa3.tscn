@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://c06ig3ih64d25"]
+
+[ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://player.tscn" id="1_8ufcs"]
+[ext_resource type="PackedScene" uid="uid://djdihmm0stx38" path="res://city/scene.gltf" id="2_dpx2b"]
+[ext_resource type="Texture2D" uid="uid://cbr7i7mde7ep6" path="res://AllSky_Night_MoonBurst Equirect.png" id="3_w5xdk"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_u34pp"]
+plane = Plane(0, 0, 100, 0)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vo36t"]
+panorama = ExtResource("3_w5xdk")
+
+[sub_resource type="Sky" id="Sky_ohpys"]
+sky_material = SubResource("PanoramaSkyMaterial_vo36t")
+
+[sub_resource type="Environment" id="Environment_2a0ht"]
+background_mode = 2
+sky = SubResource("Sky_ohpys")
+
+[node name="Sketchfab_Scene" instance=ExtResource("2_dpx2b")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, 0, 0, 0)
+
+[node name="Object_29" parent="Sketchfab_model/root/GLTF_SceneRootNode/Empty_002_20/Building3_14" index="0"]
+transform = Transform3D(1, 0, -2.84217e-14, 0, 1, 0, 2.84217e-14, 0, 1, 0, -0.306146, 0)
+
+[node name="Object_114" parent="Sketchfab_model/root/GLTF_SceneRootNode/Empty_009_60/building_004_59" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.659424, 0)
+
+[node name="Object_189" parent="Sketchfab_model/root/GLTF_SceneRootNode/Empty_013_98/building_001_97" index="0"]
+transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0, -0.447729, 0)
+
+[node name="Object_415" parent="Sketchfab_model/root/GLTF_SceneRootNode/Empty_038_224/building_012_219" index="0"]
+transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0, -0.690472, 0)
+
+[node name="Object_571" parent="Sketchfab_model/root/GLTF_SceneRootNode/Empty_052_314/building_015_302" index="0"]
+transform = Transform3D(1, 0, 5.68434e-14, 0, 1, 0, -5.68434e-14, 0, 1, 0, -0.509092, 0)
+
+[node name="Object_600" parent="Sketchfab_model/root/GLTF_SceneRootNode/Empty_054_324/building_017_318" index="0"]
+transform = Transform3D(1, 0, 5.68434e-14, 0, 1, 0, -5.68434e-14, 0, 1, 0, -0.675961, 0)
+
+[node name="Object_639" parent="Sketchfab_model/root/GLTF_SceneRootNode/Empty_057_342/building_018_337" index="0"]
+transform = Transform3D(1, 0, 5.68434e-14, 0, 1, 0, -5.68434e-14, 0, 1, 0, -0.786566, 0)
+
+[node name="Object_651" parent="Sketchfab_model/root/GLTF_SceneRootNode/Empty_058_344/Building12_004_343" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.82292, 0)
+
+[node name="Object_654" parent="Sketchfab_model/root/GLTF_SceneRootNode/Empty_059_354/Building12_003_346" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.64889, 0)
+
+[node name="Object_724" parent="Sketchfab_model/root/GLTF_SceneRootNode/Empty_067_391/building_019_385" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.602625, 0)
+
+[node name="Object_740" parent="Sketchfab_model/root/GLTF_SceneRootNode/Empty_068_395/building_020_392" index="0"]
+transform = Transform3D(1, 0, 5.68434e-14, 0, 1, 0, -5.68434e-14, 0, 1, 0, -0.675604, 0)
+
+[node name="Object_754" parent="Sketchfab_model/root/GLTF_SceneRootNode/Empty_071_405/Building12_005_400" index="0"]
+transform = Transform3D(1, 0, 5.68434e-14, 0, 1, 0, -5.68434e-14, 0, 1, 0, -3.58725, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model" index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -211.521, 220.481, -4.89565e-14)
+shape = SubResource("WorldBoundaryShape3D_u34pp")
+
+[node name="Player" parent="." index="1" instance=ExtResource("1_8ufcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -349.148, 3.9296, -472.333)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="2"]
+environment = SubResource("Environment_2a0ht")

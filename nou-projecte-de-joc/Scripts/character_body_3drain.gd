@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-const SPEED = 13.0
-const JUMP_VELOCITY = 5.5
+const SPEED = 6.0
+const JUMP_VELOCITY = 4
 const MOUSE_SENSITIVITY = 0.35
 const HEAD_BOB_SPEED = 10.0  # Velocidad del head bobbing
 const HEAD_BOB_AMOUNT = 0.1  # Intensidad del movimiento de la cámara

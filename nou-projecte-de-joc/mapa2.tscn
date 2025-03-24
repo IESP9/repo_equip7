@@ -1,12 +1,12 @@
 [gd_scene load_steps=20 format=3 uid="uid://nggqqvqhay7f"]
 
-[ext_resource type="PackedScene" uid="uid://bi7l2ytinsd4d" path="res://full_gameready_city_buildings/scene.gltf" id="1_hc1i4"]
+[ext_resource type="PackedScene" uid="uid://bi7l2ytinsd4d" path="res://Mapas/full_gameready_city_buildings/scene.gltf" id="1_hc1i4"]
 [ext_resource type="Script" path="res://mapa1.gd" id="1_wmdf0"]
-[ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://player.tscn" id="2_4tux2"]
+[ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://Mapas/caffe/player.tscn" id="2_4tux2"]
 [ext_resource type="Texture2D" uid="uid://fd0plvoln0qd" path="res://NightSkyHDRI003_4K-HDR.exr" id="3_f7o4c"]
 [ext_resource type="AudioStream" uid="uid://b6da0d5x463ve" path="res://musica/JDSherbert - Ambiences Music Pack - Cosmic Star.mp3" id="3_iiv7x"]
 [ext_resource type="Script" path="res://prueba.gd" id="5_3ecem"]
-[ext_resource type="PackedScene" uid="uid://bdi7kjm6mylsr" path="res://lowpoly-apocalyptic-buildings-by-majadroid/LowPoly-Apocalyptic-Buildings-By-Majadroid/fbx files/building-01.fbx" id="6_ooy83"]
+[ext_resource type="PackedScene" uid="uid://bdi7kjm6mylsr" path="res://Mapas/lowpoly-apocalyptic-buildings-by-majadroid/LowPoly-Apocalyptic-Buildings-By-Majadroid/fbx files/building-01.fbx" id="6_ooy83"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vidd0"]
 size = Vector3(18.3643, 4.83047, 16.2267)

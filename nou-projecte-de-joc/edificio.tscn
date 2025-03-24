@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://cv7joatlrlabn"]
 
-[ext_resource type="PackedScene" uid="uid://cmv5mwqf0iipg" path="res://free__atlanta_corperate_office_building/scene.gltf" id="1_nn4n3"]
-[ext_resource type="PackedScene" uid="uid://cocyesv8ayk2v" path="res://player.tscn" id="2_4v4sp"]
-[ext_resource type="PackedScene" uid="uid://b388tjqkr78rh" path="res://moscow_bus_station/scene.gltf" id="3_mqbd7"]
-[ext_resource type="PackedScene" uid="uid://ddm5y7ylip1rp" path="res://modern_city_block/scene.gltf" id="4_q22ts"]
+[ext_resource type="PackedScene" uid="uid://cmv5mwqf0iipg" path="res://Mapas/free__atlanta_corperate_office_building/scene.gltf" id="1_nn4n3"]
+[ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://Mapas/caffe/player.tscn" id="2_4v4sp"]
+[ext_resource type="PackedScene" uid="uid://b388tjqkr78rh" path="res://Mapas/moscow_bus_station/scene.gltf" id="3_mqbd7"]
+[ext_resource type="PackedScene" uid="uid://ddm5y7ylip1rp" path="res://Mapas/modern_city_block/scene.gltf" id="4_q22ts"]
 [ext_resource type="Texture2D" uid="uid://bx5tkmfi4tsf4" path="res://kloofendal_misty_morning_puresky_4k.exr" id="5_fqwas"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ic58h"]
