@@ -56,6 +56,7 @@ theme_override_font_sizes/font_size = 50
 script = ExtResource("2_jp5hk")
 
 [node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 960.0
 offset_top = 540.0
 offset_right = 1000.0

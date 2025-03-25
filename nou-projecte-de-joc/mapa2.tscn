@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bi7l2ytinsd4d" path="res://Mapas/full_gameready_city_buildings/scene.gltf" id="1_hc1i4"]
 [ext_resource type="Script" path="res://mapa1.gd" id="1_wmdf0"]
-[ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://Mapas/caffe/player.tscn" id="2_4tux2"]
+[ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://player.tscn" id="2_4tux2"]
 [ext_resource type="Texture2D" uid="uid://fd0plvoln0qd" path="res://NightSkyHDRI003_4K-HDR.exr" id="3_f7o4c"]
 [ext_resource type="AudioStream" uid="uid://b6da0d5x463ve" path="res://musica/JDSherbert - Ambiences Music Pack - Cosmic Star.mp3" id="3_iiv7x"]
 [ext_resource type="Script" path="res://prueba.gd" id="5_3ecem"]
@@ -45,6 +45,9 @@ sky_material = SubResource("PanoramaSkyMaterial_8mvrl")
 [sub_resource type="Environment" id="Environment_q3otm"]
 background_mode = 2
 sky = SubResource("Sky_r82o7")
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
 
 [node name="Node3D" type="Node3D" node_paths=PackedStringArray("spawn_controller")]
 script = ExtResource("1_wmdf0")
@@ -149,6 +152,12 @@ shape = SubResource("BoxShape3D_icwo8")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="sulos paredes luces mapa"]
 environment = SubResource("Environment_q3otm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="sulos paredes luces mapa/WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 0.692987, 0.72095, 0, -0.72095, 0.692987, 0, 12.473, 0)
+light_energy = 0.25
+shadow_enabled = true
+sky_mode = 1
 
 [node name="Luces" type="Node" parent="sulos paredes luces mapa"]
 

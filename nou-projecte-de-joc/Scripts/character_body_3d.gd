@@ -9,6 +9,8 @@ const HEAD_BOB_AMOUNT = 0.1  # Intensidad del movimiento de la cámara
 var yaw := 0.0
 var pitch := 0.0
 var head_bob_timer := 0.0  # Controla el tiempo para la animación
+var ha_leido_nota = false
+var esta_en_sala_mision = false
 
 signal jumped  # Señal de que el jugador ha saltado
 
@@ -71,3 +73,5 @@ func _apply_head_bobbing(delta: float) -> void:
 	if is_on_floor():
 		head_bob_timer += delta * HEAD_BOB_SPEED
 		camera.transform.origin.y = sin(head_bob_timer) * HEAD_BOB_AMOUNT
+func leer_nota():
+	ha_leido_nota = true

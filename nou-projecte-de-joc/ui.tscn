@@ -60,3 +60,18 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MensajeBloqueo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 506.0
+offset_right = 832.0
+offset_bottom = 529.0
+
+[node name="MisionTexto" type="Label" parent="."]
+layout_mode = 0
+offset_top = 23.0
+offset_right = 40.0
+offset_bottom = 46.0
+
+[node name="MensajeBloqueoTimer" type="Timer" parent="."]

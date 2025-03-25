@@ -10,7 +10,7 @@ func _ready():
 	quit_button.pressed.connect(_on_quit_pressed)
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://historia.tscn")  # Cambia a la escena del juego
+	get_tree().change_scene_to_file("res://menu2.tscn")  # Cambia a la escena del juego
 
 func _on_options_pressed():
 	get_tree().change_scene_to_file("res://ajustes.tscn")  # Cambia a la escena del ajustes

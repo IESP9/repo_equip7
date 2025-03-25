@@ -1,71 +1,101 @@
-[gd_scene load_steps=8 format=3 uid="uid://c06ig3ih64d25"]
+[gd_scene load_steps=11 format=3 uid="uid://cgcarmeqwbatm"]
 
 [ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://player.tscn" id="1_8ufcs"]
-[ext_resource type="PackedScene" uid="uid://djdihmm0stx38" path="res://city/scene.gltf" id="2_dpx2b"]
-[ext_resource type="Texture2D" uid="uid://cbr7i7mde7ep6" path="res://AllSky_Night_MoonBurst Equirect.png" id="3_w5xdk"]
+[ext_resource type="PackedScene" uid="uid://85bj3w3qn83l" path="res://nexus.tscn" id="1_k3mqv"]
+[ext_resource type="Texture2D" uid="uid://buydk88eckfy7" path="res://overcast_soil_puresky_4k.exr" id="3_07gkp"]
+[ext_resource type="PackedScene" uid="uid://btipddbbvvin2" path="res://forest/scene.gltf" id="4_7hm7o"]
+[ext_resource type="PackedScene" uid="uid://wxslogmfukub" path="res://eiffel_tower_model_3d_with_best_quality/scene.gltf" id="5_w1uvw"]
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_u34pp"]
-plane = Plane(0, 0, 100, 0)
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_gd37h"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vo36t"]
-panorama = ExtResource("3_w5xdk")
+[sub_resource type="BoxShape3D" id="BoxShape3D_2nfu7"]
+size = Vector3(0.617065, 6.97412, 74.3798)
 
-[sub_resource type="Sky" id="Sky_ohpys"]
-sky_material = SubResource("PanoramaSkyMaterial_vo36t")
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_b2ew1"]
+panorama = ExtResource("3_07gkp")
 
-[sub_resource type="Environment" id="Environment_2a0ht"]
+[sub_resource type="Sky" id="Sky_405jc"]
+sky_material = SubResource("PanoramaSkyMaterial_b2ew1")
+
+[sub_resource type="Environment" id="Environment_550uf"]
 background_mode = 2
-sky = SubResource("Sky_ohpys")
+sky = SubResource("Sky_405jc")
+fog_enabled = true
+fog_light_color = Color(0.633532, 0.665425, 0.715537, 1)
+fog_sky_affect = 0.95
 
-[node name="Sketchfab_Scene" instance=ExtResource("2_dpx2b")]
+[node name="Node3D" type="Node3D"]
 
-[node name="Sketchfab_model" parent="." index="0"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, 0, 0, 0)
+[node name="uploads_files_5196714_Nexus+Corp+Office+Building+3D" parent="." instance=ExtResource("1_k3mqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.7071, 0)
 
-[node name="Object_29" parent="Sketchfab_model/root/GLTF_SceneRootNode/Empty_002_20/Building3_14" index="0"]
-transform = Transform3D(1, 0, -2.84217e-14, 0, 1, 0, 2.84217e-14, 0, 1, 0, -0.306146, 0)
+[node name="StaticBody3D" type="StaticBody3D" parent="uploads_files_5196714_Nexus+Corp+Office+Building+3D"]
 
-[node name="Object_114" parent="Sketchfab_model/root/GLTF_SceneRootNode/Empty_009_60/building_004_59" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.659424, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="uploads_files_5196714_Nexus+Corp+Office+Building+3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.10416, 0)
+shape = SubResource("WorldBoundaryShape3D_gd37h")
 
-[node name="Object_189" parent="Sketchfab_model/root/GLTF_SceneRootNode/Empty_013_98/building_001_97" index="0"]
-transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0, -0.447729, 0)
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="uploads_files_5196714_Nexus+Corp+Office+Building+3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.2869, -2.98706, 4.45941)
+shape = SubResource("BoxShape3D_2nfu7")
 
-[node name="Object_415" parent="Sketchfab_model/root/GLTF_SceneRootNode/Empty_038_224/building_012_219" index="0"]
-transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0, -0.690472, 0)
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="uploads_files_5196714_Nexus+Corp+Office+Building+3D/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.44394, -2.98706, -27.3939)
+shape = SubResource("BoxShape3D_2nfu7")
 
-[node name="Object_571" parent="Sketchfab_model/root/GLTF_SceneRootNode/Empty_052_314/building_015_302" index="0"]
-transform = Transform3D(1, 0, 5.68434e-14, 0, 1, 0, -5.68434e-14, 0, 1, 0, -0.509092, 0)
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="uploads_files_5196714_Nexus+Corp+Office+Building+3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6191, -2.98706, 4.45941)
+shape = SubResource("BoxShape3D_2nfu7")
 
-[node name="Object_600" parent="Sketchfab_model/root/GLTF_SceneRootNode/Empty_054_324/building_017_318" index="0"]
-transform = Transform3D(1, 0, 5.68434e-14, 0, 1, 0, -5.68434e-14, 0, 1, 0, -0.675961, 0)
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="uploads_files_5196714_Nexus+Corp+Office+Building+3D/StaticBody3D"]
+transform = Transform3D(0.00246091, 0, -0.999997, 0, 1, 0, 0.999997, 0, 0.00246091, -0.999344, -2.98706, 34.401)
+shape = SubResource("BoxShape3D_2nfu7")
 
-[node name="Object_639" parent="Sketchfab_model/root/GLTF_SceneRootNode/Empty_057_342/building_018_337" index="0"]
-transform = Transform3D(1, 0, 5.68434e-14, 0, 1, 0, -5.68434e-14, 0, 1, 0, -0.786566, 0)
+[node name="Player" parent="." instance=ExtResource("1_8ufcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.325, 0, 27.763)
 
-[node name="Object_651" parent="Sketchfab_model/root/GLTF_SceneRootNode/Empty_058_344/Building12_004_343" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.82292, 0)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_550uf")
 
-[node name="Object_654" parent="Sketchfab_model/root/GLTF_SceneRootNode/Empty_059_354/Building12_003_346" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.64889, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.736038, 0, 0.67694, -0.0823224, 0.992578, 0.0895092, -0.671916, -0.121609, 0.730575, 0, 39.3833, 0)
+shadow_enabled = true
 
-[node name="Object_724" parent="Sketchfab_model/root/GLTF_SceneRootNode/Empty_067_391/building_019_385" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.602625, 0)
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("4_7hm7o")]
+transform = Transform3D(-4.99876, 0, 0.111256, 0, 5, 0, -0.111256, 0, -4.99876, -111.173, -1.2, -77.498)
 
-[node name="Object_740" parent="Sketchfab_model/root/GLTF_SceneRootNode/Empty_068_395/building_020_392" index="0"]
-transform = Transform3D(1, 0, 5.68434e-14, 0, 1, 0, -5.68434e-14, 0, 1, 0, -0.675604, 0)
+[node name="Sketchfab_Scene2" parent="." instance=ExtResource("4_7hm7o")]
+transform = Transform3D(-4.99876, 0, 0.111256, 0, 5, 0, -0.111256, 0, -4.99876, -107.557, -0.982761, 2.08324)
 
-[node name="Object_754" parent="Sketchfab_model/root/GLTF_SceneRootNode/Empty_071_405/Building12_005_400" index="0"]
-transform = Transform3D(1, 0, 5.68434e-14, 0, 1, 0, -5.68434e-14, 0, 1, 0, -3.58725, 0)
+[node name="Sketchfab_Scene3" parent="." instance=ExtResource("4_7hm7o")]
+transform = Transform3D(-4.99876, 0, 0.111256, 0, 5, 0, -0.111256, 0, -4.99876, -111.173, -1.2, 78.1839)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model" index="1"]
+[node name="Sketchfab_Scene4" parent="." instance=ExtResource("4_7hm7o")]
+transform = Transform3D(4.99987, 0, -0.0354299, 0, 5, 0, 0.0354299, 0, 4.99987, 145.978, -1.2, 79.3351)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -211.521, 220.481, -4.89565e-14)
-shape = SubResource("WorldBoundaryShape3D_u34pp")
+[node name="Sketchfab_Scene5" parent="." instance=ExtResource("4_7hm7o")]
+transform = Transform3D(4.99987, 0, -0.0354299, 0, 5, 0, 0.0354299, 0, 4.99987, 144.771, -1.2, -0.237006)
 
-[node name="Player" parent="." index="1" instance=ExtResource("1_8ufcs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -349.148, 3.9296, -472.333)
+[node name="Sketchfab_Scene6" parent="." instance=ExtResource("4_7hm7o")]
+transform = Transform3D(4.99987, 0, -0.0354299, 0, 5, 0, 0.0354299, 0, 4.99987, 143.617, -1.2, -76.3289)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="2"]
-environment = SubResource("Environment_2a0ht")
+[node name="Sketchfab_Scene7" parent="." instance=ExtResource("4_7hm7o")]
+transform = Transform3D(0.0320263, 0, 4.9999, 0, 5, 0, -4.9999, 0, 0.0320263, 73.8875, -1.2, -149.046)
+
+[node name="Sketchfab_Scene8" parent="." instance=ExtResource("4_7hm7o")]
+transform = Transform3D(0.0320263, 0, 4.9999, 0, 5, 0, -4.9999, 0, 0.0320263, -5.68375, -1.2, -147.785)
+
+[node name="Sketchfab_Scene9" parent="." instance=ExtResource("4_7hm7o")]
+transform = Transform3D(0.0320263, 0, 4.9999, 0, 5, 0, -4.9999, 0, 0.0320263, -81.7749, -1.2, -146.579)
+
+[node name="Sketchfab_Scene10" parent="." instance=ExtResource("4_7hm7o")]
+transform = Transform3D(-0.0612595, 0, -4.99963, 0, 5, 0, 4.99963, 0, -0.0612595, -82.9408, -1.2, 149.471)
+
+[node name="Sketchfab_Scene11" parent="." instance=ExtResource("4_7hm7o")]
+transform = Transform3D(-0.0612595, 0, -4.99963, 0, 5, 0, 4.99963, 0, -0.0612595, -3.36358, -1.2, 148.676)
+
+[node name="Sketchfab_Scene12" parent="." instance=ExtResource("4_7hm7o")]
+transform = Transform3D(-0.0612595, 0, -4.99963, 0, 5, 0, 4.99963, 0, -0.0612595, 72.7333, -1.2, 147.915)
+
+[node name="Sketchfab_Scene13" parent="." instance=ExtResource("5_w1uvw")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -225.023, 14.3679, 4.64258)
