@@ -13,7 +13,7 @@ func _on_play_pressed():
 	get_tree().change_scene_to_file("res://historia.tscn")  # Cambia a la escena del juego
 
 func _on_options_pressed():
-	get_tree().change_scene_to_file("res://mundo_abierto.tscn")  # Cambia a la escena del ajustes
+	get_tree().change_scene_to_file("res://ow.tscn")  # Cambia a la escena del ajustes
 
 func _on_quit_pressed():
 	get_tree().change_scene_to_file("res://mainmenu.tscn")  # Cambia a la escena del ajustes

@@ -20,6 +20,7 @@ scale = Vector2(1.40205, 1.41016)
 texture = ExtResource("1_hjhbd")
 
 [node name="SurvivalButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 694.0
 offset_top = 596.0
 offset_right = 871.0
@@ -29,6 +30,7 @@ theme_override_font_sizes/font_size = 50
 text = "Survival"
 
 [node name="M_abiertoButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1052.0
 offset_top = 592.0
 offset_right = 1229.0
@@ -55,6 +57,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AtrasButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 879.0
 offset_top = 762.0
 offset_right = 1056.0

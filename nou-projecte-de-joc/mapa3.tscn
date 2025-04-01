@@ -20,6 +20,10 @@ sky_material = SubResource("PanoramaSkyMaterial_b2ew1")
 [sub_resource type="Environment" id="Environment_550uf"]
 background_mode = 2
 sky = SubResource("Sky_405jc")
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
 fog_enabled = true
 fog_light_color = Color(0.633532, 0.665425, 0.715537, 1)
 fog_sky_affect = 0.95
