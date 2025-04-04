@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dc73o76glpyly"]
+[gd_scene load_steps=9 format=3 uid="uid://dc73o76glpyly"]
 
 [ext_resource type="PackedScene" uid="uid://4v5vb70eu6x3" path="res://city1/scene.gltf" id="1_esi72"]
 [ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://player.tscn" id="2_eaufd"]
 [ext_resource type="Texture2D" uid="uid://bh03sihjimug4" path="res://belfast_sunset_puresky_4k.exr" id="3_mpiht"]
+[ext_resource type="PackedScene" uid="uid://dqx7s44v2ya67" path="res://PausePanel.tscn" id="4_bdsb1"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jwkmf"]
 panorama = ExtResource("3_mpiht")
@@ -92,3 +93,5 @@ transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, -148.2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node/Sketchfab_Scene5/StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_0t7tq")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("4_bdsb1")]

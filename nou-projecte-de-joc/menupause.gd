@@ -1,54 +1,64 @@
 extends CanvasLayer
 
-# Variables explícitas para cada elemento del menú
-@onready var pause_panel: ColorRect = $ColorRect
-@onready var continue_button: Button = $ColorRect/VBoxContainer/Continuar
-@onready var config_button: Button = $ColorRect/VBoxContainer/Configuracion
-@onready var controls_button: Button = $ColorRect/VBoxContainer/Controles
-@onready var quit_button: Button = $ColorRect/VBoxContainer/SalirAlMenuPrincipal
+@onready var panel = $ColorRect
+@onready var continue_button = $ColorRect/ContinueBtn
+@onready var options_button = $ColorRect/OptionsBtn
+@onready var quit_button = $ColorRect/QuitBtn
 
-var game_paused := false
+var is_paused = false
 
 func _ready():
-	pause_panel.visible = false
+	# Configuración inicial
+	panel.visible = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
-	# Conectar señales de botones mediante código (opcional)
-	continue_button.pressed.connect(_on_continue_pressed)
-	config_button.pressed.connect(_on_config_pressed)
-	controls_button.pressed.connect(_on_controls_pressed)
-	quit_button.pressed.connect(_on_quit_pressed)
+	# Verificar que todos los botones existen
+	if not continue_button or not options_button or not quit_button:
+		printerr("¡Error! Uno o más botones no fueron encontrados")
+		return
 	
-	# Enfocar el primer botón para navegación con teclado/mando
-	continue_button.grab_focus()
+	# Configurar botones
+	setup_button(continue_button, _on_continue_pressed)
+	setup_button(options_button, _on_options_pressed)
+	setup_button(quit_button, _on_quit_pressed)
+
+func setup_button(button: Button, callback: Callable):
+	button.focus_mode = Control.FOCUS_ALL
+	button.mouse_filter = Control.MOUSE_FILTER_STOP
+	button.pressed.connect(callback)
+	button.mouse_entered.connect(_on_button_hover.bind(button))
 
 func _input(event):
-	if event.is_action_just_pressed("ui_cancel"):
-		toggle_pause_menu()
+	if event.is_action_pressed("ui_cancel"):  # Tecla ESC
+		toggle_pause()
 
-func toggle_pause_menu():
-	game_paused = !game_paused
-	
-	pause_panel.visible = game_paused
-	get_tree().paused = game_paused
-	
-	if game_paused:
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		continue_button.grab_focus()  # Reenfocar al abrir menú
-	else:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+func _on_button_hover(button: Button):
+	if is_paused:
+		button.grab_focus()
 
-# Funciones de señal para cada botón
+func toggle_pause():
+	is_paused = !is_paused
+	get_tree().paused = is_paused
+	panel.visible = is_paused
+	
+	# Manejo del ratón
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if is_paused else Input.MOUSE_MODE_CAPTURED)
+	
+	if is_paused:
+		continue_button.grab_focus()  # Enfocar el botón continuar al abrir
+
+# Funciones específicas para cada botón
 func _on_continue_pressed():
-	toggle_pause_menu()
+	if is_paused:
+		toggle_pause()
 
-func _on_config_pressed():
-	# Implementar lógica de configuración
-	print("Configuración presionada")
-
-func _on_controls_pressed():
-	# Implementar vista de controles
-	print("Controles presionados")
+func _on_options_pressed():
+	if is_paused:
+		print("Opciones presionado")
+		# get_tree().change_scene_to_file("res://opciones.tscn")
 
 func _on_quit_pressed():
-	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Menus/main_menu.tscn")
+	if is_paused:
+		get_tree().paused = false
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		get_tree().change_scene_to_file("res://mainmenu.tscn")

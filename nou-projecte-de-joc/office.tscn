@@ -28,8 +28,9 @@ script/source = "extends Node3D
 @onready var main_camera = $Camera3D  # Cámara de zoom
 @onready var player_camera = $Player/CharacterBody3D/Head/player_Camera  # Cámara del jugador
 @onready var transition_label = $Control/TransitionLabel  # Ruta al Label
-@export var mensaje_transicion = \"Oficina\"  # Texto que aparecerá
-@export var tiempo_mensaje = 2.0  # Duración total del mensaje en pantalla
+@export var mensaje_transicion = \"'Oficina' 
+Usa WASD para moverte\"  # Texto que aparecerá
+@export var tiempo_mensaje = 5.0  # Duración total del mensaje en pantalla
 @export var tiempo_fade = 0.5  # Duración del efecto de desvanecimiento
 
 func _ready():
