@@ -1,9 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://iki64rv75og2"]
+[gd_scene load_steps=36 format=3 uid="uid://iki64rv75og2"]
 
 [ext_resource type="Script" path="res://pasillo.gd" id="1_oj43a"]
 [ext_resource type="PackedScene" uid="uid://4ljke0j41ydq" path="res://window/scene.gltf" id="2_f1oce"]
 [ext_resource type="PackedScene" uid="uid://bjipmb2jmalft" path="res://Mapas/elevator-door/scene.gltf" id="3_aq1of"]
 [ext_resource type="PackedScene" uid="uid://ccq4ux4nv6rkc" path="res://Mapas/exit_sign/scene.gltf" id="4_ieod2"]
+[ext_resource type="Script" path="res://ascensor.gd" id="5_v7uf3"]
 [ext_resource type="PackedScene" uid="uid://dnaturvg5ja88" path="res://Mapas/long_office_ceiling_light/scene.gltf" id="6_8igag"]
 [ext_resource type="PackedScene" uid="uid://c2ugxpppoqmje" path="res://Mapas/ceiling_tiles_texture/scene.gltf" id="7_gnyrb"]
 [ext_resource type="Texture2D" uid="uid://c5nbr05ybey1q" path="res://28211d0561b8d4d6ceabf2bcf0b6ac8a.jpg" id="8_oq1gf"]
@@ -14,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://player.tscn" id="12_wv4ru"]
 [ext_resource type="Texture2D" uid="uid://bejqxd5bda8wk" path="res://19434421701595501121-128.png" id="13_sknld"]
 [ext_resource type="Texture2D" uid="uid://cg4qrxlsplsw0" path="res://sangre.png" id="14_la3vk"]
+[ext_resource type="PackedScene" uid="uid://dqx7s44v2ya67" path="res://PausePanel.tscn" id="15_wll1x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vske8"]
 
@@ -35,6 +37,9 @@ size = Vector3(50, 5, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kpxdj"]
 size = Vector3(50, 6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vx6ml"]
+size = Vector3(117.809, 212.23, 18.5245)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ep411"]
 
@@ -136,6 +141,13 @@ transform = Transform3D(-6.55671e-10, 0, 0.015, 0, 0.015, 0, -0.015, 0, -6.55671
 
 [node name="Sketchfab_Scene" parent="Paredes/Sketchfab_Scene2" instance=ExtResource("4_ieod2")]
 transform = Transform3D(0.02, 0, 3.88578e-16, 0, 0.02, 0, -3.88578e-16, 0, 0.02, 2.63435, 4.20935, -0.352417)
+
+[node name="Area3D" type="Area3D" parent="Paredes/Sketchfab_Scene2"]
+script = ExtResource("5_v7uf3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Paredes/Sketchfab_Scene2/Area3D"]
+transform = Transform3D(1, 0, 4.61853e-14, 0, 1, 0, -4.61853e-14, 0, 1, -0.318299, -105.615, 8.76221)
+shape = SubResource("BoxShape3D_vx6ml")
 
 [node name="Techo" type="Node" parent="."]
 
@@ -710,5 +722,7 @@ texture = ExtResource("13_sknld")
 transform = Transform3D(-0.225, -3.39741e-08, 1.48505e-15, 0, -9.83506e-09, -0.225, 3.39741e-08, -0.225, 9.83506e-09, -19.9221, 0.0514292, -7.02034)
 modulate = Color(0.674815, 0.674815, 0.674815, 1)
 texture = ExtResource("14_la3vk")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("15_wll1x")]
 
 [connection signal="body_entered" from="Sketchfab_Scene3/Area3D" to="Sketchfab_Scene3/Area3D" method="_on_body_entered"]

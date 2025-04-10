@@ -57,8 +57,8 @@
 [ext_resource type="Texture2D" uid="uid://ccgmx23od02st" path="res://d4vhyzb-87e74112-9538-40ad-a4f7-b81a615c6b86.png" id="56_82g5m"]
 [ext_resource type="PackedScene" uid="uid://dna0g3x8u0o5y" path="res://skyscraper/scene.gltf" id="56_m3nk6"]
 [ext_resource type="PackedScene" uid="uid://cxerupa16henk" path="res://Mapas/barcelonas_metal_bin_prop/scene.gltf" id="57_6naj4"]
-[ext_resource type="FontFile" uid="uid://jmfhcuwr7vlc" path="res://Mapas/kalayo/Kalayo.ttf" id="58_k5ucv"]
 [ext_resource type="FontFile" uid="uid://dxmxsgkmnb2ye" path="res://super_magical/Super Magical.ttf" id="59_en3mv"]
+[ext_resource type="PackedScene" uid="uid://dqx7s44v2ya67" path="res://PausePanel.tscn" id="60_optxt"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2fbui"]
 panorama = ExtResource("1_uj3ra")
@@ -70,9 +70,6 @@ sky_material = SubResource("PanoramaSkyMaterial_2fbui")
 background_mode = 2
 background_energy_multiplier = 0.75
 sky = SubResource("Sky_dvnrv")
-ssr_enabled = true
-ssao_enabled = true
-ssil_enabled = true
 fog_enabled = true
 fog_light_energy = 0.5
 fog_density = 0.002
@@ -2939,12 +2936,6 @@ transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene2/StaticBody3D"]
 shape = SubResource("CylinderShape3D_7lv5x")
 
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(0.941776, -0.336241, 0, 0.336241, 0.941776, 0, 0, 0, 1, 10.8153, 64.8111, -161.299)
-text = "PEDRO SANCHEZ DIMISION"
-font = ExtResource("58_k5ucv")
-font_size = 1000
-
 [node name="Label3D2" type="Label3D" parent="."]
 transform = Transform3D(1.31134e-07, -1, -4.37114e-08, -3.82137e-15, 4.37114e-08, -1, 1, 1.31134e-07, 1.91069e-15, 36.2825, 447.606, -32.6213)
 text = "PEDRO SANCHEZ DIMISION"
@@ -2962,5 +2953,7 @@ mesh = SubResource("BoxMesh_fx47o")
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -72.582, -0.418, -9.41913)
 mesh = SubResource("BoxMesh_fx47o")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("60_optxt")]
 
 [connection signal="body_entered" from="Cosas/Sketchfab_Scene4/Area3D" to="Cosas/Sketchfab_Scene4/Area3D" method="_on_body_entered"]

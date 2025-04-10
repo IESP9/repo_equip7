@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c4e8acq42oisw"]
+[gd_scene load_steps=26 format=3 uid="uid://c4e8acq42oisw"]
 
 [ext_resource type="Texture2D" uid="uid://fd0plvoln0qd" path="res://NightSkyHDRI003_4K-HDR.exr" id="1_jy8cx"]
 [ext_resource type="Script" path="res://lobby.gd" id="1_y44rw"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cmv5mwqf0iipg" path="res://Mapas/free__atlanta_corperate_office_building/scene.gltf" id="7_uwr0s"]
 [ext_resource type="Script" path="res://Scripts/area_3dl.gd" id="8_gqj5w"]
 [ext_resource type="PackedScene" uid="uid://c5xwsfnjltjjf" path="res://Mapas/korean_digital_kiosk/scene.gltf" id="9_7h4sd"]
+[ext_resource type="PackedScene" uid="uid://dqx7s44v2ya67" path="res://PausePanel.tscn" id="10_s7mn6"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8phk5"]
 panorama = ExtResource("1_jy8cx")
@@ -179,5 +180,7 @@ offset_bottom = 815.0
 theme_override_font_sizes/font_size = 35
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CanvasLayer" parent="." instance=ExtResource("10_s7mn6")]
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

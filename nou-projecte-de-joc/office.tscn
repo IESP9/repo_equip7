@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://cs1nyo7owx2i4"]
+[gd_scene load_steps=54 format=3 uid="uid://cs1nyo7owx2i4"]
 
 [ext_resource type="PackedScene" uid="uid://c2ugxpppoqmje" path="res://Mapas/ceiling_tiles_texture/scene.gltf" id="1_bvhg0"]
 [ext_resource type="PackedScene" uid="uid://4ljke0j41ydq" path="res://window/scene.gltf" id="2_lt2fv"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bd21v5j708bja" path="res://Eg9vTC6XcAA9QT8-600x445.webp" id="17_t6yop"]
 [ext_resource type="PackedScene" uid="uid://bgiytif6jgksa" path="res://Nota1.tscn" id="19_hk13i"]
 [ext_resource type="Script" path="res://area_sala.gd" id="20_1sx2e"]
+[ext_resource type="PackedScene" uid="uid://dqx7s44v2ya67" path="res://PausePanel.tscn" id="21_b8yvi"]
 
 [sub_resource type="GDScript" id="GDScript_lqr8o"]
 script/source = "extends Node3D
@@ -1463,6 +1464,8 @@ script = ExtResource("20_1sx2e")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.71438, 0)
 shape = SubResource("BoxShape3D_v1kip")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("21_b8yvi")]
 
 [connection signal="body_entered" from="Puerta/Sketchfab_Scene41/Area3D" to="Puerta/Sketchfab_Scene41/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Detalles/Sprite3D/Area3D" to="." method="_on_area_3d_body_entered"]

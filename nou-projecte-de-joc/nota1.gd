@@ -77,7 +77,7 @@ func ocultar_nota():
 
 func habilitar_controles_jugador(jugador, habilitar: bool):
 	# Control de cámara
-	var camara = jugador.get_node("Camera3D")
+	var camara = jugador.get_node("player_Camera")
 	if camara and camara.has_method("set_process_input"):
 		camara.set_process_input(habilitar)
 	

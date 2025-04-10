@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://nggqqvqhay7f"]
+[gd_scene load_steps=21 format=3 uid="uid://nggqqvqhay7f"]
 
 [ext_resource type="PackedScene" uid="uid://bi7l2ytinsd4d" path="res://Mapas/full_gameready_city_buildings/scene.gltf" id="1_hc1i4"]
 [ext_resource type="Script" path="res://mapa1.gd" id="1_wmdf0"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://b6da0d5x463ve" path="res://musica/JDSherbert - Ambiences Music Pack - Cosmic Star.mp3" id="3_iiv7x"]
 [ext_resource type="Script" path="res://prueba.gd" id="5_3ecem"]
 [ext_resource type="PackedScene" uid="uid://bdi7kjm6mylsr" path="res://Mapas/lowpoly-apocalyptic-buildings-by-majadroid/LowPoly-Apocalyptic-Buildings-By-Majadroid/fbx files/building-01.fbx" id="6_ooy83"]
+[ext_resource type="PackedScene" uid="uid://dqx7s44v2ya67" path="res://PausePanel.tscn" id="8_avgmb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vidd0"]
 size = Vector3(18.3643, 4.83047, 16.2267)
@@ -429,3 +430,5 @@ spot_angle = 37.73
 
 [node name="building-01" parent="sulos paredes luces mapa" instance=ExtResource("6_ooy83")]
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 84.8066, 0, -11.9807)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("8_avgmb")]

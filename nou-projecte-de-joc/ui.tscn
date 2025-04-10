@@ -75,3 +75,10 @@ offset_right = 40.0
 offset_bottom = 46.0
 
 [node name="MensajeBloqueoTimer" type="Timer" parent="."]
+
+[node name="MensajeBloqueo2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 506.0
+offset_right = 832.0
+offset_bottom = 529.0
