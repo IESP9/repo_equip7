@@ -1,11 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://nggqqvqhay7f"]
+[gd_scene load_steps=20 format=3 uid="uid://nggqqvqhay7f"]
 
 [ext_resource type="PackedScene" uid="uid://bi7l2ytinsd4d" path="res://Mapas/full_gameready_city_buildings/scene.gltf" id="1_hc1i4"]
 [ext_resource type="Script" path="res://mapa1.gd" id="1_wmdf0"]
-[ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://player.tscn" id="2_4tux2"]
 [ext_resource type="Texture2D" uid="uid://fd0plvoln0qd" path="res://NightSkyHDRI003_4K-HDR.exr" id="3_f7o4c"]
-[ext_resource type="AudioStream" uid="uid://b6da0d5x463ve" path="res://musica/JDSherbert - Ambiences Music Pack - Cosmic Star.mp3" id="3_iiv7x"]
 [ext_resource type="Script" path="res://prueba.gd" id="5_3ecem"]
+[ext_resource type="PackedScene" uid="uid://c4d58w78p53qw" path="res://character_body_3d.tscn" id="6_1rr8g"]
 [ext_resource type="PackedScene" uid="uid://bdi7kjm6mylsr" path="res://Mapas/lowpoly-apocalyptic-buildings-by-majadroid/LowPoly-Apocalyptic-Buildings-By-Majadroid/fbx files/building-01.fbx" id="6_ooy83"]
 [ext_resource type="PackedScene" uid="uid://dqx7s44v2ya67" path="res://PausePanel.tscn" id="8_avgmb"]
 
@@ -54,13 +53,9 @@ ssil_enabled = true
 script = ExtResource("1_wmdf0")
 spawn_controller = NodePath("pruebazombie/SpawnController")
 
-[node name="Player" parent="." instance=ExtResource("2_4tux2")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.268136, 0.626421, 0.321678)
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Player"]
-stream = ExtResource("3_iiv7x")
-autoplay = true
-parameters/looping = true
+[node name="CharacterBody3D" parent="." instance=ExtResource("6_1rr8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00559092, 0.000861764, 0.988589)
+collision_mask = 3
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -78,6 +73,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="pruebazombie" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0268586, 0)
 
 [node name="SpawnController" type="Node3D" parent="pruebazombie"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8496, 0, 0)
@@ -103,7 +99,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9519, -0.499138, -0.625244
 shape = SubResource("BoxShape3D_dbcv6")
 
 [node name="Sketchfab_Scene" parent="sulos paredes luces mapa" instance=ExtResource("1_hc1i4")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.062135, 0.0198378, 0.505868)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.396115, 0.0877723, 0.621122)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="sulos paredes luces mapa/Sketchfab_Scene"]
 
@@ -122,7 +118,7 @@ skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="sulos paredes luces mapa/MeshInstance3D3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="sulos paredes luces mapa/MeshInstance3D3/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="sulos paredes luces mapa/MeshInstance3D3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.4217, 0, -14.6195)
 shape = SubResource("BoxShape3D_d3icq")
 

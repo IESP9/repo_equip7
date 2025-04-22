@@ -10,7 +10,7 @@ var wave_started = false
 func _ready():
 	# Configurar el texto inicial del label
 		# Buscar el nodo Player en la escena
-	var player_node = get_node_or_null("Player")
+	var player_node = get_node_or_null("CharacterBody3D")
 	if player_node:
 		Global.player = player_node  # Asignar la referencia del jugador al singleton
 	else:

@@ -1,11 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://cgcarmeqwbatm"]
+[gd_scene load_steps=15 format=3 uid="uid://cgcarmeqwbatm"]
 
-[ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://player.tscn" id="1_8ufcs"]
 [ext_resource type="PackedScene" uid="uid://85bj3w3qn83l" path="res://nexus.tscn" id="1_k3mqv"]
+[ext_resource type="Script" path="res://mapa_3.gd" id="1_rylb6"]
 [ext_resource type="Texture2D" uid="uid://buydk88eckfy7" path="res://overcast_soil_puresky_4k.exr" id="3_07gkp"]
 [ext_resource type="PackedScene" uid="uid://btipddbbvvin2" path="res://forest/scene.gltf" id="4_7hm7o"]
 [ext_resource type="PackedScene" uid="uid://wxslogmfukub" path="res://eiffel_tower_model_3d_with_best_quality/scene.gltf" id="5_w1uvw"]
 [ext_resource type="PackedScene" uid="uid://dqx7s44v2ya67" path="res://PausePanel.tscn" id="6_h5sgw"]
+[ext_resource type="Script" path="res://prueba.gd" id="8_icpy4"]
+[ext_resource type="PackedScene" uid="uid://c4d58w78p53qw" path="res://character_body_3d.tscn" id="8_kfekr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h531v"]
+size = Vector3(18.3643, 4.83047, 16.2267)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_gd37h"]
 
@@ -29,7 +34,42 @@ fog_enabled = true
 fog_light_color = Color(0.633532, 0.665425, 0.715537, 1)
 fog_sky_affect = 0.95
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D" type="Node3D" node_paths=PackedStringArray("spawn_controller")]
+script = ExtResource("1_rylb6")
+spawn_controller = NodePath("pruebazombie/SpawnController")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("8_kfekr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9895, -1.39706, 25.5252)
+collision_mask = 3
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 750.0
+offset_top = 425.0
+offset_right = 1161.0
+offset_bottom = 581.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pruebazombie" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.50342, -1.09137, -19.1615)
+
+[node name="SpawnController" type="Node3D" parent="pruebazombie"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8496, 0, 0)
+script = ExtResource("8_icpy4")
+
+[node name="SpawnArea" type="Area3D" parent="pruebazombie/SpawnController"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00217056, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pruebazombie/SpawnController/SpawnArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0244639, 2.43199, 0.23928)
+shape = SubResource("BoxShape3D_h531v")
 
 [node name="uploads_files_5196714_Nexus+Corp+Office+Building+3D" parent="." instance=ExtResource("1_k3mqv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.7071, 0)
@@ -55,9 +95,6 @@ shape = SubResource("BoxShape3D_2nfu7")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="uploads_files_5196714_Nexus+Corp+Office+Building+3D/StaticBody3D"]
 transform = Transform3D(0.00246091, 0, -0.999997, 0, 1, 0, 0.999997, 0, 0.00246091, -0.999344, -2.98706, 34.401)
 shape = SubResource("BoxShape3D_2nfu7")
-
-[node name="Player" parent="." instance=ExtResource("1_8ufcs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.325, 0, 27.763)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_550uf")

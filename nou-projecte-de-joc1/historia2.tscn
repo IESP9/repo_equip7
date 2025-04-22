@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ddc4f30hrf1gp"]
 
-[ext_resource type="Texture2D" uid="uid://cqypm71ar06ds" path="res://DALL·E 2025-03-11 19.51.14 - A news website displaying a headline about the beginning of a zombie apocalypse, urging everyone to seek safety. The website design features dark, omi.webp" id="1_151sl"]
 [ext_resource type="Script" path="res://historia_2.gd" id="1_v16b0"]
+[ext_resource type="Texture2D" uid="uid://chwvi0c757olm" path="res://Disseny sense títol (1).png" id="2_trn18"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -13,9 +13,9 @@ offset_bottom = 40.0
 script = ExtResource("1_v16b0")
 
 [node name="Sprite2D" type="Sprite2D" parent="Control"]
-position = Vector2(960.5, 541.5)
-scale = Vector2(1.06752, 1.05957)
-texture = ExtResource("1_151sl")
+position = Vector2(961.5, 540.5)
+scale = Vector2(0.999479, 0.999074)
+texture = ExtResource("2_trn18")
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
