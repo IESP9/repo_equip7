@@ -1,0 +1,11 @@
+Model Information:
+* title:	Window
+* source:	https://sketchfab.com/3d-models/window-dcca6a944c16426d8f775febae2d8ff4
+* author:	humoyun (https://sketchfab.com/humoyu)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Window" (https://sketchfab.com/3d-models/window-dcca6a944c16426d8f775febae2d8ff4) by humoyun (https://sketchfab.com/humoyu) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

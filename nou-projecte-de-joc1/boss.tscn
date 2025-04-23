@@ -1,0 +1,129 @@
+[gd_scene load_steps=12 format=3 uid="uid://dwti8n5fmcsks"]
+
+[ext_resource type="Script" path="res://Scripts/boss.gd" id="1_kg3y0"]
+[ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://player.tscn" id="1_vjr16"]
+[ext_resource type="Texture2D" uid="uid://b68a7tnm1xoa5" path="res://Mapas/Prototype Textures/black.png" id="2_8x128"]
+[ext_resource type="PackedScene" uid="uid://btwhd6ocrq2l2" path="res://zombie_scream.tscn" id="3_j02al"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6u2km"]
+albedo_texture = ExtResource("2_8x128")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2bwa"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_a8eus"]
+material = SubResource("StandardMaterial3D_g2bwa")
+size = Vector2(50, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fkqen"]
+size = Vector3(50, 0, 30)
+
+[sub_resource type="Animation" id="Animation_wukq6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.178355, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 8.85465, -10.7442)]
+}
+
+[sub_resource type="Animation" id="Animation_hrwb6"]
+resource_name = "seguir"
+length = 4.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.16667, 2.73333, 3.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.178355, 0, 0), Vector3(-1.20931, 0, 0), Vector3(0.281469, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.16667, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 8.85465, -10.7442), Vector3(0.289511, 2.75887, 19.3765)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5i04p"]
+_data = {
+"RESET": SubResource("Animation_wukq6"),
+"seguir": SubResource("Animation_hrwb6")
+}
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_kg3y0")
+
+[node name="Player" parent="." instance=ExtResource("1_vjr16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.280707, 1.52685, 19.5337)
+
+[node name="Suelo2" type="Node" parent="."]
+
+[node name="Suelo" type="MeshInstance3D" parent="Suelo2"]
+transform = Transform3D(-0.00738273, 0, -0.999973, 0, 1, 0, 0.999973, 0, -0.00738273, 0, 0.0276618, 0)
+material_override = SubResource("StandardMaterial3D_6u2km")
+mesh = SubResource("PlaneMesh_a8eus")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Suelo2/Suelo"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Suelo2/Suelo/StaticBody3D"]
+shape = SubResource("BoxShape3D_fkqen")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.631826, 0.77511, 0, -0.77511, 0.631826, 0, 0, 0)
+
+[node name="Zombie Scream" parent="." instance=ExtResource("3_j02al")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0.45179, 0.0276618, -22.1506)
+
+[node name="ZombieCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.984137, 0.177411, 0, -0.177411, 0.984137, 0, 8.85465, -10.7442)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ZombieCamera"]
+libraries = {
+"": SubResource("AnimationLibrary_5i04p")
+}
+autoplay = "seguir"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TransitionLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 1918.0
+offset_bottom = 815.0
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+vertical_alignment = 1

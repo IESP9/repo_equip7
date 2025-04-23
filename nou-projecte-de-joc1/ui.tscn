@@ -1,0 +1,84 @@
+[gd_scene load_steps=3 format=3 uid="uid://crbk635xm35uk"]
+
+[ext_resource type="Script" path="res://ui.gd" id="1_kqxy4"]
+[ext_resource type="FontFile" uid="uid://ccuobr2q25roa" path="res://Merienda-Regular.ttf" id="2_upku1"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kqxy4")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1925.0
+offset_bottom = 1086.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 80.0
+offset_right = 1300.0
+offset_bottom = 980.0
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 15.0
+offset_right = 559.0
+offset_bottom = 900.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_upku1")
+text = "\"Si lees esto… nos acabamos de ir.\"
+
+No tuvimos elección. Esperamos todo lo que pudimos, pero la situación se volvió insostenible. El pasillo ya no es seguro. Escuchamos cómo arañaban las puertas, golpeaban las paredes… estaban demasiado cerca.
+
+Carlos insistió en que aún podíamos aguantar aquí, que quizás alguien vendría a rescatarnos. Pero nadie vendrá. Nadie nos ha contactado en horas. Marta encontró un viejo mapa y convenció a los demás de que el mejor plan era salir antes de que nos quedáramos atrapados.
+
+No sabemos si el refugio del norte es real, pero es nuestra única opción. Nos vamos con lo que pudimos cargar: algo de agua, unas pocas provisiones y una linterna que parpadea más de lo que ilumina.
+
+Si estás leyendo esto, significa que te quedaste atrás… o que acabas de llegar. Si es lo primero, corre. No sabemos cuánto más podrán aguantar esas barricadas. Si es lo segundo… tal vez aún puedas alcanzarnos.
+
+Nos dirigimos al puente principal. No sabemos qué nos espera al otro lado, pero quedarse aquí es un suicidio.
+
+Corre.
+
+— Los últimos de la oficina."
+autowrap_mode = 1
+
+[node name="MensajeInteraccion" type="Label" parent="."]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 900.0
+offset_right = 1300.0
+offset_bottom = 980.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MensajeBloqueo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 506.0
+offset_right = 832.0
+offset_bottom = 529.0
+
+[node name="MisionTexto" type="Label" parent="."]
+layout_mode = 0
+offset_top = 23.0
+offset_right = 40.0
+offset_bottom = 46.0
+
+[node name="MensajeBloqueoTimer" type="Timer" parent="."]
+
+[node name="MensajeBloqueo2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 506.0
+offset_right = 832.0
+offset_bottom = 529.0

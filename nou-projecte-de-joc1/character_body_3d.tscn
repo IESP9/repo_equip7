@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4d58w78p53qw"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_1x2ko"]
+[ext_resource type="PackedScene" uid="uid://diwsemoatvvm8" path="res://armas/animated_fps_pistol.glb" id="2_cjm5i"]
+[ext_resource type="Script" path="res://canvas_layer.gd" id="3_faq2t"]
+[ext_resource type="Script" path="res://control.gd" id="4_j5uwj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7c3ia"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_alq6p"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000941753, -2.38419e-07, 0.0077858)
+collision_mask = 2
+script = ExtResource("1_1x2ko")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00718737, 0.925087, -0.120744)
+shape = SubResource("CapsuleShape3D_7c3ia")
+
+[node name="Camera3D" type="Camera3D" parent="CollisionShape3D"]
+transform = Transform3D(-0.99956, 0, -0.0296663, 0, 1, 0, 0.0296663, 0, -0.99956, -0.0892224, 0.825369, -0.097946)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00950313, 0.920472, -0.133302)
+mesh = SubResource("CapsuleMesh_alq6p")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_cjm5i")]
+transform = Transform3D(-0.999995, 0, 0.00335107, 0, 1, 0, -0.00335107, 0, -0.999995, -4.94873, -17.5133, -2.22567)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("3_faq2t")
+
+[node name="Vida" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_top = 0.796
+anchor_bottom = 0.83
+offset_left = -279.0
+offset_top = -78.808
+offset_right = -239.0
+offset_bottom = -77.84
+
+[node name="Balas" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 1.217
+anchor_top = 0.838
+anchor_right = 1.217
+anchor_bottom = 0.838
+offset_left = -78.984
+offset_top = -10.024
+offset_right = -77.984
+offset_bottom = 22.976
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_j5uwj")

@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxeqjpuovloaw"]
+
+[ext_resource type="Script" path="res://menu_2.gd" id="1_grdev"]
+[ext_resource type="Texture2D" uid="uid://itcy2dla4xxi" path="res://Leonardo_Kino_XL_In_the_tattered_remains_of_a_postapocalyptic_2.jpg" id="1_hjhbd"]
+[ext_resource type="FontFile" uid="uid://diakic27yfkso" path="res://Mapas/contra_muerta/CONTRA MUERTA.ttf" id="2_hnef5"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_grdev")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(959, 540.501)
+scale = Vector2(1.40205, 1.41016)
+texture = ExtResource("1_hjhbd")
+
+[node name="SurvivalButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 694.0
+offset_top = 596.0
+offset_right = 871.0
+offset_bottom = 679.0
+theme_override_fonts/font = ExtResource("2_hnef5")
+theme_override_font_sizes/font_size = 50
+text = "Survival"
+
+[node name="M_abiertoButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1052.0
+offset_top = 592.0
+offset_right = 1229.0
+offset_bottom = 675.0
+theme_override_fonts/font = ExtResource("2_hnef5")
+theme_override_font_sizes/font_size = 50
+text = "M.Abierto"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.503
+anchor_top = 0.5
+anchor_right = 0.503
+anchor_bottom = 0.5
+offset_left = -767.76
+offset_top = -392.0
+offset_right = 764.24
+offset_bottom = -188.0
+theme_override_fonts/font = ExtResource("2_hnef5")
+theme_override_font_sizes/font_size = 100
+text = "Elige Modo de Juego"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AtrasButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 879.0
+offset_top = 762.0
+offset_right = 1056.0
+offset_bottom = 845.0
+theme_override_fonts/font = ExtResource("2_hnef5")
+theme_override_font_sizes/font_size = 50
+text = "Atras"

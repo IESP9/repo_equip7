@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://tqbjpknmxrmu"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_vgw4a"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_e3efp"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_alq6p"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gptle"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bgelq"]
+height = 2.0157
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000941753, -2.38419e-07, 0.0077858)
+collision_layer = 2
+script = ExtResource("1_vgw4a")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1999.67, 0.0181504, 0, -36.3009, 0.999835, 0, 0, 0, 2000, 0, 0, 0)
+navigation_mesh = SubResource("NavigationMesh_e3efp")
+navigation_layers = 65535
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.93316, 0)
+layers = 5
+mesh = SubResource("CapsuleMesh_alq6p")
+skeleton = NodePath("")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00216794, 0.131971, 0.000396252)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0.783214, 0)
+shape = SubResource("CapsuleShape3D_gptle")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0.951824, 0)
+shape = SubResource("CapsuleShape3D_bgelq")

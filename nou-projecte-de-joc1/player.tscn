@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkl38l61g6lu5"]
+
+[ext_resource type="Script" path="res://Scripts/character_body_3d.gd" id="1_d3ix3"]
+[ext_resource type="Script" path="res://Scripts/label.gd" id="2_hpum8"]
+[ext_resource type="PackedScene" uid="uid://crbk635xm35uk" path="res://ui.tscn" id="3_safad"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bur01"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vukmd"]
+height = 3.0
+
+[node name="Player" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("1_d3ix3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_bur01")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = SubResource("CapsuleMesh_vukmd")
+
+[node name="Head" type="Node3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.20262, 0)
+
+[node name="player_Camera" type="Camera3D" parent="CharacterBody3D/Head"]
+
+[node name="RayCast3D" type="RayCast3D" parent="CharacterBody3D/Head/player_Camera"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="UI" parent="CharacterBody3D" instance=ExtResource("3_safad")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1921.0
+offset_bottom = 1084.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 215.0
+script = ExtResource("2_hpum8")
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 540.0
+offset_right = 1000.0
+offset_bottom = 563.0
+text = "."
