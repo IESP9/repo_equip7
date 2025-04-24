@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @export var speed: float = 3.0
 @export var damage: int = 10
-@export var health: int = 50
+@export var health: int = 200
 @export var gravity: float = 50
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D

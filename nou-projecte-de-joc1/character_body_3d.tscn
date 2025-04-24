@@ -60,3 +60,9 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("4_j5uwj")
+
+[node name="Recargar" type="Label" parent="CanvasLayer"]
+offset_left = 861.0
+offset_top = 965.0
+offset_right = 901.0
+offset_bottom = 988.0

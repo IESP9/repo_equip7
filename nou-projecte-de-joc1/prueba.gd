@@ -1,77 +1,92 @@
 extends Node3D
 
-# Señal para indicar que la oleada ha terminado
+# Señales
 signal oleada_terminada
+signal boss_derrotado
 
-# Referencias a nodos y recursos
-@onready var spawn_area: Node3D = $SpawnArea  # Asegurar que el nodo esté asignado correctamente
-@onready var zombie_scene: PackedScene = preload("res://enemy.tscn")  # Cargar la escena del zombie
+# Referencias
+@onready var spawn_area: Node3D = $SpawnArea
+@onready var zombie_scene: PackedScene = preload("res://enemy.tscn")
 
-# Variables exportables para personalizar la oleada
-@export var zombies_por_oleada: int = 5  # Número de zombies a generar por oleada
-@export var tiempo_entre_spawns: float = 2.0  # Tiempo en segundos entre cada spawn
+# Configuración
+@export var zombies_base_por_oleada: int = 5
+@export var incremento_por_oleada: int = 5
+@export var tiempo_entre_spawns: float = 2.0
+@export var tiempo_espera_final: float = 20.0
 
-# Estado de la oleada
-var wave_active = false  # Controla si la oleada ya comenzó
+# Estado
+var wave_active = false
+var zombies_en_escena: int = 0
+var boss_active: bool = false
 
-func _ready() -> void:
-	# Verificar que el área de spawn esté asignada
+func _ready():
 	if not spawn_area:
 		push_error("Error: spawn_area no está asignado.")
-		return
 
-# Función para iniciar la oleada de zombies
-func start_wave() -> void:
+func start_wave(wave_number: int):
 	if wave_active:
-		return  # Si ya comenzó, no volver a iniciar
+		return
 	
 	wave_active = true
-	print("¡Iniciando oleada de zombies!")
+	print("¡Iniciando oleada %d!" % wave_number)
+	
+	# Calcular zombies para esta oleada
+	var zombies_esta_oleada = zombies_base_por_oleada + (wave_number - 1) * incremento_por_oleada
+	
+	# Ajustar para rondas de boss (menos zombies normales)
+	if wave_number == 5 or wave_number == 10:
+		zombies_esta_oleada = max(10, zombies_esta_oleada / 2)  # Mitad de zombies pero mínimo 10
+	
+	# Generar zombies
+	for i in range(zombies_esta_oleada):
+		if wave_active:  # Por si cancelamos la oleada
+			await get_tree().create_timer(tiempo_entre_spawns).timeout
+			spawn_zombie()
+	
+	# Esperar tiempo adicional si no es ronda de boss
+	if wave_number != 5 and wave_number != 10:
+		await get_tree().create_timer(tiempo_espera_final).timeout
+		
+		# Verificar zombies restantes
+		if zombies_en_escena > 0:
+			print("Quedan %d zombies por eliminar..." % zombies_en_escena)
+			await get_tree().create_timer(5.0).timeout
+	
+	wave_active = false
+	emit_signal("oleada_terminada")
 
-	# Generar zombies en intervalos de tiempo
-	for i in range(zombies_por_oleada):
-		await get_tree().create_timer(tiempo_entre_spawns).timeout
-		spawn_zombie()
-
-	wave_active = false  # Reiniciar el estado de la oleada
-	emit_signal("oleada_terminada")  # Emitir la señal
-
-# Función para generar un zombie en una posición aleatoria
-func spawn_zombie() -> void:
+func spawn_zombie():
 	var zombie = zombie_scene.instantiate()
 	if not zombie:
-		push_error("Error: No se pudo instanciar la escena del zombie.")
+		push_error("Error: No se pudo instanciar el zombie.")
 		return
 	
-	# Añadir el zombie al árbol de la escena
+	if zombie.has_signal("zombie_muerto"):
+		zombie.connect("zombie_muerto", Callable(self, "_on_zombie_muerto"))
+	
 	add_child(zombie)
+	zombies_en_escena += 1
 	
-	# Esperar un frame para asegurarse de que el zombie esté completamente en el árbol de la escena
 	await get_tree().process_frame
-	
-	# Obtener una posición aleatoria dentro del área de spawn
 	var spawn_position = get_random_position_in_area()
 	zombie.global_transform.origin = spawn_position
 
-# Función para calcular una posición aleatoria dentro del área de spawn
+func _on_zombie_muerto():
+	zombies_en_escena -= 1
+
+func _on_boss_derrotado():
+	boss_active = false
+	emit_signal("boss_derrotado")
+
 func get_random_position_in_area() -> Vector3:
 	if not spawn_area:
-		push_error("Error: spawn_area no está asignado.")
 		return Vector3.ZERO
 
-	# Buscar el CollisionShape3D dentro del área de spawn
 	var shape_node = spawn_area.find_child("CollisionShape3D")
-	if not (shape_node is CollisionShape3D):
-		push_error("Error: No se encontró CollisionShape3D dentro de spawn_area.")
+	if not (shape_node is CollisionShape3D) or not (shape_node.shape is BoxShape3D):
 		return spawn_area.global_transform.origin
 
-	# Verificar que el CollisionShape3D tenga un BoxShape3D
-	if not (shape_node.shape is BoxShape3D):
-		push_error("Error: CollisionShape3D no tiene un BoxShape3D.")
-		return spawn_area.global_transform.origin
-
-	# Calcular una posición aleatoria dentro del área
-	var box_size = shape_node.shape.size  # Usar `size` para BoxShape3D
+	var box_size = shape_node.shape.size
 	var spawn_x = randf_range(-box_size.x / 2, box_size.x / 2)
 	var spawn_z = randf_range(-box_size.z / 2, box_size.z / 2)
 

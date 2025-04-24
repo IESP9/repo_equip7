@@ -32,6 +32,7 @@ var Balas : Label
 
 @export var bullet_scene: PackedScene = preload("res://bullet.tscn")  # Asignación directa
 @export var fire_rate: float = 0.2  
+@export var target_scene: String = "res://pmuerto.tscn"
 
 var can_shoot = true
 
@@ -185,6 +186,7 @@ func die():
 	set_process(false)  
 	$CollisionShape3D.disabled = true  
 	print("El jugador ha muerto.")
+	get_tree().call_deferred("change_scene_to_file", target_scene)
 
 # Obtener estadísticas del jugador
 func get_player_stats():

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dxrxheyhr050k"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_vgw4a"]
-[ext_resource type="PackedScene" uid="uid://dw426bc764235" path="res://Zombie Running (4).tscn" id="2_g38fq"]
+[ext_resource type="PackedScene" uid="uid://8n1yjnx1y8hq" path="res://Zombiee.tscn" id="2_rnrex"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_e3efp"]
 
@@ -9,11 +9,11 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gptle"]
 radius = 0.534281
-height = 2.59631
+height = 2.42033
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bgelq"]
 radius = 0.532014
-height = 2.59781
+height = 2.51079
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00622988, -2.38419e-07, 0.0117035)
@@ -47,5 +47,5 @@ shape = SubResource("CapsuleShape3D_gptle")
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0.951824, 0)
 shape = SubResource("CapsuleShape3D_bgelq")
 
-[node name="Zombie Running (3)" parent="." instance=ExtResource("2_g38fq")]
-transform = Transform3D(-1.3, 0, 1.1365e-07, 0, 1.3, 0, -1.1365e-07, 0, -1.3, -0.00160759, -0.142891, 0.211237)
+[node name="Zombie" parent="." instance=ExtResource("2_rnrex")]
+transform = Transform3D(-1.2, 0, 1.81195e-07, 0, 1.2, 0, -1.81195e-07, 0, -1.2, -0.0716306, -0.439242, 0.0878108)

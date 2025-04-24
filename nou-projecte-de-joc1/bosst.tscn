@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cbo6yqhhyqsfc"]
 
-[ext_resource type="Script" path="res://enemy.gd" id="1_fhkxm"]
+[ext_resource type="Script" path="res://bosst.gd" id="1_8403f"]
 [ext_resource type="PackedScene" uid="uid://dw426bc764235" path="res://Zombie Running (4).tscn" id="2_lq4gt"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_e3efp"]
@@ -16,9 +16,7 @@ radius = 1.33287
 height = 6.82733
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00622988, -2.38419e-07, 0.0117035)
-collision_layer = 2
-script = ExtResource("1_fhkxm")
+script = ExtResource("1_8403f")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
