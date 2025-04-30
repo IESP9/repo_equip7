@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-@export var speed: float = 3.0
-@export var damage: int = 10
+@export var speed: float = 5.0
+@export var damage: int = 50
 @export var health: int = 200
 @export var gravity: float = 50
 
@@ -74,13 +74,13 @@ func _physics_process(delta):
 
 func take_damage(damage_amount: int):
 	health -= damage_amount
-	print("💥 Enemigo golpeado! Vida restante: ", health)
+	print("💥 Boss golpeado! Vida restante: ", health)
 	
 	if health <= 0:
 		die()
 
 func die():
-	print("☠️ Enemigo eliminado")
+	print("☠️ Boss eliminado")
 	queue_free()
 
 func _on_body_entered(body):
@@ -94,6 +94,6 @@ func _on_body_entered(body):
 			take_damage(10)
 	# Detección del jugador
 	elif body.is_in_group("player"):
-		print("👊 Enemigo atacando al jugador")
+		print("👊 Boss atacando al jugador")
 		if body.has_method("take_damage"):
 			body.take_damage(damage)

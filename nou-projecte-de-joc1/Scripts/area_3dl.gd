@@ -1,15 +1,24 @@
 extends Area3D
 
 @export var target_scene: String = "res://primermapa.tscn"
+var loading_screen = null
 
-func _on_body_entered(body):
-	if body is CharacterBody3D:
-		var loading_ui = get_tree().get_first_node_in_group("loading_ui")
-		
-		if loading_ui:
-			loading_ui.show_loading()  # Muestra la pantalla de carga
-			
-			await get_tree().process_frame  # Espera un frame para dibujar la pantalla de carga
-			await get_tree().create_timer(1.5).timeout  # Simula un tiempo de carga
+func _ready():
+	# Precarga la pantalla de carga
+	call_deferred("_prepare_loading_screen")
+	
+	# Conexión segura de señal
+	if not body_entered.is_connected(_on_body_entered):
+		body_entered.connect(_on_body_entered)
 
-		get_tree().call_deferred("change_scene_to_file", target_scene)  # Ahora cambia de escena
+func _prepare_loading_screen():
+	loading_screen = preload("res://LoadingScreen.tscn").instantiate()
+	get_tree().root.add_child(loading_screen)
+
+func _on_body_entered(body: Node3D):
+	if body is CharacterBody3D and loading_screen:
+		# Verificación adicional de la escena
+		if ResourceLoader.exists(target_scene):
+			loading_screen.start_loading(target_scene)
+		else:
+			push_error("La escena objetivo no existe: ", target_scene)

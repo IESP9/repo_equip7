@@ -12,7 +12,7 @@ signal boss_derrotado
 @export var zombies_base_por_oleada: int = 5
 @export var incremento_por_oleada: int = 5
 @export var tiempo_entre_spawns: float = 2.0
-@export var tiempo_espera_final: float = 20.0
+@export var tiempo_espera_final: float = 10.0
 
 # Estado
 var wave_active = false
@@ -35,7 +35,7 @@ func start_wave(wave_number: int):
 	
 	# Ajustar para rondas de boss (menos zombies normales)
 	if wave_number == 5 or wave_number == 10:
-		zombies_esta_oleada = max(10, zombies_esta_oleada / 2)  # Mitad de zombies pero mínimo 10
+		zombies_esta_oleada = max(20, zombies_esta_oleada / 2)  # Mitad de zombies pero mínimo 10
 	
 	# Generar zombies
 	for i in range(zombies_esta_oleada):

@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://y0rm3ceaj27s"]
+
+[ext_resource type="Script" path="res://transición.gd" id="1_p42vg"]
+[ext_resource type="Texture2D" uid="uid://cfwlvo4dpbddh" path="res://LOS.png" id="2_8ie3b"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p42vg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 539.999)
+scale = Vector2(1.25, 1.05469)
+texture = ExtResource("2_8ie3b")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 778.0
+offset_top = 1003.0
+offset_right = 1196.0
+offset_bottom = 1051.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Presiona [E] para continuar..."

@@ -25,18 +25,17 @@ var max_life = 100
 var current_ammo = 10
 var max_ammo = 10
 
-# Referencia al CanvasLayer (UI) propio del jugador
-var canvas_layer : CanvasLayer
-var Vida : Label
-var Balas : Label
+# Señales para la UI
+signal stats_updated(life, ammo)
+signal player_died()
 
-@export var bullet_scene: PackedScene = preload("res://bullet.tscn")  # Asignación directa
+
+@export var bullet_scene: PackedScene = preload("res://bullet.tscn")
 @export var fire_rate: float = 0.2  
 @export var target_scene: String = "res://pmuerto.tscn"
 
 var can_shoot = true
 
-# Inicialización
 func _ready():
 	add_to_group("player")  
 
@@ -53,29 +52,9 @@ func _ready():
 	camera = $CollisionShape3D/Camera3D
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-	# Configurar el CanvasLayer propio
-	canvas_layer = CanvasLayer.new()
-	add_child(canvas_layer)
+	# Emitir señal inicial con los stats
+	emit_signal("stats_updated", current_life, current_ammo)
 
-	# Crear etiquetas de vida y balas
-	Vida = Label.new()
-	Balas = Label.new()
-	canvas_layer.add_child(Vida)
-	canvas_layer.add_child(Balas)
-
-	# Ajustes de posición y estilo
-	Vida.position = Vector2(20, 20)
-	Balas.position = Vector2(20, 50)
-	Vida.modulate = Color(1, 0, 0)  # Rojo para vida
-	Balas.modulate = Color(1, 1, 0)  # Amarillo para balas
-	update_ui()
-
-# Función para actualizar la UI
-func update_ui():
-	Vida.text = "Vida: " + str(current_life) + " / " + str(max_life)
-	Balas.text = "Balas: " + str(current_ammo) + " / " + str(max_ammo)
-
-# Movimiento de la cámara y rotación
 func _input(event):
 	if event is InputEventMouseMotion:
 		rotation_x -= event.relative.y * mouse_sensitivity
@@ -84,7 +63,6 @@ func _input(event):
 		self.rotation.y = deg_to_rad(rotation_y)
 		camera.rotation.x = deg_to_rad(rotation_x)
 
-# Movimiento y animaciones del personaje
 func _physics_process(delta: float):  
 	var direction = Vector3.ZERO
 	is_running = false
@@ -130,14 +108,12 @@ func _physics_process(delta: float):
 	if Input.is_action_just_pressed("reload"):
 		reload()
 
-# Función de disparo CORREGIDA
 func shoot():
 	if can_shoot and current_ammo > 0:
 		can_shoot = false
 		is_firing = true
 		animation_player.play("Pistol_FIRE")
 
-		# Verificación de bullet_scene
 		if bullet_scene == null:
 			printerr("ERROR: No se asignó bullet_scene")
 			return
@@ -154,13 +130,12 @@ func shoot():
 		bullet.linear_velocity = direction * bullet_speed
 
 		current_ammo -= 1
-		update_ui()  
+		emit_signal("stats_updated", current_life, current_ammo)
 
 		await get_tree().create_timer(fire_rate).timeout
 		can_shoot = true
 		is_firing = false
 
-# Función de recarga
 func reload():
 	if current_ammo < max_ammo and animation_player.current_animation != "Pistol_RELOAD" and not is_firing:
 		animation_player.play("Pistol_RELOAD")
@@ -168,26 +143,21 @@ func reload():
 		await animation_player.animation_finished
 		is_reloading = false
 		current_ammo = max_ammo
-		update_ui()
+		emit_signal("stats_updated", current_life, current_ammo)
 
-# Función para recibir daño
 func take_damage(damage: int):
 	current_life -= damage
-	current_life = clamp(current_life, 0, max_life)  
-	print("🔥 Jugador ha recibido ", damage, " de daño!")
-	update_ui()  
+	current_life = clamp(current_life, 0, max_life)
+	emit_signal("stats_updated", current_life, current_ammo)
 
 	if current_life <= 0:
 		die()
 
-# Función para la muerte del jugador
 func die():
-	animation_player.play("Pistol_DEATH")
-	set_process(false)  
-	$CollisionShape3D.disabled = true  
-	print("El jugador ha muerto.")
+	set_process(false)
+	$CollisionShape3D.disabled = true
+	emit_signal("player_died")
 	get_tree().call_deferred("change_scene_to_file", target_scene)
 
-# Obtener estadísticas del jugador
 func get_player_stats():
 	return {"life": current_life, "ammo": current_ammo}

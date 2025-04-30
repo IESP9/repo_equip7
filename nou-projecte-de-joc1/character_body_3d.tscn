@@ -23,6 +23,7 @@ transform = Transform3D(-0.99956, 0, -0.0296663, 0, 1, 0, 0.0296663, 0, -0.99956
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00950313, 0.920472, -0.133302)
+visible = false
 mesh = SubResource("CapsuleMesh_alq6p")
 skeleton = NodePath("../CollisionShape3D")
 
@@ -34,25 +35,23 @@ transform = Transform3D(-0.999995, 0, 0.00335107, 0, 1, 0, -0.00335107, 0, -0.99
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("3_faq2t")
 
-[node name="Vida" type="Label" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_top = 0.796
-anchor_bottom = 0.83
-offset_left = -279.0
-offset_top = -78.808
-offset_right = -239.0
-offset_bottom = -77.84
+[node name="VidaLabel" type="Label" parent="CanvasLayer"]
+offset_left = -280.0
+offset_top = 15.0
+offset_right = -240.0
+offset_bottom = 38.0
 
-[node name="Balas" type="Label" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_left = 1.217
-anchor_top = 0.838
-anchor_right = 1.217
-anchor_bottom = 0.838
-offset_left = -78.984
-offset_top = -10.024
-offset_right = -77.984
-offset_bottom = 22.976
+[node name="BalasLabel" type="Label" parent="CanvasLayer"]
+offset_left = -78.0
+offset_top = 4.0
+offset_right = -77.0
+offset_bottom = 27.0
+
+[node name="RecargarLabel" type="Label" parent="CanvasLayer"]
+offset_left = -412.0
+offset_top = 12.0
+offset_right = -160.0
+offset_bottom = 41.0
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -60,9 +59,3 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("4_j5uwj")
-
-[node name="Recargar" type="Label" parent="CanvasLayer"]
-offset_left = 861.0
-offset_top = 965.0
-offset_right = 901.0
-offset_bottom = 988.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://nggqqvqhay7f"]
+[gd_scene load_steps=23 format=3 uid="uid://nggqqvqhay7f"]
 
 [ext_resource type="PackedScene" uid="uid://bi7l2ytinsd4d" path="res://Mapas/full_gameready_city_buildings/scene.gltf" id="1_hc1i4"]
 [ext_resource type="Script" path="res://mapa1.gd" id="1_wmdf0"]
@@ -32,7 +32,13 @@ size = Vector3(2.22693, 1.1958, 1)
 size = Vector3(0.001, 0.001, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d3icq"]
-size = Vector3(147.243, 10, 28.3002)
+size = Vector3(74.1831, 10, 26.6414)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h52du"]
+size = Vector3(84.1265, 3.21576, 35.894)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qgq4n"]
+size = Vector3(1, 3.86523, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_icwo8"]
 size = Vector3(1, 3.09766, 17.8825)
@@ -55,7 +61,7 @@ script = ExtResource("1_wmdf0")
 spawn_controller = NodePath("pruebazombie/SpawnController")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("6_1rr8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00559092, 0.000861764, 0.988589)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.00559092, 0.000861764, 0.988589)
 collision_mask = 3
 
 [node name="Control" type="Control" parent="."]
@@ -131,8 +137,16 @@ skeleton = NodePath("../..")
 [node name="StaticBody3D" type="StaticBody3D" parent="sulos paredes luces mapa/MeshInstance3D4"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="sulos paredes luces mapa/MeshInstance3D4/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.673, 0, -14.0709)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.531113, 0, -14.0709)
 shape = SubResource("BoxShape3D_d3icq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="sulos paredes luces mapa/MeshInstance3D4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.0453, 1.10788, -19.2971)
+shape = SubResource("BoxShape3D_h52du")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="sulos paredes luces mapa/MeshInstance3D4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4823, 1.43262, -14.2845)
+shape = SubResource("BoxShape3D_qgq4n")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="sulos paredes luces mapa"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.715, 0, 0)
