@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dhy8aaw4ljb2q"]
 
 [ext_resource type="Script" path="res://ajustes.gd" id="1_rgui1"]
-[ext_resource type="Texture2D" uid="uid://itcy2dla4xxi" path="res://Leonardo_Kino_XL_In_the_tattered_remains_of_a_postapocalyptic_2.jpg" id="2_nbx3l"]
+[ext_resource type="Texture2D" uid="uid://c2va48227t4nv" path="res://ChatGPT Image 5 de maig del 2025, 15_33_09.png" id="2_ia266"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -12,11 +12,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rgui1")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("2_nbx3l")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960.5, 540.5)
+scale = Vector2(1.24935, 1.05371)
+texture = ExtResource("2_ia266")
 
 [node name="Titulo" type="Label" parent="."]
 layout_mode = 0
@@ -59,10 +58,11 @@ offset_left = 938.0
 offset_top = 414.0
 offset_right = 1008.0
 offset_bottom = 437.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
 text = "Volumen"
+horizontal_alignment = 1
 
 [node name="Resolución" type="Label" parent="."]
 layout_mode = 0
@@ -70,7 +70,7 @@ offset_left = 932.0
 offset_top = 508.0
 offset_right = 1037.0
 offset_bottom = 536.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
 text = "Resolución"

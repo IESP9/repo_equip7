@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbo6yqhhyqsfc"]
+[gd_scene load_steps=11 format=3 uid="uid://cbo6yqhhyqsfc"]
 
 [ext_resource type="Script" path="res://bosst.gd" id="1_8403f"]
 [ext_resource type="PackedScene" uid="uid://dw426bc764235" path="res://Zombie Running (4).tscn" id="2_lq4gt"]
+[ext_resource type="Texture2D" uid="uid://d0d4j6mcgkq21" path="res://particulas-photoaidcom-invert.png" id="3_dijxw"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_e3efp"]
 
@@ -14,6 +15,24 @@ height = 7.18285
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bgelq"]
 radius = 1.33287
 height = 6.82733
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_iplxp"]
+emission_shape = 3
+emission_box_extents = Vector3(3, 3, 3)
+direction = Vector3(0, 1, 0)
+spread = 180.0
+initial_velocity_max = 1.5
+gravity = Vector3(0, 20, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_khf3u"]
+albedo_texture = ExtResource("3_dijxw")
+albedo_texture_force_srgb = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_1kqa4"]
+lightmap_size_hint = Vector2i(2, 2)
+material = SubResource("StandardMaterial3D_khf3u")
+flip_faces = true
+size = Vector2(0.08, 0.2)
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_8403f")
@@ -47,3 +66,9 @@ shape = SubResource("CapsuleShape3D_bgelq")
 
 [node name="Zombie Running (3)" parent="." instance=ExtResource("2_lq4gt")]
 transform = Transform3D(-5, 0, 7.54979e-07, 0, 5, 0, -7.54979e-07, 0, -5, -0.00160759, -0.142891, 0.211237)
+
+[node name="AuraParticles" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.256488, 1.32376, -0.369606)
+amount = 500
+process_material = SubResource("ParticleProcessMaterial_iplxp")
+draw_pass_1 = SubResource("QuadMesh_1kqa4")

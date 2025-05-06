@@ -1,0 +1,11 @@
+Model Information:
+* title:	Skibidi toilet city
+* source:	https://sketchfab.com/3d-models/skibidi-toilet-city-fd881151b5c04ce59add63a6318b3dc3
+* author:	Mostafa Ebrahim (https://sketchfab.com/mostafaebrahiem1998)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Skibidi toilet city" (https://sketchfab.com/3d-models/skibidi-toilet-city-fd881151b5c04ce59add63a6318b3dc3) by Mostafa Ebrahim (https://sketchfab.com/mostafaebrahiem1998) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

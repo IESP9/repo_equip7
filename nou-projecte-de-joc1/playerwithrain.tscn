@@ -12,10 +12,10 @@ height = 3.0
 emission_shape = 3
 emission_box_extents = Vector3(50, 100, 50)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_agfx6"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rn0fq"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_oscnd"]
-material = SubResource("StandardMaterial3D_agfx6")
+material = SubResource("StandardMaterial3D_rn0fq")
 size = Vector2(0.02, 0.7)
 
 [node name="Node3D" type="Node3D"]

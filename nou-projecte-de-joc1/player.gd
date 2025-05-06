@@ -22,8 +22,8 @@ var rotation_y : float = 0.0
 # Variables del jugador
 var current_life = 100
 var max_life = 100
-var current_ammo = 10
-var max_ammo = 10
+var current_ammo = 15
+var max_ammo = 15
 
 # Señales para la UI
 signal stats_updated(life, ammo)

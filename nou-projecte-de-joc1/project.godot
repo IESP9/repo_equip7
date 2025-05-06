@@ -13,6 +13,7 @@ config_version=5
 config/name="Juego"
 run/main_scene="res://pcargap.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+run/max_fps=60
 config/icon="res://icon.svg"
 
 [autoload]
@@ -25,6 +26,10 @@ MisionGlobal="*res://MisionGlobal.gd"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
+
+[editor]
+
+movie_writer/fps=300
 
 [filesystem]
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4d58w78p53qw"]
+[gd_scene load_steps=8 format=3 uid="uid://c4d58w78p53qw"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_1x2ko"]
 [ext_resource type="PackedScene" uid="uid://diwsemoatvvm8" path="res://armas/animated_fps_pistol.glb" id="2_cjm5i"]
 [ext_resource type="Script" path="res://canvas_layer.gd" id="3_faq2t"]
 [ext_resource type="Script" path="res://control.gd" id="4_j5uwj"]
+[ext_resource type="Script" path="res://Scripts/label.gd" id="5_btw7f"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7c3ia"]
 
@@ -59,3 +60,8 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("4_j5uwj")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 320.0
+offset_bottom = 215.0
+script = ExtResource("5_btw7f")

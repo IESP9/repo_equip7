@@ -9,7 +9,8 @@ extends Node3D
 var wave_started = false
 var current_wave: int = 0
 var max_waves: int = 10
-var transition_timer: Timer  # Timer para la transición
+var transition_timer: Timer
+var puede_iniciar_oleadas: bool = false
 
 func _ready():
 	# Configurar jugador
@@ -25,13 +26,24 @@ func _ready():
 	transition_timer.timeout.connect(_on_transition_timeout)
 	add_child(transition_timer)
 	
-	update_wave_label()
+	# Mostrar mensaje inicial y configurar espera
+	wave_label.text = "¡BOSS A APARECIDO DERROTALO!"
 	wave_label.visible = true
+	
+	# Temporizador para esperar 30 segundos
+	var espera_inicial = get_tree().create_timer(30.0)
+	await espera_inicial.timeout
+	
+	puede_iniciar_oleadas = true
+	update_wave_label()
 
 	if not spawn_controller:
 		push_error("Error: SpawnController no está asignado.")
 
 func update_wave_label():
+	if not puede_iniciar_oleadas:
+		return
+		
 	if current_wave == 0:
 		wave_label.text = "¡Preparate! Presiona [E] para comenzar la oleada 1"
 	elif current_wave >= max_waves:
@@ -40,10 +52,16 @@ func update_wave_label():
 		wave_label.text = "Oleada %d completada. Presiona [E] para comenzar la oleada %d" % [current_wave, current_wave + 1]
 
 func _input(event):
+	if not puede_iniciar_oleadas:
+		return
+		
 	if event is InputEventKey and event.pressed and event.keycode == KEY_E and not wave_started and current_wave < max_waves:
 		start_next_wave()
 
 func start_next_wave():
+	if not puede_iniciar_oleadas:
+		return
+		
 	current_wave += 1
 	wave_started = true
 	wave_label.visible = true

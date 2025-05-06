@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bxeqjpuovloaw"]
 
 [ext_resource type="Script" path="res://menu_2.gd" id="1_grdev"]
-[ext_resource type="Texture2D" uid="uid://itcy2dla4xxi" path="res://Leonardo_Kino_XL_In_the_tattered_remains_of_a_postapocalyptic_2.jpg" id="1_hjhbd"]
+[ext_resource type="Texture2D" uid="uid://c2va48227t4nv" path="res://ChatGPT Image 5 de maig del 2025, 15_33_09.png" id="2_bqicu"]
 [ext_resource type="FontFile" uid="uid://diakic27yfkso" path="res://Mapas/contra_muerta/CONTRA MUERTA.ttf" id="2_hnef5"]
 
 [node name="Control" type="Control"]
@@ -14,9 +14,9 @@ grow_vertical = 2
 script = ExtResource("1_grdev")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(959, 540.501)
-scale = Vector2(1.40205, 1.41016)
-texture = ExtResource("1_hjhbd")
+position = Vector2(960.5, 540.5)
+scale = Vector2(1.24935, 1.05371)
+texture = ExtResource("2_bqicu")
 
 [node name="SurvivalButton" type="Button" parent="."]
 layout_mode = 0

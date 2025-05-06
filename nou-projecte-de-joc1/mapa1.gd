@@ -4,7 +4,7 @@ extends Node3D
 @onready var wave_label: Label = $Control/Label
 @export var spawn_controller: Node3D
 @export var boss_scene: PackedScene = preload("res://bosst.tscn")
-@export var next_scene: PackedScene = preload("res://mapa3.tscn")  # Cargar la escena de antemano
+@export var next_scene: String = "res://mapa3.tscn"  # Cargar la escena de antemano
 
 # Configuración
 var wave_started = false
@@ -113,8 +113,9 @@ func force_transition():
 func transition_to_next_map():
 	print("Iniciando transición a mapa3.tscn")
 	
+	
 	if next_scene:
-		get_tree().change_scene_to_packed(next_scene)
+		get_tree().call_deferred("change_scene_to_file", next_scene)
 	else:
 		push_error("Error: No se pudo cargar la siguiente escena")
 		# Opción alternativa

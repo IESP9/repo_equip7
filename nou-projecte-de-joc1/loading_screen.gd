@@ -4,7 +4,7 @@ extends CanvasLayer
 @onready var status_label: Label = $Label
 
 var target_scene: PackedScene
-const MAX_WAIT_TIME := 8.0  # Aumentado a 8 segundos
+const MAX_WAIT_TIME := 10.0  # Aumentado a 8 segundos
 var current_wait_time := 0.0
 
 func _ready():
@@ -41,7 +41,7 @@ func _load_scene_safely(scene_path: String):
 			ResourceLoader.THREAD_LOAD_IN_PROGRESS:
 				var percent = int(progress[0] * 100)
 				progress_bar.value = percent
-				status_label.text = "Cargando %d%%" % percent
+				status_label.text = "no confies en cualquier persona, puede que  voten al PSOE..."
 				
 				if current_wait_time >= MAX_WAIT_TIME:
 					_load_directly(scene_path)

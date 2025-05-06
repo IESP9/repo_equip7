@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://cm83875kba6ep"]
+
+[ext_resource type="PackedScene" uid="uid://dfccff6ljdpgt" path="res://skibidi_toilet_city/scene.gltf" id="1_7g23q"]
+[ext_resource type="PackedScene" uid="uid://c4d58w78p53qw" path="res://character_body_3d.tscn" id="2_o5npw"]
+[ext_resource type="PackedScene" uid="uid://caj3qcnjkag52" path="res://sagrada_familia/scene.gltf" id="3_2yqsv"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_sycm4"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2behs"]
+sky_top_color = Color(0, 0.404541, 0.941595, 1)
+
+[sub_resource type="Sky" id="Sky_1xa7v"]
+sky_material = SubResource("ProceduralSkyMaterial_2behs")
+
+[sub_resource type="Environment" id="Environment_u6lda"]
+background_mode = 2
+sky = SubResource("Sky_1xa7v")
+ambient_light_source = 3
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_7g23q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.7555, 0, -34.3458)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -174.354, -1.34946, -160.741)
+shape = SubResource("WorldBoundaryShape3D_sycm4")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("2_o5npw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -244.845, -0.924875, -201.823)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_u6lda")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.0229263, -0.529801, 0.847812, -0.0143215, 0.848122, 0.529607, -0.999635, 0, -0.0270319, 0, 484.128, 0)
+
+[node name="Sketchfab_Scene2" parent="." instance=ExtResource("3_2yqsv")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 1974.12, -1.34946, 718.425)

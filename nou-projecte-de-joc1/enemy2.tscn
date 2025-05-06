@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://blnvocohewepv"]
+
+[ext_resource type="Script" path="res://enemy_2.gd" id="1_03fjs"]
+[ext_resource type="PackedScene" uid="uid://8n1yjnx1y8hq" path="res://Zombiee.tscn" id="1_o5b0v"]
+[ext_resource type="Texture2D" uid="uid://d0d4j6mcgkq21" path="res://particulas-photoaidcom-invert.png" id="3_abupt"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_hcgvh"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ta34k"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sfhmv"]
+radius = 0.534281
+height = 2.42033
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_736ua"]
+radius = 0.532014
+height = 2.51079
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f5cg7"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, 1, 0)
+spread = 180.0
+initial_velocity_max = 1.5
+gravity = Vector3(0, 5, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qgy20"]
+albedo_texture = ExtResource("3_abupt")
+
+[sub_resource type="QuadMesh" id="QuadMesh_8n04k"]
+lightmap_size_hint = Vector2i(2, 2)
+material = SubResource("StandardMaterial3D_qgy20")
+flip_faces = true
+size = Vector2(0.04, 0.1)
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.461575, 0)
+script = ExtResource("1_03fjs")
+health = 60
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1999.67, 0.0181504, 0, -36.3009, 0.999835, 0, 0, 0, 2000, 0, 0, 0)
+navigation_mesh = SubResource("NavigationMesh_hcgvh")
+navigation_layers = 65535
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.93316, 0)
+visible = false
+layers = 5
+mesh = SubResource("CapsuleMesh_ta34k")
+skeleton = NodePath("")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00216794, 0.131971, 0.000396252)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0.783214, 0)
+shape = SubResource("CapsuleShape3D_sfhmv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0.951824, 0)
+shape = SubResource("CapsuleShape3D_736ua")
+
+[node name="Zombie" parent="." instance=ExtResource("1_o5b0v")]
+transform = Transform3D(-1.5, 0, 2.26494e-07, 0, 1.5, 0, -2.26494e-07, 0, -1.5, -0.0716306, -0.399564, 0.0878108)
+
+[node name="AuraParticles" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0481858, 0.33614, -0.369606)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_f5cg7")
+draw_pass_1 = SubResource("QuadMesh_8n04k")

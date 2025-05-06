@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+signal boss_derrotado
+
 @export var speed: float = 5.0
 @export var damage: int = 50
 @export var health: int = 200
@@ -81,6 +83,7 @@ func take_damage(damage_amount: int):
 
 func die():
 	print("☠️ Boss eliminado")
+	emit_signal("boss_derrotado")
 	queue_free()
 
 func _on_body_entered(body):
