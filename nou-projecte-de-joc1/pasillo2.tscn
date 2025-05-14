@@ -715,8 +715,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -7.43199, 3.74004, 7.44649)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -7.42137, 3.85172, 7.44649)
 texture = ExtResource("13_sknld")
+
+[node name="Label3D" type="Label3D" parent="Sprite3D"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.115118, -0.705168, 0)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 1)
+text = "Café"
+font_size = 46
+outline_size = 0
+uppercase = true
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
 transform = Transform3D(-0.225, -3.39741e-08, 1.48505e-15, 0, -9.83506e-09, -0.225, 3.39741e-08, -0.225, 9.83506e-09, -19.9221, 0.0514292, -7.02034)

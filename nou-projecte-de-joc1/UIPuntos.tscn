@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgqcjlpkmv72x"]
+
+[ext_resource type="Script" path="res://controlui.gd" id="1_ft07m"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ft07m")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1823.0
+offset_top = 1.0
+offset_right = 1863.0
+offset_bottom = 24.0

@@ -19,9 +19,3 @@ func _on_body_exited(body):
 		if requiere_nota and !body.ha_leido_nota:
 			# Impide salir si no ha leído la nota
 			body.global_transform.origin = get_global_transform().origin
-			mostrar_mensaje_bloqueo(body)
-
-func mostrar_mensaje_bloqueo(jugador):
-	var ui = jugador.get_node("UI")
-	if ui:
-		ui.mostrar_mensaje("Debes revisar la sala en busca de pistas antes de salir")

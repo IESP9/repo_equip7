@@ -1,0 +1,11 @@
+Model Information:
+* title:	Tower Crane
+* source:	https://sketchfab.com/3d-models/tower-crane-49851dc7a51b43bda6aea06856c26a85
+* author:	Chamod (https://sketchfab.com/Chamodp)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Tower Crane" (https://sketchfab.com/3d-models/tower-crane-49851dc7a51b43bda6aea06856c26a85) by Chamod (https://sketchfab.com/Chamodp) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

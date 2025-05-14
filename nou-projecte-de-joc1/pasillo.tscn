@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://db1gofbyqxvyv"]
+[gd_scene load_steps=38 format=3 uid="uid://db1gofbyqxvyv"]
 
 [ext_resource type="PackedScene" uid="uid://4ljke0j41ydq" path="res://window/scene.gltf" id="1_3cgys"]
 [ext_resource type="Script" path="res://pasillo.gd" id="1_ahkxx"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://ce0ysuvfdqvys" path="res://aldama-y-sanchez-psoe_1200_1600.webp" id="14_j5327"]
 [ext_resource type="Texture2D" uid="uid://cg4qrxlsplsw0" path="res://sangre.png" id="16_dqqw1"]
 [ext_resource type="PackedScene" uid="uid://dqx7s44v2ya67" path="res://PausePanel.tscn" id="17_msv5o"]
+[ext_resource type="Texture2D" uid="uid://c86ihb2cmb01o" path="res://pezDisseny sense títol.png" id="18_77mut"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vske8"]
 
@@ -730,6 +731,10 @@ modulate = Color(0.674815, 0.674815, 0.674815, 1)
 texture = ExtResource("16_dqqw1")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("17_msv5o")]
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, -24.0064, 2.3562, -3.67113)
+texture = ExtResource("18_77mut")
 
 [connection signal="body_entered" from="Paredes/Sketchfab_Scene2/Area3D" to="Paredes/Sketchfab_Scene2/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Sketchfab_Scene3/Area3D" to="Sketchfab_Scene3/Area3D" method="_on_body_entered"]

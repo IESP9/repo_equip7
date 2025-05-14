@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b2yyorpyu8n5g"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_mdlp5"]
-[ext_resource type="Texture2D" uid="uid://c2va48227t4nv" path="res://ChatGPT Image 5 de maig del 2025, 15_33_09.png" id="2_673n1"]
+[ext_resource type="Texture2D" uid="uid://1g2daqcg5jox" path="res://meunu.png" id="2_fn4k0"]
 [ext_resource type="FontFile" uid="uid://diakic27yfkso" path="res://Mapas/contra_muerta/CONTRA MUERTA.ttf" id="3_xw0u3"]
 
 [node name="Control" type="Control"]
@@ -16,34 +16,34 @@ script = ExtResource("1_mdlp5")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(960.5, 540.5)
 scale = Vector2(1.24935, 1.05371)
-texture = ExtResource("2_673n1")
+texture = ExtResource("2_fn4k0")
 
 [node name="PlayButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 879.0
-offset_top = 592.0
-offset_right = 1056.0
-offset_bottom = 675.0
+offset_left = 487.0
+offset_top = 584.0
+offset_right = 664.0
+offset_bottom = 667.0
 theme_override_fonts/font = ExtResource("3_xw0u3")
 theme_override_font_sizes/font_size = 50
 text = "Jugar"
 
 [node name="OptionsButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 879.0
-offset_top = 677.0
-offset_right = 1056.0
-offset_bottom = 760.0
+offset_left = 487.0
+offset_top = 669.0
+offset_right = 664.0
+offset_bottom = 752.0
 theme_override_fonts/font = ExtResource("3_xw0u3")
 theme_override_font_sizes/font_size = 50
 text = "Opciones"
 
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 879.0
-offset_top = 762.0
-offset_right = 1056.0
-offset_bottom = 845.0
+offset_left = 487.0
+offset_top = 754.0
+offset_right = 664.0
+offset_bottom = 837.0
 theme_override_fonts/font = ExtResource("3_xw0u3")
 theme_override_font_sizes/font_size = 50
 text = "Quit"

@@ -13,7 +13,7 @@ func _ready():
 
 # Función para simular el progreso de la carga
 func simular_carga():
-	var tiempo_carga = 20.0  # Tiempo total de carga en segundos
+	var tiempo_carga = 10.0  # Tiempo total de carga en segundos
 	var incremento = 3.0  # Incremento del progreso en cada paso
 	var tiempo_por_paso = tiempo_carga / (progress_bar.max_value / incremento)
 

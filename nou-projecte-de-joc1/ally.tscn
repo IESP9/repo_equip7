@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://csfhk8lb5tk81"]
+
+[ext_resource type="Script" path="res://ally.gd" id="1_rn0wi"]
+[ext_resource type="PackedScene" uid="uid://baag5ieeuof7t" path="res://mutant_run.tscn" id="2_4mtqo"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_pn1k6"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5jwc8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_of178"]
+radius = 0.534281
+height = 2.42033
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3kqgf"]
+radius = 0.532014
+height = 2.51079
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_rn0wi")
+speed = 5.0
+damage = 50
+health = 500
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1999.67, 0.0181504, 0, -36.3009, 0.999835, 0, 0, 0, 2000, 0, 0, 0)
+navigation_mesh = SubResource("NavigationMesh_pn1k6")
+navigation_layers = 65535
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.93316, 0)
+visible = false
+layers = 5
+mesh = SubResource("CapsuleMesh_5jwc8")
+skeleton = NodePath("")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00216794, 0.131971, 0.000396252)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0.783214, 0)
+shape = SubResource("CapsuleShape3D_of178")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0.951824, 0)
+shape = SubResource("CapsuleShape3D_3kqgf")
+
+[node name="Mutant Run" parent="." instance=ExtResource("2_4mtqo")]
+transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, 0, 0, 0)

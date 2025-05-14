@@ -22,7 +22,7 @@ emission_box_extents = Vector3(1, 1, 1)
 direction = Vector3(0, 1, 0)
 spread = 180.0
 initial_velocity_max = 1.5
-gravity = Vector3(0, 5, 0)
+gravity = Vector3(0, 2, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qgy20"]
 albedo_texture = ExtResource("3_abupt")
@@ -31,7 +31,7 @@ albedo_texture = ExtResource("3_abupt")
 lightmap_size_hint = Vector2i(2, 2)
 material = SubResource("StandardMaterial3D_qgy20")
 flip_faces = true
-size = Vector2(0.04, 0.1)
+size = Vector2(0.02, 0.02)
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.461575, 0)

@@ -9,8 +9,8 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_alq6p"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gptle"]
-radius = 1.31244
-height = 7.18285
+radius = 2.51811
+height = 12.3055
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bgelq"]
 radius = 1.33287
@@ -22,7 +22,7 @@ emission_box_extents = Vector3(3, 3, 3)
 direction = Vector3(0, 1, 0)
 spread = 180.0
 initial_velocity_max = 1.5
-gravity = Vector3(0, 20, 0)
+gravity = Vector3(0, 2, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_khf3u"]
 albedo_texture = ExtResource("3_dijxw")
@@ -32,10 +32,14 @@ albedo_texture_force_srgb = true
 lightmap_size_hint = Vector2i(2, 2)
 material = SubResource("StandardMaterial3D_khf3u")
 flip_faces = true
-size = Vector2(0.08, 0.2)
+size = Vector2(0.04, 0.04)
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_8403f")
+speed = null
+damage = null
+health = null
+gravity = null
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvxe6n6tn5edf"]
+
+[ext_resource type="PackedScene" uid="uid://dgxme32p4usr" path="res://pack_a_punch/scene.gltf" id="2_ntcf5"]
+[ext_resource type="Script" path="res://aaa.gd" id="2_tfins"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nd5i8"]
+size = Vector3(1.61145, 1.0874, 1.13281)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y1r7w"]
+size = Vector3(1.61133, 1.89383, 0.725708)
+
+[node name="RigidBody3D" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.824869, 0, 0)
+freeze = true
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("2_tfins")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.826915, 0.554777, 0.0664062)
+shape = SubResource("BoxShape3D_nd5i8")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_ntcf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0704039, 0, 0.306134)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.820911, 0.952604, -0.0980793)
+shape = SubResource("BoxShape3D_y1r7w")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

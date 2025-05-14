@@ -13,7 +13,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05519, 0.203732, -0.0037360
 collision_mask = 2
 mass = 0.001
 physics_material_override = SubResource("PhysicsMaterial_sssei")
-linear_velocity = Vector3(100, 0, 0)
+gravity_scale = 0.5
+linear_velocity = Vector3(1000, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-0.000492453, -0.000722351, -0.299999, -0.299994, -0.00184468, 0.000496887, -0.00184587, 0.299993, -0.000719308, 0.000139356, 0.000241488, 0.000209078)

@@ -27,7 +27,7 @@ func _ready():
 	add_child(transition_timer)
 	
 	# Mostrar mensaje inicial y configurar espera
-	wave_label.text = "¡BOSS A APARECIDO DERROTALO!"
+	wave_label.text = "¡EL BOSS HA APARECIDO, DERROTALO!"
 	wave_label.visible = true
 	
 	# Temporizador para esperar 30 segundos
@@ -109,4 +109,4 @@ func spawn_boss():
 func _on_transition_timeout():
 	# Cambiar al mapa3.tscn
 	print("Transición a mapa3.tscn")
-	get_tree().change_scene_to_file("res://mapa3.tscn")
+	get_tree().change_scene_to_file("res://mapa4.tscn")

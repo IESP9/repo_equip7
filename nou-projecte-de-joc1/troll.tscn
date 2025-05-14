@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbdr7kl7pb1hl"]
+
+[ext_resource type="Script" path="res://troll.gd" id="1_5w8ns"]
+[ext_resource type="Texture2D" uid="uid://bw0h8jvpifdx2" path="res://Se piensa que puede mejorar su arma (1).png" id="2_uy3p2"]
+
+[node name="CanvasLayer" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_5w8ns")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 399.0
+offset_top = 1.0
+offset_right = 1543.0
+offset_bottom = 1083.0
+texture = ExtResource("2_uy3p2")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 761.0
+offset_top = 736.0
+offset_right = 1179.0
+offset_bottom = 778.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Presiona [E] para continuar..."

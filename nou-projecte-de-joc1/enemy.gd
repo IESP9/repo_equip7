@@ -81,6 +81,7 @@ func take_damage(damage_amount: int):
 
 func die():
 	print("☠️ Enemigo eliminado")
+	Global.agregar_puntos(20)
 	queue_free()
 
 func _on_body_entered(body):

@@ -1,12 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://dc73o76glpyly"]
+[gd_scene load_steps=10 format=3 uid="uid://dc73o76glpyly"]
 
 [ext_resource type="PackedScene" uid="uid://4v5vb70eu6x3" path="res://city1/scene.gltf" id="1_esi72"]
-[ext_resource type="Script" path="res://ow.gd" id="1_tcw26"]
 [ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://player.tscn" id="2_eaufd"]
 [ext_resource type="Texture2D" uid="uid://bh03sihjimug4" path="res://belfast_sunset_puresky_4k.exr" id="3_mpiht"]
 [ext_resource type="PackedScene" uid="uid://dqx7s44v2ya67" path="res://PausePanel.tscn" id="4_bdsb1"]
 [ext_resource type="PackedScene" uid="uid://dy2fnho1y0p1k" path="res://low-poly_city_buildings/scene.gltf" id="5_w2lgf"]
-[ext_resource type="Script" path="res://prueba.gd" id="7_vusb0"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jwkmf"]
 panorama = ExtResource("3_mpiht")
@@ -25,11 +23,7 @@ sdfgi_enabled = true
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_0t7tq"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_sb8bu"]
-size = Vector3(18.3643, 4.83047, 16.2267)
-
 [node name="Node3D" type="Node3D"]
-script = ExtResource("1_tcw26")
 
 [node name="Player" parent="." instance=ExtResource("2_eaufd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1847, 1.85191, 3.16651)
@@ -220,17 +214,3 @@ transform = Transform3D(85.5897, 0, -51.7146, 0, 100, 0, 51.7146, 0, 85.5897, -3
 
 [node name="Sketchfab_Scene2" parent="." instance=ExtResource("5_w2lgf")]
 transform = Transform3D(85.5897, 0, -51.7146, 0, 100, 0, 51.7146, 0, 85.5897, -35.7584, 0.01, -609.029)
-
-[node name="pruebazombie" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0268586, 0)
-
-[node name="SpawnController" type="Node3D" parent="pruebazombie"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51755, 0, 82.8248)
-script = ExtResource("7_vusb0")
-
-[node name="SpawnArea" type="Area3D" parent="pruebazombie/SpawnController"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00217056, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="pruebazombie/SpawnController/SpawnArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0244639, 2.43199, 0.23928)
-shape = SubResource("BoxShape3D_sb8bu")

@@ -24,7 +24,6 @@ var current_life = 100
 var max_life = 100
 var current_ammo = 15
 var max_ammo = 15
-
 # Señales para la UI
 signal stats_updated(life, ammo)
 signal player_died()
