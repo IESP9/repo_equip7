@@ -19,7 +19,7 @@ height = 2.51079
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00622988, -2.38419e-07, 0.0117035)
 collision_layer = 2
 script = ExtResource("1_vgw4a")
-health = 25
+health = 40
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 

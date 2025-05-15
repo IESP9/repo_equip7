@@ -1,0 +1,559 @@
+[gd_scene load_steps=2 format=3 uid="uid://bktxlcww00oqg"]
+
+[ext_resource type="Script" path="res://creditos.gd" id="1_1xpe6"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1xpe6")
+
+[node name="Panel" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="CreditsContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 272.0
+offset_right = 1416.0
+offset_bottom = 563.0
+alignment = 1
+
+[node name="Title" type="Label" parent="CreditsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "Spanish Security Simulator
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer7" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer8" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer18" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer19" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer20" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer21" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer22" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer23" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer24" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer73" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer74" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer75" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer76" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer77" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer78" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer79" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer80" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer81" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer82" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="CreditSection" type="Label" parent="CreditsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Desarrollado por..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer2" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer5" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer6" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer25" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer26" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer27" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer28" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer83" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer84" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer85" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer86" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer87" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer88" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer89" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="CreditsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Cristian Benages"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer3" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer29" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer30" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer31" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer32" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer90" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer91" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer92" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer93" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer94" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Name2" type="Label" parent="CreditsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Abdullah Dar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer4" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer33" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer34" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer35" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer36" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer95" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer96" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer97" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer98" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer99" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Name3" type="Label" parent="CreditsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Danylo Mykhailov"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer9" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer37" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer38" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer39" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer40" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer100" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer101" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer102" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer103" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer104" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Name4" type="Label" parent="CreditsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Diseñador Principal: Cristian Benages"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer10" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer41" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer42" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer43" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer44" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer105" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer106" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer107" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer108" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer109" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Name5" type="Label" parent="CreditsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Diseñado de Niveles: Cristian Benages"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer11" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer45" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer46" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer47" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer48" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer110" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer111" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer112" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer113" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer114" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Name6" type="Label" parent="CreditsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Diseñado de Mecanicas: Cristian Benages"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer12" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer49" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer50" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer51" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer52" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer115" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer116" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer117" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer118" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer119" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Name7" type="Label" parent="CreditsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Programacion Jugador: Abdullah Dar / Danylo Mykhailov"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer13" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer53" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer54" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer55" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer56" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer120" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer121" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer122" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer123" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer124" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Name8" type="Label" parent="CreditsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Programacion Enemigos: Abdullah Dar / Danylo Mykhailov"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer14" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer57" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer58" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer59" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer60" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer125" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer126" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer127" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer128" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer129" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Name9" type="Label" parent="CreditsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Programacion IA: Abdullah Dar / Danylo Mykhailov"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer15" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer61" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer62" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer63" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer64" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer130" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer131" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer132" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer133" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer134" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Name10" type="Label" parent="CreditsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Programacion Gameplay: Abdullah Dar / Danylo Mykhailov"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer16" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer65" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer66" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer67" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer68" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer135" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer136" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer137" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer138" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer139" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Name11" type="Label" parent="CreditsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Motor: Godot Engine"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer17" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer69" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer70" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer71" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer72" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer140" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer141" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer142" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer143" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Spacer144" type="Control" parent="CreditsContainer"]
+layout_mode = 2
+
+[node name="Name12" type="Label" parent="CreditsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "© 2025 - TPMOB"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]

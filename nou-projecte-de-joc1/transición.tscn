@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://y0rm3ceaj27s"]
 
 [ext_resource type="Script" path="res://transición.gd" id="1_p42vg"]
-[ext_resource type="Texture2D" uid="uid://cfwlvo4dpbddh" path="res://LOS.png" id="2_8ie3b"]
+[ext_resource type="Texture2D" uid="uid://bu54m5ecbp6uo" path="res://imagen.png" id="2_73ipl"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -15,7 +15,7 @@ script = ExtResource("1_p42vg")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(960, 539.999)
 scale = Vector2(1.25, 1.05469)
-texture = ExtResource("2_8ie3b")
+texture = ExtResource("2_73ipl")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0

@@ -36,7 +36,7 @@ offset_right = 1229.0
 offset_bottom = 675.0
 theme_override_fonts/font = ExtResource("2_hnef5")
 theme_override_font_sizes/font_size = 50
-text = "M.Abierto"
+text = "Coming Soon"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

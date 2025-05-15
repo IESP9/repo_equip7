@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://boa2ys6ihj0gd"]
+[gd_scene load_steps=19 format=3 uid="uid://boa2ys6ihj0gd"]
 
 [ext_resource type="Texture2D" uid="uid://cferjwjyub1pv" path="res://Flag_of_Spain.svg" id="1_w8ddu"]
 [ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://player.tscn" id="2_1s82e"]
 [ext_resource type="AudioStream" uid="uid://c4c1fprtadmcx" path="res://himno-espana.mp3" id="3_x53er"]
+[ext_resource type="PackedScene" uid="uid://dqx7s44v2ya67" path="res://PausePanel.tscn" id="4_q6gw7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_57syf"]
 albedo_texture = ExtResource("1_w8ddu")
@@ -127,3 +128,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.1361, 0)
 stream = ExtResource("3_x53er")
 autoplay = true
 parameters/looping = true
+
+[node name="CanvasLayer" parent="." instance=ExtResource("4_q6gw7")]

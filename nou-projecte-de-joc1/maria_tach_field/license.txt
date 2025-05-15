@@ -1,0 +1,11 @@
+Model Information:
+* title:	Maria Tach Field
+* source:	https://sketchfab.com/3d-models/maria-tach-field-97750e1a8d264eb8aa2caa28128ba1d1
+* author:	Francesco Coldesina (https://sketchfab.com/topfrank2013)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Maria Tach Field" (https://sketchfab.com/3d-models/maria-tach-field-97750e1a8d264eb8aa2caa28128ba1d1) by Francesco Coldesina (https://sketchfab.com/topfrank2013) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

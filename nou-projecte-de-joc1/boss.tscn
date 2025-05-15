@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwti8n5fmcsks"]
+[gd_scene load_steps=17 format=3 uid="uid://dwti8n5fmcsks"]
 
 [ext_resource type="Script" path="res://Scripts/boss.gd" id="1_kg3y0"]
 [ext_resource type="PackedScene" uid="uid://dkl38l61g6lu5" path="res://player.tscn" id="1_vjr16"]
 [ext_resource type="Texture2D" uid="uid://b68a7tnm1xoa5" path="res://Mapas/Prototype Textures/black.png" id="2_8x128"]
 [ext_resource type="PackedScene" uid="uid://btwhd6ocrq2l2" path="res://zombie_scream.tscn" id="3_j02al"]
+[ext_resource type="PackedScene" uid="uid://b7mfd5x45q40w" path="res://abandoned_warehouse_-_interior_scene/scene.gltf" id="5_wg3dl"]
+[ext_resource type="Texture2D" uid="uid://cbr7i7mde7ep6" path="res://AllSky_Night_MoonBurst Equirect.png" id="6_tnknu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6u2km"]
 albedo_texture = ExtResource("2_8x128")
@@ -78,6 +80,16 @@ _data = {
 "seguir": SubResource("Animation_hrwb6")
 }
 
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8fsy4"]
+panorama = ExtResource("6_tnknu")
+
+[sub_resource type="Sky" id="Sky_s4ypg"]
+sky_material = SubResource("PanoramaSkyMaterial_8fsy4")
+
+[sub_resource type="Environment" id="Environment_tc2he"]
+background_mode = 2
+sky = SubResource("Sky_s4ypg")
+
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_kg3y0")
 
@@ -127,3 +139,9 @@ offset_bottom = 815.0
 theme_override_font_sizes/font_size = 35
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("5_wg3dl")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -16.1486, 8.85902, -8.68202)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tc2he")

@@ -99,7 +99,7 @@ func start_next_wave():
 func spawn_boss():
 	var boss = boss_scene.instantiate()
 	add_child(boss)
-	boss.global_transform.origin = Vector3(0, 0, 10)  # Ajustar posición
+	boss.global_transform.origin = Vector3(3, 36, 0.4)  # Ajustar posición
 	
 	if boss.has_signal("boss_derrotado"):
 		boss.connect("boss_derrotado", Callable(spawn_controller, "_on_boss_derrotado"))

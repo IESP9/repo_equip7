@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bivitpl7p8f0"]
+
+[ext_resource type="PackedScene" uid="uid://dr4p82lj8mbw4" path="res://maria_tach_field/scene.gltf" id="1_onbqu"]
+
+[sub_resource type="Environment" id="Environment_jm5iw"]
+background_mode = 2
+background_energy_multiplier = 0.0
+ambient_light_source = 3
+ambient_light_sky_contribution = 0.0
+tonemap_exposure = 0.16
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_onbqu")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1"]
+environment = SubResource("Environment_jm5iw")

@@ -4,7 +4,7 @@ extends Node3D
 @onready var wave_label: Label = $Control/Label
 @export var spawn_controller: Node3D
 @export var boss_scene: PackedScene = preload("res://bosst.tscn")
-@export var next_scene: String = "res://mapa3.tscn"  # Cargar la escena de antemano
+@export var next_scene: String = "res://fin.tscn"  # Cargar la escena de antemano
 
 # Configuración
 var wave_started = false
@@ -97,7 +97,7 @@ func _on_boss_derrotado():
 func spawn_boss():
 	var boss = boss_scene.instantiate()
 	add_child(boss)
-	boss.global_transform.origin = Vector3(0, 0, 0.1)  # Ajustar posición
+	boss.global_transform.origin = Vector3(5.4, -1.8, -20)  # Ajustar posición
 	
 	if boss.has_signal("boss_derrotado"):
 		boss.connect("boss_derrotado", Callable(spawn_controller, "_on_boss_derrotado"))
@@ -126,6 +126,6 @@ func transition_to_next_map():
 	else:
 		push_error("Error: No se pudo cargar la siguiente escena")
 		# Opción alternativa
-		var error = get_tree().change_scene_to_file("res://mapa3.tscn")
+		var error = get_tree().change_scene_to_file("res://fin.tscn")
 		if error != OK:
 			push_error("Fallo al cargar mapa3.tscn, código de error: ", error)

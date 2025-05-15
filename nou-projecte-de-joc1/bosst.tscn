@@ -36,10 +36,7 @@ size = Vector2(0.04, 0.04)
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_8403f")
-speed = null
-damage = null
-health = null
-gravity = null
+health = 300
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
